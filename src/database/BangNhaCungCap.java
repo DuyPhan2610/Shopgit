@@ -14,7 +14,7 @@ import java.sql.SQLException;
  * @author phamh
  */
 public class BangNhaCungCap extends TruyVanDuLieu{
-    
+
     ////////////////////////////////////////////////////////////////////////////
    public void themNhaCungCap (NhaCungCap nhaCungCap){
        try {

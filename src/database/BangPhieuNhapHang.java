@@ -16,10 +16,7 @@ import java.util.ArrayList;
  * @author phamh
  */
 public class BangPhieuNhapHang extends TruyVanDuLieu{
-    
-    public BangPhieuNhapHang() throws SQLException, ClassNotFoundException {
-        super();
-    }
+
     
         // them 1 record hang hoa
    ////////////////////////////////////////////////////////////////////////////

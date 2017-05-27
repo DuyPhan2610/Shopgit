@@ -16,10 +16,7 @@ import java.util.ArrayList;
  */
 public class BangHangHoa extends TruyVanDuLieu{
 
-    public BangHangHoa() throws SQLException, ClassNotFoundException {
-        super();
-    }
-    
+
     
     // Thêm danh sách các hàng hóa vào table hàng hóa
     public void themDuLieuVaoHangHoa(ArrayList<HangHoa> arlHangHoa){

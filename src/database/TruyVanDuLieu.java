@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,8 +27,14 @@ public class TruyVanDuLieu {
    //private PreparedStatement preStatement;
    //private Statement statement;
    //private ResultSet resultSet;
-   public TruyVanDuLieu() throws SQLException, ClassNotFoundException{
-       connection = new ConnectionUtils().getMySQLConnection();
+   public TruyVanDuLieu(){
+       try {
+           connection = new ConnectionUtils().getMySQLConnection();
+       } catch (SQLException ex) {
+           Logger.getLogger(TruyVanDuLieu.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (ClassNotFoundException ex) {
+           Logger.getLogger(TruyVanDuLieu.class.getName()).log(Level.SEVERE, null, ex);
+       }
    }
    
    // Câu lệnh query tổng quát
