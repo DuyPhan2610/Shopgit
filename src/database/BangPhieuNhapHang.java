@@ -30,7 +30,7 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
     public final static String THOI_GIAN = "THOIGIAN";
     public final static String GHI_CHU = "GHICHU";
     
-        // them 1 record hang hoa
+        // them 1 phiếu nhập vào csdl
    ////////////////////////////////////////////////////////////////////////////
    public void themPhieuNhapHang (PhieuNhapHang phieuNhapHang){
        try {
@@ -72,5 +72,7 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
 
         return arlPhieuNhapHang;
     }
+    
+    
     
 }

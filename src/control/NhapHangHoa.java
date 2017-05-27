@@ -120,7 +120,17 @@ public class NhapHangHoa {
         return arlHangNhap;
     }
     
-
+    
+    //Đưa hàng nhập vào trong csdl Hàng Hóa
+    public void choHangNhapVaoCSDL(){
+        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
+        ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
+        
+        for(int i = 0; i < arlHangNhap.size(); i ++){
+            // tạo hàng hóa từ hàng nhập
+            arlHangHoa.add(new HangHoa(arlHangNhap.get(i)));
+        }
+    }
     
     // Tạo phiếu nhập
     public void taoPhieuNhap(String maPhieuNhap, String maNhaCungCap,
@@ -128,36 +138,23 @@ public class NhapHangHoa {
     
         PhieuNhapHang phieuNhapHang = new PhieuNhapHang(maPhieuNhap, maNhaCungCap,
             tongTien, giaGiam, tienDaTra, conNo, thoiGian, ghiChu);
-        TruyVanDuLieu queryData;
-        // Kết nối cơ sở dữ liệu
-        queryData = new TruyVanDuLieu();
-        //Thực hiện câu truy vấn chèn record vào csdl
-        //queryData.insertProduct(hangHoa);
-        
-        // Đóng kết nối cơ sở dữ liệu khi chèn xong
-        queryData.closeDatabase();
+        bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
     }
     
     
     // Tạo chi tiết phiếu nhập
-    public void taoChiTietPhieuNhap(ArrayList<String> arlMaHangHoa, String maPhieuNhap){
+    public void taoChiTietPhieuNhap(ArrayList<HangNhap> arlHangNhap, String maPhieuNhap){
         
         TruyVanDuLieu queryData;
         // Kết nối cơ sở dữ liệu
         queryData = new TruyVanDuLieu();
-        for(int i = 0; i < arlMaHangHoa.size(); i ++ ){
+        for(int i = 0; i < arlHangNhap.size(); i ++ ){
             
-            //Thực hiện câu truy vấn chèn record vào csdl
-            //queryData.insertChiTietPhieuNhap(new ChiTietPhieuNhapHang(arlMaHangHoa.get(i), maPhieuNhap));
         }
+        
         // Đóng kết nối cơ sở dữ liệu khi chèn xong
         queryData.closeDatabase();
     }
-    
-    
-    
-    
-    
     
     
     

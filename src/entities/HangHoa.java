@@ -67,6 +67,18 @@ public class HangHoa {
         }
     }
     
+    //Tạo một hàng hóa từ hàng nhập trong file
+    public HangHoa(HangNhap hangNhap){
+        this.mMaHangHoa = hangNhap.mMaHangHoa;
+        this.mTenHangHoa = hangNhap.mTenHangHoa;
+        this.mGiaBan = 0;
+        this.mGiaVon = (int)hangNhap.mGiaMua;
+        this.mTonKho = 0;
+        this.mNhomHangHoa = hangNhap.mNhomHangHoa;
+        this.mDinhMucTonItNhat = 0;
+        this.mDinhMucTonNhieuNhat = 0;
+    }
+    
     public String  getMaHangHoa(){
         return this.mMaHangHoa;
     }

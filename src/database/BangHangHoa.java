@@ -7,7 +7,6 @@ package database;
 
 import control.NhapHangHoa;
 
-import entities.ChiTietCongNoNhaCungCap;
 
 import entities.HangHoa;
 import java.sql.PreparedStatement;
@@ -42,7 +41,7 @@ public class BangHangHoa extends TruyVanDuLieu{
             themMotHangHoa(arlHangHoa.get(i));
         }
     }
-        // them 1 record hang hoa
+   // them 1 record hang hoa
    ////////////////////////////////////////////////////////////////////////////
    public void themMotHangHoa (HangHoa product){
        try {
