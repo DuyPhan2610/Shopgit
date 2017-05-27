@@ -7,7 +7,11 @@ package database;
 
 import entities.ChiTietNhanVien;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -50,4 +54,21 @@ public class BangChiTietNhanVien extends TruyVanDuLieu {
             System.out.print("\n Thêm dữ liệu không thành công");
         }
     }
+    
+    //Lấy tất cả các chi tiết nhân viên trong csdl
+     public ArrayList<ChiTietNhanVien> layTatCaChiTietNhanVienTrongCSDL() {
+         ArrayList<ChiTietNhanVien> arlChiTietNhanVien = new ArrayList<>();
+              // mở kết nối csdl
+
+            // thực hiện câu truy vấn đưa kết quả vào result set
+         ResultSet rs = this.selectData(CauTruyVan.selectedStatement("chitietnhanvien"));
+        try {
+            while (rs.next()){
+                arlChiTietNhanVien.add(new ChiTietNhanVien(rs));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangChiTietPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return  arlChiTietNhanVien;
+     }
 }

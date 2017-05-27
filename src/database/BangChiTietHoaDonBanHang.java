@@ -5,9 +5,15 @@
  */
 package database;
 
+import control.NhapHangHoa;
 import entities.ChiTietHoaDonBanHang;
+import entities.HangHoa;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,4 +43,24 @@ public class BangChiTietHoaDonBanHang extends TruyVanDuLieu{
           System.out.print("\n Thêm dữ liệu không thành công");
     }        
 }
+    
+       //Lấy tất cả các chi tiết hóa đơn bán hàng trong csdl
+    public ArrayList<ChiTietHoaDonBanHang> layTatCaChiTietHoaDonBanHangTrongCSDL(){
+        
+        ArrayList<ChiTietHoaDonBanHang> arlChiTietHoaDonBanHang = new ArrayList<>();
+        try {
+            // mở kết nối csdl
+
+            // thực hiện câu truy vấn đưa kết quả vào result set
+            ResultSet rs = this.selectData(CauTruyVan.selectedStatement("chitiethoadonbanhang"));
+            while(rs.next()){
+                arlChiTietHoaDonBanHang.add(new ChiTietHoaDonBanHang(rs));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return arlChiTietHoaDonBanHang;
+    }
 }

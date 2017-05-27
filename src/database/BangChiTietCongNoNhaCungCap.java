@@ -7,7 +7,11 @@ package database;
 
 import entities.ChiTietCongNoNhaCungCap;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,7 +30,7 @@ public class BangChiTietCongNoNhaCungCap extends TruyVanDuLieu{
             PreparedStatement preStatement = connection.prepareStatement(sql);
             preStatement.setString(1, chiTietCongNoNhaCungcap.mMaCongNoNhaCungCap);
             preStatement.setString(2, chiTietCongNoNhaCungcap.mMaPhieuNhap);
-            preStatement.setInt(3, chiTietCongNoNhaCungcap.mTOngNo);
+            preStatement.setInt(3, chiTietCongNoNhaCungcap.mTongNo);
             
             boolean checkSuccess = preStatement.execute();
             
@@ -36,4 +40,21 @@ public class BangChiTietCongNoNhaCungCap extends TruyVanDuLieu{
           System.out.print("\n thêm dữ liệu không thành công");
        }
     }
+    
+    //Lấy tất cả các chi tiết công nợ nhà cung cấp trong csdl
+     public ArrayList<ChiTietCongNoNhaCungCap> layTatCaChiTietConNoNhaCungCapTrongCSDL() {
+         ArrayList<ChiTietCongNoNhaCungCap> arlChiTietCongNoNhaCungCap = new ArrayList<>();
+              // mở kết nối csdl
+
+            // thực hiện câu truy vấn đưa kết quả vào result set
+         ResultSet rs = this.selectData(CauTruyVan.selectedStatement("chitietcongnonhacungcap"));
+        try {
+            while (rs.next()){
+                arlChiTietCongNoNhaCungCap.add(new ChiTietCongNoNhaCungCap(rs));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangChiTietPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return  arlChiTietCongNoNhaCungCap;
+     }
 }
