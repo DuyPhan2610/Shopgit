@@ -5,6 +5,7 @@
  */
 package database;
 
+import entities.ChiTietCongNoNhaCungCap;
 import entities.HangHoa;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
  */
 public class BangHangHoa extends TruyVanDuLieu{
 
-
+    
     
     // Thêm danh sách các hàng hóa vào table hàng hóa
     public void themDuLieuVaoHangHoa(ArrayList<HangHoa> arlHangHoa){

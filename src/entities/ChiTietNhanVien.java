@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 public class ChiTietNhanVien {
     public String mMaChiTietNhanVien;
     public String mMaNhanVien;
-    public String mTenNhanVien;
     public int mSoNgayLam;
     public int mSoGioLamTrongNgay;
     public int mTongSoGioLam;
@@ -13,22 +12,21 @@ public class ChiTietNhanVien {
     public int mTienThuong;
     public int mTongLuong;
     public String mGhiChu;
+    public String mNgayVaoLam;
     
     public ChiTietNhanVien(){}
     public ChiTietNhanVien(String maChiTietNhanVien ,
     String maNhanVien ,
-    String tenNhanVien ,
     int soNgayLam ,
       int soGioLamTrongNgay ,
       int tongSoGioLam ,
       int tienLuong ,
       int tienThuong ,
       int tongLuong ,
-      String ghiChu ){
+      String ghiChu, String ngayVaoLam ){
         
         this.mMaChiTietNhanVien = maChiTietNhanVien;
         this.mMaNhanVien = maNhanVien;
-        this.mTenNhanVien = tenNhanVien;
         this.mSoNgayLam = soNgayLam;
         this.mSoGioLamTrongNgay = soGioLamTrongNgay;
         this.mTongSoGioLam = tongSoGioLam;
@@ -36,6 +34,7 @@ public class ChiTietNhanVien {
         this.mTienThuong = tienThuong;
         this.mTongLuong = tongLuong;
         this.mGhiChu = ghiChu;
+        this.mNgayVaoLam = ngayVaoLam;
         
         
     }

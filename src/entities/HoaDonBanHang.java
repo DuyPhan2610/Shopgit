@@ -10,10 +10,11 @@ public class HoaDonBanHang {
     public Time mGio;
     public int mTongTienHang, mGiaGiam, mKhachDaTra, mCongNo;
     
+    
     public HoaDonBanHang(){}
     public HoaDonBanHang(String maHoaDonBanHang, String tenKhachHang,
             String ghiChu, int tongTienHang, int giaGiam, int khachDaTra, int congNo,
-             Date thoiGian, Time gio ){
+             Date thoiGian, Time gio  ){
              
         this.mCongNo = congNo;
         this.mGhiChu = ghiChu;
@@ -24,5 +25,6 @@ public class HoaDonBanHang {
         this.mTenKhachHang = tenKhachHang;
         this.mThoiGian = thoiGian;
         this.mTongTienHang = tongTienHang;
+        
     }
 }
