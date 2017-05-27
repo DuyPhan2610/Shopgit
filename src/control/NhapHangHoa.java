@@ -119,15 +119,9 @@ public class NhapHangHoa {
     // Lấy dữ liệu từ file vào cơ sở dữ liệu
     public void themDuLieuTuTableVaoCoSoDuLieu( ArrayList <HangHoa> arlHangHoa){
     
-    BangHangHoa bangHangHoa;
-        try {
-            bangHangHoa = new BangHangHoa();
-            bangHangHoa.themDuLieuVaoHangHoa(arlHangHoa);
-        } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        BangHangHoa bangHangHoa;
+        bangHangHoa = new BangHangHoa();
+        bangHangHoa.themDuLieuVaoHangHoa(arlHangHoa);
         
     }
     
@@ -152,20 +146,13 @@ public class NhapHangHoa {
         PhieuNhapHang phieuNhapHang = new PhieuNhapHang(maPhieuNhap, maNhaCungCap,
             tongTien, giaGiam, tienDaTra, conNo, thoiGian, ghiChu);
         TruyVanDuLieu queryData;
-        try {
-            // Kết nối cơ sở dữ liệu
-            queryData = new TruyVanDuLieu();
-            
-            //Thực hiện câu truy vấn chèn record vào csdl
-            //queryData.insertProduct(hangHoa);
-            
-            // Đóng kết nối cơ sở dữ liệu khi chèn xong
-            queryData.closeDatabase();
-        } catch (SQLException ex) {
-            System.out.println("Chèn record không thành công");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Chèn record không thành công");
-        }
+        // Kết nối cơ sở dữ liệu
+        queryData = new TruyVanDuLieu();
+        //Thực hiện câu truy vấn chèn record vào csdl
+        //queryData.insertProduct(hangHoa);
+        
+        // Đóng kết nối cơ sở dữ liệu khi chèn xong
+        queryData.closeDatabase();
     }
     
     
@@ -173,23 +160,15 @@ public class NhapHangHoa {
     public void taoChiTietPhieuNhap(ArrayList<String> arlMaHangHoa, String maPhieuNhap){
         
         TruyVanDuLieu queryData;
-        try {
-            // Kết nối cơ sở dữ liệu
-            queryData = new TruyVanDuLieu();
+        // Kết nối cơ sở dữ liệu
+        queryData = new TruyVanDuLieu();
+        for(int i = 0; i < arlMaHangHoa.size(); i ++ ){
             
-            for(int i = 0; i < arlMaHangHoa.size(); i ++ ){
-            
-                //Thực hiện câu truy vấn chèn record vào csdl
-                //queryData.insertChiTietPhieuNhap(new ChiTietPhieuNhapHang(arlMaHangHoa.get(i), maPhieuNhap));
-            }
-            
-            // Đóng kết nối cơ sở dữ liệu khi chèn xong
-            queryData.closeDatabase();
-        } catch (SQLException ex) {
-            System.out.println("Chèn record không thành công");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Chèn record không thành công");
+            //Thực hiện câu truy vấn chèn record vào csdl
+            //queryData.insertChiTietPhieuNhap(new ChiTietPhieuNhapHang(arlMaHangHoa.get(i), maPhieuNhap));
         }
+        // Đóng kết nối cơ sở dữ liệu khi chèn xong
+        queryData.closeDatabase();
     }
     
     
@@ -210,8 +189,6 @@ public class NhapHangHoa {
             truyVanDuLieu.closeDatabase();
             
         } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
             Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -236,18 +213,12 @@ public class NhapHangHoa {
         
         // Mở csdl để lấy mã sản phẩm cuối cùng
         HangHoa hangHoa;
-        TruyVanDuLieu queryData;
-        try {
-            // Kết nối cơ sở dữ liệu
-            queryData = new TruyVanDuLieu();
-                
-            // Đóng kết nối cơ sở dữ liệu khi chèn xong
-            queryData.closeDatabase();
-        } catch (SQLException ex) {
-            System.out.println("Chèn record không thành công");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("Chèn record không thành công");
-        }
+        BangHangHoa bangHangHoa;
+        // Kết nối cơ sở dữ liệu
+        bangHangHoa = new BangHangHoa();
+        
+        // Đóng kết nối cơ sở dữ liệu khi chèn xong
+        bangHangHoa.closeDatabase();
         return null;
     }
     
