@@ -81,13 +81,23 @@ public class NhapHangHoa {
     }
     
     //kiểm tra có trùng mã hàng hóa khi nhập dữ liệu không
-    public void  kiemTraMaHangHoa(){
+    public  ArrayList<HangNhap>  kiemTraMaHangHoa(){
         ArrayList<HangHoa> arlHangHoa = this.layTatCaHangHoaTrongCSDL();
         ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
         
-        
-        
+        //Danh sách các hàng nhập bị trùng mã sản phẩm
+        ArrayList<HangNhap> hangNhapTrung = new ArrayList<>();
+        for(int i = 0; i < arlHangNhap.size(); i++){
+            for(int j = 0; j < arlHangHoa.size(); j ++){
+                if(arlHangNhap.get(i).mMaHangHoa.equals(arlHangHoa.get(j).mMaHangHoa)){
+                    hangNhapTrung.add(arlHangNhap.get(i));
+                }
+            }
+        }
+        return hangNhapTrung;
     }
+    
+    
     
     // lấy danh sách các hàng nhập trong table
     public ArrayList<HangNhap> layDanhSachHangNhapTrongTable(){
