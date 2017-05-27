@@ -23,7 +23,7 @@ public class BangChiTietHoaDonBanHang extends TruyVanDuLieu{
     
     public void themChiTietHoaDonBanHang (ChiTietHoaDonBanHang chiTietHoaDonBanHang){
         try {
-            String sql = " insert into chitiethoadonbanhang (MAHOADONBANHANG, MAHANGHOA, SOLUONG) values (?, ?, ?)";
+            String sql = "insert into chitiethoadonbanhang (MAHOADONBANHANG, MAHANGHOA, SOLUONG) values (?, ?, ?)";
             PreparedStatement preStatement = connection.prepareStatement(sql);
             preStatement.setString(1, chiTietHoaDonBanHang.mMaHoaDonBanHang);
             preStatement.setString(2, chiTietHoaDonBanHang.mMaHangHoa);
