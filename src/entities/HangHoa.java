@@ -1,5 +1,6 @@
 package entities;
 
+import database.BangHangHoa;
 import database.DatabaseConsts;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,14 +53,14 @@ public class HangHoa {
     
     public HangHoa(ResultSet rs){
         try {
-            this.mMaHangHoa = rs.getString(DatabaseConsts.HANG_HOA_MA_HANG_HOA);
-            this.mTenHangHoa = rs.getString(DatabaseConsts.HANG_HOA_TEN_HANG_HOA);
-            this.mNhomHangHoa = rs.getString(DatabaseConsts.HANG_HOA_NHOM_HANG_HOA);
-            this.mGiaBan = rs.getInt(DatabaseConsts.HANG_HOA_GIA_BAN);
-            this.mGiaVon = rs.getInt(DatabaseConsts.HANG_HOA_GIA_VON);
-            this.mTonKho = rs.getInt(DatabaseConsts.HANG_HOA_TON_KHO);
-            this.mDinhMucTonItNhat = rs.getInt(DatabaseConsts.HANG_HOA_TON_IT_NHAT);
-            this.mDinhMucTonNhieuNhat = rs.getInt(DatabaseConsts.HANG_HOA_TON_NHIEU_NHAT);
+            this.mMaHangHoa = rs.getString(BangHangHoa.HANG_HOA_MA_HANG_HOA);
+            this.mTenHangHoa = rs.getString(BangHangHoa.HANG_HOA_TEN_HANG_HOA);
+            this.mNhomHangHoa = rs.getString(BangHangHoa.HANG_HOA_NHOM_HANG_HOA);
+            this.mGiaBan = rs.getInt(BangHangHoa.HANG_HOA_GIA_BAN);
+            this.mGiaVon = rs.getInt(BangHangHoa.HANG_HOA_GIA_VON);
+            this.mTonKho = rs.getInt(BangHangHoa.HANG_HOA_TON_KHO);
+            this.mDinhMucTonItNhat = rs.getInt(BangHangHoa.HANG_HOA_TON_IT_NHAT);
+            this.mDinhMucTonNhieuNhat = rs.getInt(BangHangHoa.HANG_HOA_TON_NHIEU_NHAT);
             
         } catch (SQLException ex) {
             Logger.getLogger(HangHoa.class.getName()).log(Level.SEVERE, null, ex);

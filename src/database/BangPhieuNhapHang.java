@@ -5,18 +5,30 @@
  */
 package database;
 
+import control.NhapHangHoa;
 import entities.HangHoa;
 import entities.PhieuNhapHang;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author phamh
  */
 public class BangPhieuNhapHang extends TruyVanDuLieu{
-
+    
+    public final static String MA_PHIEU_NHAP = "MAPHIEUNHAP";
+    public final static String MA_NHA_CUNG_CAP = "MANHACUNGCAP";
+    public final static String TONG_TIEN = "TONGTIEN";
+    public final static String GIA_GIAM = "GIAGIAM";
+    public final static String TIEN_DA_TRA = "TIENDATRA";
+    public final static String CON_NO = "CONNO";
+    public final static String THOI_GIAN = "THOIGIAN";
+    public final static String GHI_CHU = "GHICHU";
     
         // them 1 record hang hoa
    ////////////////////////////////////////////////////////////////////////////
@@ -41,4 +53,24 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
           System.out.print("\n thêm dữ liệu không thành công");
        }
    }
+   
+   
+   //Hàm lấy tất cả phiếu nhập trong csdl
+    public ArrayList<PhieuNhapHang> layTatCaPhieuNhapHangTrongCSDL(){
+        ArrayList<PhieuNhapHang> arlPhieuNhapHang = new ArrayList<>();
+        try {
+            // thực hiện câu truy vấn đưa kết quả vào result set
+            ResultSet rs = this.selectData(CauTruyVan.selectedStatement("phieunhaphang"));
+            while(rs.next()){
+                arlPhieuNhapHang.add(new PhieuNhapHang(rs));
+            }
+            this.closeDatabase();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return arlPhieuNhapHang;
+    }
+    
 }

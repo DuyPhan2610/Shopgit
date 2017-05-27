@@ -5,7 +5,10 @@
  */
 package control;
 
+import database.BangChiTietCongNoNhaCungCap;
 import database.BangHangHoa;
+import database.BangNhaCungCap;
+import database.BangPhieuNhapHang;
 import database.CauTruyVan;
 import database.TruyVanDuLieu;
 import entities.ChiTietPhieuNhapHang;
@@ -34,17 +37,20 @@ import javax.swing.table.DefaultTableModel;
 public class NhapHangHoa {
     private javax.swing.JTable tb_screennhaphang;
     private DefaultTableModel model;
-    public TruyVanDuLieu truyVanDuLieu;
+    private BangHangHoa bangHangHoa;
+    private BangNhaCungCap bangNhaCungCap;
+    private BangPhieuNhapHang bangPhieuNhapHang;
+    
     public DocFile docFile;
     
-    // arrayList này sẽ chứa các hàng hóa mà import từng sản phẩm
-    private ArrayList<HangHoa> arl;
-    DocFile usingExcelFile;
     
     public NhapHangHoa(JTable table){
         this.tb_screennhaphang = table;
         model = (DefaultTableModel) tb_screennhaphang.getModel();
-
+        bangHangHoa = new BangHangHoa();
+        bangNhaCungCap = new BangNhaCungCap();
+        bangPhieuNhapHang = new BangPhieuNhapHang();
+        
     }
     
     // Khi click vào IMPORT
@@ -64,7 +70,7 @@ public class NhapHangHoa {
     private void duaDuLieuVaoBang(){
         ArrayList<HangNhap> arlHangNhap = docFile.layDanhSachHangNhap();
         
-        if(arlHangNhap.size() == 0){
+        if(arlHangNhap.isEmpty()){
             System.out.println("Khong co cai nao trong mang");
         }
         for(int i = 0; i < arlHangNhap.size(); i ++){
@@ -81,8 +87,9 @@ public class NhapHangHoa {
     }
     
     //kiểm tra có trùng mã hàng hóa khi nhập dữ liệu không
+    // Nếu trùng thì hiện danh sách các hàng nhập bị trùng
     public  ArrayList<HangNhap>  kiemTraMaHangHoa(){
-        ArrayList<HangHoa> arlHangHoa = this.layTatCaHangHoaTrongCSDL();
+        ArrayList<HangHoa> arlHangHoa = bangHangHoa.layTatCaHangHoaTrongCSDL();
         ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
         
         //Danh sách các hàng nhập bị trùng mã sản phẩm
@@ -96,8 +103,6 @@ public class NhapHangHoa {
         }
         return hangNhapTrung;
     }
-    
-    
     
     // lấy danh sách các hàng nhập trong table
     public ArrayList<HangNhap> layDanhSachHangNhapTrongTable(){
@@ -115,29 +120,7 @@ public class NhapHangHoa {
         return arlHangNhap;
     }
     
-    
-    // Lấy dữ liệu từ file vào cơ sở dữ liệu
-    public void themDuLieuTuTableVaoCoSoDuLieu( ArrayList <HangHoa> arlHangHoa){
-    
-        BangHangHoa bangHangHoa;
-        bangHangHoa = new BangHangHoa();
-        bangHangHoa.themDuLieuVaoHangHoa(arlHangHoa);
-        
-    }
-    
-    // Thêm từng hàng hóa vào arrayList
-    public void nhapTungHangHoa(String maHangHoa, String tenHangHoa, int giaBan, int giaVon, int tonKho
-            , String nhomHangHoa, int dinhMucTonItNhat, int dinhMucTonNhieuNhat){
-       
-        arl.add( new HangHoa(maHangHoa, tenHangHoa, giaBan, giaVon, tonKho
-            , nhomHangHoa, dinhMucTonItNhat, dinhMucTonNhieuNhat));
 
-    }
-    
-    
-    public ArrayList<HangHoa> getArl(){
-        return this.arl;
-    }
     
     // Tạo phiếu nhập
     public void taoPhieuNhap(String maPhieuNhap, String maNhaCungCap,
@@ -173,58 +156,39 @@ public class NhapHangHoa {
     
     
     
-    //Lấy tất cả các hàng hóa trong csdl
-    public ArrayList<HangHoa> layTatCaHangHoaTrongCSDL(){
-        
-        ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
-        try {
-            // mở kết nối csdl
-            truyVanDuLieu = new TruyVanDuLieu();
-            
-            // thực hiện câu truy vấn đưa kết quả vào result set
-            ResultSet rs = truyVanDuLieu.selectData(CauTruyVan.selectedStatement("hanghoa"));
-            while(rs.next()){
-                arlHangHoa.add(new HangHoa(rs));
-            }
-            truyVanDuLieu.closeDatabase();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return arlHangHoa;
-    }
     
+    
+    
+    
+    
+    
+    // Hàm tự động tạo mã hàng hóa từ hàng hóa cuối cùng
+    public String taoMaHangHoa(){
+        ArrayList<HangHoa> arlHangHoa = bangHangHoa.layTatCaHangHoaTrongCSDL();
+        
+        if(arlHangHoa.size() > 0){
+        //Lấy hàng hóa cuối cùng trong csdl
+            HangHoa hangHoa = arlHangHoa.get(arlHangHoa.size() - 1);   
+            return ControlUtils.taoMaHangHoa(hangHoa.mMaHangHoa);
+        }
+        else{
+            return ControlUtils.taoMaHangHoa("SP0000000");
+        }
+    }
     
     
     
     // Hàm tự động tạo mã phiếu nhập
     public String taoMaPhieuNhap(){
+        ArrayList<PhieuNhapHang> arlPhieuNhap = bangPhieuNhapHang.layTatCaPhieuNhapHangTrongCSDL();
         
-        return null;
-    }
-    
-    
-    
-    
-    
-    // Hàm tự động tạo mã hàng hóa
-    public String taoMaHangHoa(){
-        
-        // Mở csdl để lấy mã sản phẩm cuối cùng
-        HangHoa hangHoa;
-        BangHangHoa bangHangHoa;
-        // Kết nối cơ sở dữ liệu
-        bangHangHoa = new BangHangHoa();
-        
-        // Đóng kết nối cơ sở dữ liệu khi chèn xong
-        bangHangHoa.closeDatabase();
-        return null;
-    }
-    
-    
-    
-    public static void main(String[] args){
-
+        if(arlPhieuNhap.size() > 0){
+        //Lấy hàng hóa cuối cùng trong csdl
+            PhieuNhapHang phieuNhapHang = arlPhieuNhap.get(arlPhieuNhap.size() - 1);   
+            return ControlUtils.taoMaHangHoa(phieuNhapHang.mMaPhieuNhap);
+        }
+        else{
+            return ControlUtils.taoMaHangHoa("SP0000000");
+        }
     }
 }

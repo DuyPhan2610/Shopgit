@@ -38,16 +38,28 @@ public class TruyVanDuLieu {
    }
    
    // Câu lệnh query tổng quát
-   public ResultSet selectData(String statementString) throws SQLException{
-       Statement statement = connection.createStatement();
-       return statement.executeQuery(statementString);
+   public ResultSet selectData(String statementString){
+       Statement statement;
+       try {
+           statement = connection.createStatement();
+           return statement.executeQuery(statementString);
+       } catch (SQLException ex) {
+           Logger.getLogger(TruyVanDuLieu.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       return null;
    }
    
    // Câu lệnh insert tổng quát
-   public void insertData(String statementString) throws SQLException{
+   public void insertData(String statementString){
        
-       Statement statement = connection.createStatement();
-       statement.executeUpdate(statementString);
+       Statement statement;
+       try {
+           statement = connection.createStatement();
+           statement.executeUpdate(statementString);
+       } catch (SQLException ex) {
+           Logger.getLogger(TruyVanDuLieu.class.getName()).log(Level.SEVERE, null, ex);
+       }
+       
    }
    
    
@@ -80,69 +92,6 @@ public class TruyVanDuLieu {
        
    }
    
-   
-   
-   
-//   // them 1 recode hang hoa
-//   //////////////////////////////////////////////////////////////////////////
-//    public void insertProduct(HangHoa product, int tonKho, int dinhMucTonItNhat, int dinhMucTonNhieuNhat){
-//       
-//       try {
-//           String sql = "insert into hanghoa (MAHANGHOA, TENHANGHOA, GIABAN, GIAVON, TONKHO, NHOMHANGHOA, DINHMUCTONITNHAT, DINHMUCTONNHIEUNHAT) values (?, ?, ?, ?, ?, ?, ?, ?)";
-//           PreparedStatement preStatement = connection.prepareStatement(sql);
-//           preStatement.setString(1, product.getMaHangHoa());
-//           preStatement.setString(2, product.getTenHangHoa());
-//           preStatement.setInt(3, product.getGiaBan());
-//           preStatement.setInt(4, product.getGiaVon());
-//           preStatement.setInt(5, tonKho);
-//           preStatement.setString(6, product.getNhomHangHoa());
-//           preStatement.setInt(7, dinhMucTonItNhat);
-//           preStatement.setInt(8, dinhMucTonNhieuNhat);
-//
-//
-////           PreparedStatement preStatement = connection.prepareStatement(sql);
-////           preStatement.setString(1, "SP003");
-////           preStatement.setString(2, "Ao Nike");
-////           preStatement.setInt(3, 300);
-////           preStatement.setInt(4,250);
-////           preStatement.setInt(5, 5);
-////           preStatement.setString(6, "Ao the thao");
-////           preStatement.setInt(7,3);
-////           preStatement.setInt(8, 7);
-//           
-//           preStatement.execute();
-//           
-//           
-//           System.out.print("\n thêm dữ liệu thành công");
-//        }catch (SQLException ex) {
-//            System.out.print("\n thêm dữ liệu không thành công");
-//        }
-//   }
-//    
-//    
-//    public void insertChiTietPhieuNhap(String maHangHoa, String maPhieuNhap){
-//        try {
-//           String sql = "insert into hanghoa (MAHANGHOA, TENHANGHOA) values (?, ?)";
-//           PreparedStatement preStatement = connection.prepareStatement(sql);
-//           preStatement.setString(1,maHangHoa);
-//           preStatement.setString(2, maPhieuNhap);
-//    
-//           preStatement.execute();
-//           
-//           
-//           System.out.print("\n thêm dữ liệu thành công");
-//        }catch (SQLException ex) {
-//            System.out.print("\n thêm dữ liệu không thành công");
-//        }
-//    }
-//   
-    
-    //////////////////////////LAM TOI DAY ROI////////////////////////////
-//    public HangHoa getProductFromDatabase(String maHangHoa){
-//        
-//        return null;
-//    }
-    //  xoa het du lieu cua table
    public void clearAllData(String tableName){
        try {
             Statement statement = (Statement) connection.createStatement();
