@@ -8,6 +8,6 @@ public class ChiTietCongNoNhaCungCap {
    public ChiTietCongNoNhaCungCap(){}
    public ChiTietCongNoNhaCungCap(String maPhieuNhap, int tongNo){
        this.mMaPhieuNhap = maPhieuNhap;
-       this.mTOngNo = tongNo;
+       this.mTOngNo = tongN;
    }
 }

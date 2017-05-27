@@ -22,12 +22,12 @@ public class BangHangHoa extends TruyVanDuLieu{
     public void themDuLieuVaoHangHoa(ArrayList<HangHoa> arlHangHoa){
     
         for(int i = 0; i < arlHangHoa.size(); i ++){
-            themMotHangHang(arlHangHoa.get(i));
+            themMotHangHoa(arlHangHoa.get(i));
         }
     }
         // them 1 record hang hoa
    ////////////////////////////////////////////////////////////////////////////
-   public void themMotHangHang (HangHoa product){
+   public void themMotHangHoa (HangHoa product){
        try {
            String sql = "insert into hanghoa (MAHANGHOA, TENHANGHOA, GIABAN, GIAVON, TONKHO, NHOMHANGHOA, DINHMUCTONITNHAT, DINHMUCTONNHIEUNHAT) values (?, ?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement preStatement = connection.prepareStatement(sql);
