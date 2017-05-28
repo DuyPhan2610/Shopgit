@@ -1,19 +1,40 @@
 package entities;
 
-import org.apache.poi.xssf.usermodel.XSSFCell;
+import database.BangCongNoNhaCungCap;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CongNoNhaCungCap {
-    public String mMaCongNoNhaCungCap, mTenNhaCungCap, mGhiChu;
+    
+    
+
+    
+    
+    
+    public String mMaCongNoNhaCungCap, mGhiChu;
     public int mTongNo, mNoCanTra;
     
     public CongNoNhaCungCap(){}
-    public CongNoNhaCungCap(String maCongNoNhaCungCap, String tenNhaCungCap, String ghiChu,
+    public CongNoNhaCungCap(String maCongNoNhaCungCap, String ghiChu,
             int tongNo, int noCanTra){
             
         this.mMaCongNoNhaCungCap = maCongNoNhaCungCap;
-        this.mTenNhaCungCap = tenNhaCungCap;
         this.mTongNo = tongNo;
         this.mNoCanTra = noCanTra;
         this.mGhiChu = ghiChu;
+    }
+    
+    public CongNoNhaCungCap(ResultSet rs){
+        try {
+            this.mMaCongNoNhaCungCap = rs.getString(BangCongNoNhaCungCap.MA_CONG_NO_NHA_CUNG_CAP);
+            this.mTongNo = rs.getInt(BangCongNoNhaCungCap.TONG_NO);
+            this.mNoCanTra = rs.getInt(BangCongNoNhaCungCap.NO_CAN_TRA);
+            this.mGhiChu = rs.getString(BangCongNoNhaCungCap.GHI_CHU);
+        } catch (SQLException ex) {
+            Logger.getLogger(CongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }

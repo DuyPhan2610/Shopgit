@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import control.NhapHangHoa;
 
 
@@ -85,5 +86,20 @@ public class BangHangHoa extends TruyVanDuLieu{
         }
 
         return arlHangHoa;
+    }
+    
+    
+    // Hàm tự động tạo mã hàng hóa từ hàng hóa cuối cùng
+    public String taoMaHangHoa(){
+        ArrayList<HangHoa> arlHangHoa = this.layTatCaHangHoaTrongCSDL();
+        
+        if(arlHangHoa.size() > 0){
+        //Lấy hàng hóa cuối cùng trong csdl
+            HangHoa hangHoa = arlHangHoa.get(arlHangHoa.size() - 1);   
+            return ControlUtils.taoMaHangHoa(hangHoa.mMaHangHoa);
+        }
+        else{
+            return ControlUtils.taoMaHangHoa("SP0000000");
+        }
     }
 }

@@ -4,6 +4,7 @@ import database.BangPhieuNhapHang;
 import database.DatabaseConsts;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -49,6 +50,5 @@ public class PhieuNhapHang {
         } catch (SQLException ex) {
             Logger.getLogger(PhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
     }
 }

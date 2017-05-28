@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import control.NhapHangHoa;
 import entities.HangHoa;
 import entities.PhieuNhapHang;
@@ -73,6 +74,20 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
         return arlPhieuNhapHang;
     }
     
+    
+    // Hàm tự động tạo mã phiếu nhập
+    public String taoMaPhieuNhap(){
+        ArrayList<PhieuNhapHang> arlPhieuNhap = this.layTatCaPhieuNhapHangTrongCSDL();
+        
+        if(arlPhieuNhap.size() > 0){
+        //Lấy hàng hóa cuối cùng trong csdl
+            PhieuNhapHang phieuNhapHang = arlPhieuNhap.get(arlPhieuNhap.size() - 1);   
+            return ControlUtils.taoMaHangHoa(phieuNhapHang.mMaPhieuNhap);
+        }
+        else{
+            return ControlUtils.taoMaHangHoa("PN0000000");
+        }
+    }
     
     
 }

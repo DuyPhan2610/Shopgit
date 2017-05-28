@@ -8,6 +8,7 @@ package giaodien.giaodich;
 import control.NhapHangHoa;
 import control.DocFile;
 import control.GhiFile;
+import database.TruyVanDuLieu;
 import entities.HangHoa;
 import entities.HangNhap;
 import java.awt.Color;
@@ -32,6 +33,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     /**
      * Creates new form screennhaphang
      */
+    
     public JFrame_screennhaphang() {
         initComponents();
         JTableHeader theader = tb_screennhaphang.getTableHeader();
@@ -44,8 +46,8 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
        tb_screennhaphang.setFont(new Font("Arial",Font.PLAIN,14));
        tb_screennhaphang.setRowHeight(30);
        
-       nhapHangHoa = new NhapHangHoa(tb_screennhaphang);
-       
+       nhapHangHoa = new NhapHangHoa(tb_screennhaphang, jComboBoxNCC);
+
     }
 
     /**
@@ -66,7 +68,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
@@ -79,7 +80,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
@@ -89,6 +89,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jComboBoxNCC = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jTextField7 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
@@ -175,9 +176,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jTabbedPane1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(218, 247, 233));
-
-        jTextField2.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField2.setText("Tìm nhà cung cấp...");
 
         jButton3.setBackground(new java.awt.Color(34, 139, 34));
         jButton3.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
@@ -274,18 +272,12 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("Giảm giá");
 
-        jLabel7.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setText("!");
-        jLabel7.setToolTipText("Giảm giá hóa đơn sẽ được phân bổ vào giá nhập theo tỉ lệ thành tiền của mỗi mặt hàng.");
-        jLabel7.setOpaque(true);
-
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("0 ");
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel11.setText("Tiền trả nhà cung cấp");
+        jLabel11.setText("Tiền trả cho nhà cung cấp");
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -297,7 +289,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel12.setText("Tính vào công nợ");
+        jLabel12.setText("Còn nợ");
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel13.setForeground(java.awt.Color.blue);
@@ -321,8 +313,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
@@ -340,9 +330,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel7)))
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
@@ -397,6 +385,12 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
+        jComboBoxNCC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxNCCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -407,10 +401,10 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField3)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxNCC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -418,10 +412,10 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxNCC))
+                .addGap(18, 18, 18)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -613,7 +607,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ghi chú", jPanel5);
@@ -630,9 +624,9 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         tb_screennhaphang.setModel(new javax.swing.table.DefaultTableModel(
@@ -693,7 +687,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -743,7 +737,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
 //        jp1.setVisible(true);
           
             // mở file và đọc dữ liệu từ file vào table
-          nhapHangHoa.importFile();
+            nhapHangHoa.importFile();
     }//GEN-LAST:event_btnImportActionPerformed
 
     
@@ -758,6 +752,11 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jComboBoxNCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNCCActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jComboBoxNCCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -809,6 +808,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jComboBoxNCC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -824,7 +824,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -843,7 +842,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;

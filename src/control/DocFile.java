@@ -46,6 +46,7 @@ public class DocFile {
     private int sheetNumber;
     XSSFWorkbook  workbook;
     FileInputStream fileInputStream;
+    public boolean chapNhan = false;
     
     // Constructor truyền tên file cần mở
     public DocFile(String fileName) throws FileNotFoundException, IOException {
@@ -57,10 +58,13 @@ public class DocFile {
     
     // Constructor và mở jFileChooser để lấy đường dẫn file 
     public DocFile() throws FileNotFoundException, IOException {
-        fileInputStream = new FileInputStream(new File(this.getPath()));
-        workbook = new XSSFWorkbook(fileInputStream);
-        sheetNumber= 0;
-        sheet = workbook.getSheetAt(sheetNumber);
+        String path = this.getPath();
+        if(path != null){
+            fileInputStream = new FileInputStream(new File(path));
+            workbook = new XSSFWorkbook(fileInputStream);
+            sheetNumber= 0;
+            sheet = workbook.getSheetAt(sheetNumber);
+        }
     }
     
     
@@ -73,6 +77,7 @@ public class DocFile {
         int returnVal = fileChooser.showOpenDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION){
             File file = fileChooser.getSelectedFile();
+            chapNhan = true;
             return file.getAbsolutePath();
         }
         return null;
