@@ -7,7 +7,6 @@ package database;
 
 import control.ControlUtils;
 import control.NhapHangHoa;
-import entities.CongNoNhaCungCap;
 import entities.HangHoa;
 import entities.NhaCungCap;
 import java.sql.PreparedStatement;

@@ -6,9 +6,7 @@
 package database;
 
 import control.ControlUtils;
-import entities.ChiTietCongNoNhaCungCap;
 import entities.CongNoNhaCungCap;
-import entities.NhaCungCap;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,24 +16,23 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author phamh
+ * @author USER
  */
-public class BangCongNoNhaCungCap extends TruyVanDuLieu{
-    public final static String MA_CONG_NO_NHA_CUNG_CAP = "MACONGNONHACUNGCAP";
-    public final static String TONG_NO = "TONGNO";
-    public final static String NO_CAN_TRA = "NOCANTRA";
-    public final static String GHI_CHU = "GHICHU";
+public class BangCongNoNhaCungCap extends TruyVanDuLieu {
+    //
+    public final static String MA_CONG_NO_NHA_CUNG_CAP ="MACONGNONHACUNGCAP";
+    public final static String TONG_NO ="TONGNO";
+    public final static String NO_CAN_TRA ="NOCANTRA";
+    public final static String GHI_CHU ="GHICHU";
     
-    //...
-
-    public void themCongNoNhaCungCap (CongNoNhaCungCap chiTietNhaCungcap){
+     public void themCongNoNhaCungCap (CongNoNhaCungCap congNoNhaCungCap){
         try {
             String sql = "insert into congnonhacungcap (MACONGNONHACUNGCAP, TONGNO, NOCANTRA, GHICHU) values (?, ?, ?, ? )";
             PreparedStatement preStatement = connection.prepareStatement(sql);
-            preStatement.setString(1, chiTietNhaCungcap.mMaCongNoNhaCungCap);
-            preStatement.setInt(2, chiTietNhaCungcap.mTongNo);
-            preStatement.setInt(3, chiTietNhaCungcap.mNoCanTra);
-            preStatement.setString(1, chiTietNhaCungcap.mGhiChu);
+            preStatement.setString(1, congNoNhaCungCap.mMaCongNoNhaCungCap);
+            preStatement.setInt(2, congNoNhaCungCap.mTongNo);
+            preStatement.setInt(3, congNoNhaCungCap.mNoCanTra);
+            preStatement.setString(1, congNoNhaCungCap.mGhiChu);
             
             boolean checkSuccess = preStatement.execute();
             

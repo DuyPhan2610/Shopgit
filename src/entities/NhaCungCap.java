@@ -1,19 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package entities;
 
-import database.BangCongNoNhaCungCap;
 import database.BangNhaCungCap;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ *
+ * @author USER
+ */
 public class NhaCungCap {
-    
-    
-    
-    
-   public String mMaNhaCungCap, mTenNhaCungCap, mNhomNhaCungCap, mMaCongNoNhaCungCap,
+    public String mMaNhaCungCap, mTenNhaCungCap, mNhomNhaCungCap, mMaCongNoNhaCungCap,
            mDiaChi, mEmail, mGhiChu;
    public int mTongMua;
    public NhaCungCap(){}
