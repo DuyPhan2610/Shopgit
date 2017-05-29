@@ -34,15 +34,15 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class NhapHangHoa {
-    private javax.swing.JTable tb_screennhaphang;
-    private DefaultTableModel model;
-    private BangHangHoa bangHangHoa;
-    private BangNhaCungCap bangNhaCungCap;
-    private BangPhieuNhapHang bangPhieuNhapHang;
-    private BangChiTietPhieuNhapHang bangChiTietPhieuNhapHang;
-    private BangCongNoNhaCungCap bangCongNoNhaCungCap;
-    private BangChiTietCongNoNhaCungCap bangChiTietCongNoNhaCungCap;
-    private JComboBox<String> comboBox;
+    public javax.swing.JTable tb_screennhaphang;
+    public DefaultTableModel model;
+    public BangHangHoa bangHangHoa;
+    public BangNhaCungCap bangNhaCungCap;
+    public BangPhieuNhapHang bangPhieuNhapHang;
+    public BangChiTietPhieuNhapHang bangChiTietPhieuNhapHang;
+    public BangCongNoNhaCungCap bangCongNoNhaCungCap;
+    public BangChiTietCongNoNhaCungCap bangChiTietCongNoNhaCungCap;
+    public JComboBox<String> comboBox;
     
     public DocFile docFile;
     
@@ -158,15 +158,6 @@ public class NhapHangHoa {
             bangChiTietPhieuNhapHang.themChiTietPhieuNhapHang(chiTietPhieuNhapHang);
         }
     }
-    
-    
-    //Tạo Nhà cung cấp
-    
-
-    
-    
-    
-    
     
     
      

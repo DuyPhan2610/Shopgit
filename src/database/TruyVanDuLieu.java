@@ -5,7 +5,6 @@
  */
 package database;
 
-import entities.HangHoa;
 import entities.PhieuNhapHang;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

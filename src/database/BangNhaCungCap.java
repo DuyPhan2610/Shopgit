@@ -5,10 +5,15 @@
  */
 package database;
 
+import control.ControlUtils;
+import control.NhapHangHoa;
+import entities.CongNoNhaCungCap;
+import entities.HangHoa;
 import entities.NhaCungCap;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -71,4 +76,43 @@ public class BangNhaCungCap extends TruyVanDuLieu{
        }
      return nhaCungCap;
    }
+   
+   //Lấy tất cả các nhà cung cấp có trong csdl
+    public ArrayList<NhaCungCap> layTatCaNhaCungCapTrongCSDL(){
+        
+        ArrayList<NhaCungCap> arlNhaCungCap = new ArrayList<>();
+        try {
+            // mở kết nối csdl
+
+            // thực hiện câu truy vấn đưa kết quả vào result set
+            ResultSet rs = this.selectData(CauTruyVan.selectedStatement("nhacungcap"));
+            while(rs.next()){
+                arlNhaCungCap.add(new NhaCungCap(rs));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return arlNhaCungCap;
+    }
+   
+   
+   // Hàm tự động tạo mã hàng hóa từ hàng hóa cuối cùng
+    public String taoMaHangHoa(){
+        ArrayList<NhaCungCap> arlNhaCungCap = this.layTatCaNhaCungCapTrongCSDL();
+        
+        if(arlNhaCungCap.size() > 0){
+        //Lấy hàng hóa cuối cùng trong csdl
+            NhaCungCap nhaCungCap = arlNhaCungCap.get(arlNhaCungCap.size() - 1);   
+            return ControlUtils.taoMaHangHoa(nhaCungCap.mMaNhaCungCap);
+        }
+        else{
+            return ControlUtils.taoMaNhaCungCap("NCC000000");
+        }
+    }
+    
+    
+    
+    
 }

@@ -5,8 +5,10 @@
  */
 package database;
 
+import control.ControlUtils;
 import entities.ChiTietCongNoNhaCungCap;
 import entities.CongNoNhaCungCap;
+import entities.NhaCungCap;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -60,4 +62,18 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu{
         }
         return  arlCongNoNhaCungCap;
      }
+     
+     //Hàm tự động tạo mã công nợ nhà cung cấp
+    public String taoMaCongNoNhaCungCap(){
+        ArrayList<CongNoNhaCungCap> arlCongNoNhaCungCap = this.layTatCaConNoNhaCungCapTrongCSDL();
+        
+        if(arlCongNoNhaCungCap.size() > 0){
+        //Lấy hàng hóa cuối cùng trong csdl
+            CongNoNhaCungCap congNoNhaCungCap = arlCongNoNhaCungCap.get(arlCongNoNhaCungCap.size() - 1);   
+            return ControlUtils.taoMaHangHoa(congNoNhaCungCap.mMaCongNoNhaCungCap);
+        }
+        else{
+            return ControlUtils.taoMaNhaCungCap("MCN00000");
+        }
+    }
 }

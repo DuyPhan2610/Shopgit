@@ -82,10 +82,10 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
         if(arlPhieuNhap.size() > 0){
         //Lấy hàng hóa cuối cùng trong csdl
             PhieuNhapHang phieuNhapHang = arlPhieuNhap.get(arlPhieuNhap.size() - 1);   
-            return ControlUtils.taoMaHangHoa(phieuNhapHang.mMaPhieuNhap);
+            return ControlUtils.taoMaPhieuNhap(phieuNhapHang.mMaPhieuNhap);
         }
         else{
-            return ControlUtils.taoMaHangHoa("PN0000000");
+            return ControlUtils.taoMaPhieuNhap("PN000000");
         }
     }
     

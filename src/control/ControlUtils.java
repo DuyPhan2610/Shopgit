@@ -5,8 +5,6 @@
  */
 package control;
 
-import static control.TaoMaHangHoa.productQuantity;
-
 /**
  *
  * @author phamh
@@ -19,7 +17,7 @@ public class ControlUtils {
     
     // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
     public static String taoMaHangHoa(String str){
-        String[] arStr = str.split("\\P");
+        String[] arStr = str.split("P");
         String numStr = arStr[1];
         int code = Integer.parseInt(numStr);
         return createCode(code);
@@ -29,16 +27,15 @@ public class ControlUtils {
     public static String createCode(int code){
         String codeStr = "SP" + String.format("%06d", ++code);
         return codeStr;
-    
     }
     
     
     // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
-    public static String tachMaPhieuNhap(String str){
-        String[] arStr = str.split("\\N");
+    public static String taoMaPhieuNhap(String str){
+        String[] arStr = str.split("N");
         String numStr = arStr[1];
         int code = Integer.parseInt(numStr);
-        return createCode(code);
+        return taoMaPhieuNhap(code);
     }
     
     // tạo mã hàng hóa lớn hơn mã cuối cùng trong csdl
@@ -49,16 +46,30 @@ public class ControlUtils {
     
     
     // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
-    public static String tachMaNhaCungCap(String str){
-        String[] arStr = str.split("\\C");
-        String numStr = arStr[1];
+    public static String taoMaNhaCungCap(String str){
+        String[] arStr = str.split("C");
+        String numStr = arStr[2];
         int code = Integer.parseInt(numStr);
-        return createCode(code);
+        return taoMaNhaCungCap(code);
     }
     
     // tạo mã hàng hóa lớn hơn mã cuối cùng trong csdl
     public static String taoMaNhaCungCap(int code){
-        String codeStr = "NCC" + String.format("%06d", ++code);
+        String codeStr = "NCC" + String.format("%05d", ++code);
+        return codeStr;
+    }
+    
+    // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
+    public static String taoMaCongNoNhaCungCap(String str){
+        String[] arStr = str.split("N");
+        String numStr = arStr[1];
+        int code = Integer.parseInt(numStr);
+        return taoMaCongNoNhaCungCap(code);
+    }
+    
+    // tạo mã hàng hóa lớn hơn mã cuối cùng trong csdl
+    public static String taoMaCongNoNhaCungCap(int code){
+        String codeStr = "MCN" + String.format("%04d", ++code);
         return codeStr;
     }
 }
