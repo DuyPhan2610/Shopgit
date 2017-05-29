@@ -56,7 +56,7 @@ public class ChiTietNhanVien {
             this.mNgayVaoLam = rs.getString (BangChiTietNhanVien.NGAY_VAO_LAM);
             
         } catch (SQLException ex) {
-            Logger.getLogger(HangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ChiTietNhanVien.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

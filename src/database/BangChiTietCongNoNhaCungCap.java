@@ -48,13 +48,15 @@ public class BangChiTietCongNoNhaCungCap extends TruyVanDuLieu{
 
             // thực hiện câu truy vấn đưa kết quả vào result set
          ResultSet rs = this.selectData(CauTruyVan.selectedStatement("chitietcongnonhacungcap"));
+        
         try {
             while (rs.next()){
                 arlChiTietCongNoNhaCungCap.add(new ChiTietCongNoNhaCungCap(rs));
             }
+                
         } catch (SQLException ex) {
-            Logger.getLogger(BangChiTietPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BangChiTietCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return  arlChiTietCongNoNhaCungCap;
-     }
+       return arlChiTietCongNoNhaCungCap;
+    }
 }

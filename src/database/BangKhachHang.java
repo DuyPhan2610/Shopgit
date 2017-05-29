@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  * @author USER
  */
 public class BangKhachHang extends TruyVanDuLieu {
+    //
     public final static String MA_KHACH_HANG ="MAKHACHHANG";
     public final static String MA_LOAI_KHACH_HANG ="MALOAIKHACHHANG";
     public final static String MA_CONG_NO_CUA_KHACH_HANG ="MACONGNOCUAKHACHHANG";

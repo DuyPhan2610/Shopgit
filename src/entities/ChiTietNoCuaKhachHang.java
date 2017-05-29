@@ -28,7 +28,7 @@ public class ChiTietNoCuaKhachHang {
             
             
         } catch (SQLException ex) {
-            Logger.getLogger(HangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ChiTietNoCuaKhachHang.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

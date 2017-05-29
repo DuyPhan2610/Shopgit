@@ -58,7 +58,7 @@ public class BangChiTietHoaDonBanHang extends TruyVanDuLieu{
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BangChiTietHoaDonBanHang.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return arlChiTietHoaDonBanHang;
