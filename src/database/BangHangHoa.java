@@ -102,4 +102,14 @@ public class BangHangHoa extends TruyVanDuLieu{
             return ControlUtils.taoMaHangHoa("SP0000000");
         }
     }
+    
+    //Lấy danh sách các nhóm hàng hóa có trong csdl
+    public ArrayList<String> layTatCaNhomHangHoa(){
+        ArrayList<HangHoa> arlHangHoa = this.layTatCaHangHoaTrongCSDL();
+        ArrayList<String> arlNhomHangHoa = new ArrayList<>();
+        for(int i = 0; i < arlHangHoa.size(); i++){
+            arlNhomHangHoa.add(arlHangHoa.get(i).mNhomHangHoa);
+        }
+        return arlNhomHangHoa;
+    }
 }

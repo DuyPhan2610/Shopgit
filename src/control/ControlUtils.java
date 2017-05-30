@@ -5,14 +5,21 @@
  */
 package control;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author phamh
  */
 public class ControlUtils {
     
-    
-    
+    //Hàm lấy thời gian hiện tại của hệ thông
+    public static String layThoiGian(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-DD HH:MM:SS");
+        LocalDateTime now = LocalDateTime.now();
+        return dtf.format(now);
+    }
     
     
     // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list

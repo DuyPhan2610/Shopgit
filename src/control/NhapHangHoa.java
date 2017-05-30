@@ -69,11 +69,7 @@ public class NhapHangHoa {
         comboBox.setSelectedIndex(0);
     }
     
-    //Lấy nhà cung cấp đã chọn trong comboBox
-    public NhaCungCap layNhaCungCapDaChon(){
-        
-        return null;
-    }
+
     
     // Khi click vào IMPORT
     // Mở jChooser và lấy đường dẫn file và mở file rồi đưa dữ liệu vào bảng
@@ -119,8 +115,8 @@ public class NhapHangHoa {
             String maHangNhap = model.getValueAt(i, 0).toString();
             String tenHangNhap = model.getValueAt(i, 1).toString();
             String nhomHangNhap = model.getValueAt(i, 2).toString();
-            int soLuong = Integer.parseInt(model.getValueAt(i, 3).toString());
-            int donGia = Integer.parseInt(model.getValueAt(i, 4).toString());
+            int soLuong = Integer.parseInt(model.getValueAt(i, 4).toString());
+            int donGia = Integer.parseInt(model.getValueAt(i, 3).toString());
             
             HangNhap hangNhap = new HangNhap(maHangNhap, tenHangNhap, donGia, soLuong, nhomHangNhap);
             arlHangNhap.add(hangNhap);
@@ -129,14 +125,18 @@ public class NhapHangHoa {
     }
     
     
+    
+    
     //Đưa hàng nhập vào trong csdl Hàng Hóa
     public void choHangNhapVaoCSDL(){
         ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
-        ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
         
-        for(int i = 0; i < arlHangNhap.size(); i ++){
-            // tạo hàng hóa từ hàng nhập
-            arlHangHoa.add(new HangHoa(arlHangNhap.get(i)));
+        if(arlHangNhap.size() > 0){
+            ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
+            for(int i = 0; i < arlHangNhap.size(); i ++){
+                // tạo hàng hóa từ hàng nhập
+                arlHangHoa.add(new HangHoa(arlHangNhap.get(i)));
+            }
         }
     }
     
@@ -149,9 +149,23 @@ public class NhapHangHoa {
         bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
     }
     
+    // Tạo mã hàng nhập
+    public String taoMaHangNhap(){
+        String maHangNhap = null;
+        if(this.layDanhSachHangNhapTrongTable().size() <= 0){
+             maHangNhap = this.bangHangHoa.taoMaHangHoa();
+        }
+        else{
+            String maHangNhapMoiNhat = this.model.getValueAt(this.tb_screennhaphang.getRowCount() - 1, 0).toString();
+            maHangNhap = ControlUtils.taoMaHangHoa(maHangNhapMoiNhat);
+        }
+        return maHangNhap;
+    }
+    
     
     // Tạo chi tiết phiếu nhập hàng
-    public void taoChiTietPhieuNhap(ArrayList<HangNhap> arlHangNhap, String maPhieuNhap){
+    public void taoChiTietPhieuNhap(String maPhieuNhap){
+        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
         for(int i = 0; i < arlHangNhap.size(); i ++){
             ChiTietPhieuNhapHang chiTietPhieuNhapHang = new ChiTietPhieuNhapHang(arlHangNhap.get(i).mMaHangHoa,
                                                             maPhieuNhap, arlHangNhap.get(i).mSoLuong);
@@ -159,7 +173,24 @@ public class NhapHangHoa {
         }
     }
     
+    // Lấy mã nhà cung cấp từ comboBox
+    public String layMaNCCTrongComboBox(){
+        // lấy mã nhà cung cấp từ bảng nhà cung cấp
+        return bangNhaCungCap.layNhaCungCap((String)comboBox.getSelectedItem()).mMaNhaCungCap;
+    }
     
+    
+    //Lấy tổng tiền của các hàng nhập trong bảng
+    public int layTongTien(){
+        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
+        int tongTien = 0;
+        if(arlHangNhap.size() > 0){
+            for(int i = 0; i < arlHangNhap.size(); i ++){
+                tongTien += (arlHangNhap.get(i).mGiaMua * arlHangNhap.get(i).mSoLuong);
+            }
+        }
+        return tongTien;
+    }
      
     
     // khi nhấn nút lưu thì kiểm tra

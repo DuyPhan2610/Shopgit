@@ -6,7 +6,9 @@
 package giaodien.giaodich;
 
 import control.NhapHangHoa;
+import database.BangHangHoa;
 import entities.HangNhap;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -22,16 +24,24 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         initComponents();
         this.mNhapHangHoa = nhapHangHoa;
         
+        this.nhomHangHoaTrongComboBox();
         
-        
-        String maHangNhap = nhapHangHoa.bangHangHoa.taoMaHangHoa();
+        String maHangNhap = mNhapHangHoa.taoMaHangNhap();
         jTextFieldMaHangHoa.setText(maHangNhap);
     }
     
+   
     
     //Lấy danh sách các nhóm hàng hóa rồi đưa vào comboBox
     public void nhomHangHoaTrongComboBox(){
-        
+        ArrayList<String> comboBoxNhomHangHoa = new ArrayList<>();
+        jComboBoxNhomHangHoa.addItem("Nhóm hàng hóa");
+        ArrayList<String> arlNhomHangHoa = mNhapHangHoa.bangHangHoa.layTatCaNhomHangHoa();
+        if(arlNhomHangHoa.size() > 0){
+            for(int i = 0; i <= arlNhomHangHoa.size(); i ++){
+                jComboBoxNhomHangHoa.addItem(arlNhomHangHoa.get(i));
+            }
+        }
     }
 
     /**
@@ -284,9 +294,9 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         int giaMua =  Integer.parseInt(jTextFieldDonGia.getText());
         int soLuong = Integer.parseInt(jTextFieldSoLuong.getText());
 
-        
         HangNhap hangNhap = new HangNhap(maHangHoa, tenHangHoa, giaMua, soLuong, nhomHangHoa);
-        
+        mNhapHangHoa.themMotHangNhapVaoBang(hangNhap);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextFieldMaHangHoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMaHangHoaActionPerformed
@@ -295,7 +305,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
+        this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
