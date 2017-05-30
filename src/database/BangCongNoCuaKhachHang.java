@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import entities.CongNoCuaKhachHang;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -58,4 +59,18 @@ public class BangCongNoCuaKhachHang extends TruyVanDuLieu{
         }
         return  arlCongNoCuaKhachHang;
      }
+     
+      // Hàm tự động tạo mã công nợ của khách hàng từ công nợ của kh cuối cùng
+    public String taoMaCongNoCuaKhachHang(){
+        ArrayList<CongNoCuaKhachHang> arlCongNoCuaKhachHang = this.layTatCaCongNoCuaKhachHangTrongCSDL();
+        
+        if(arlCongNoCuaKhachHang.size() > 0){
+        //Lấy công nợ của KH cuối cùng trong csdl
+            CongNoCuaKhachHang congNoCuaKhachHang = arlCongNoCuaKhachHang.get(arlCongNoCuaKhachHang.size() - 1);   
+            return ControlUtils.taoMaCongNoCuaKhachHang(congNoCuaKhachHang.mMaCongNoCuaKhachHang);
+        }
+        else{
+            return ControlUtils.taoMaCongNoCuaKhachHang("CNKH0000");
+        }
+    }
 }

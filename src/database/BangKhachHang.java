@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import entities.KhachHang;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -63,5 +64,19 @@ public class BangKhachHang extends TruyVanDuLieu {
             Logger.getLogger(BangKhachHang.class.getName()).log(Level.SEVERE, null, ex);
         }
             return arlKhachHang;
+    }
+    
+    // Hàm tự động tạo mã khách hàng từ khách hàng cuối cùng
+    public String taoMaKhachHang(){
+        ArrayList<KhachHang> arlKhachHang = this.layTatCaKhachHangTrongCSDL();
+        
+        if(arlKhachHang.size() > 0){
+        //Lấy khách hàng cuối cùng trong csdl
+            KhachHang khachHang = arlKhachHang.get(arlKhachHang.size() - 1);   
+            return ControlUtils.taoMaKhachHang(khachHang.mMaKhachHang);
+        }
+        else{
+            return ControlUtils.taoMaKhachHang("KH000000");
+        }
     }
 }

@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import entities.NhanVien;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,5 +62,19 @@ public class BangNhanVien extends TruyVanDuLieu{
             Logger.getLogger(BangNhanVien.class.getName()).log(Level.SEVERE, null, ex);
         }
             return arlNhanVien;
+    }
+    
+    // Hàm tự động tạo mã nhân viên từ nhân viên cuối cùng
+    public String taoMaNhanVien(){
+        ArrayList<NhanVien> arlNhanVien = this.layTatCaNhanVienTrongCSDL();
+        
+        if(arlNhanVien.size() > 0){
+        //Lấy nhân viên cuối cùng trong csdl
+            NhanVien nhanVien = arlNhanVien.get(arlNhanVien.size() - 1);   
+            return ControlUtils.taoMaNhanVien(nhanVien.mMaNhanVien);
+        }
+        else{
+            return ControlUtils.taoMaNhanVien("NV000000");
+        }
     }
 }

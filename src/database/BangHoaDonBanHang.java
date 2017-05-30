@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package database;
+import control.ControlUtils;
 import control.NhapHangHoa;
 import entities.HoaDonBanHang;
 import java.sql.PreparedStatement;
@@ -67,5 +68,19 @@ public class BangHoaDonBanHang extends TruyVanDuLieu{
             Logger.getLogger(BangHoaDonBanHang.class.getName()).log(Level.SEVERE, null, ex);
         }
        return arlHoaDonBanHang;
+    }
+     
+     // Hàm tự động tạo mã hóa đơn bán hàng từ hóa đơn bán hàng cuối cùng
+    public String taoMaHoaDonBanHang(){
+        ArrayList<HoaDonBanHang> arlHoaDonBanHang = this.layTatCaHoaDonBanHangTrongCSDL();
+        
+        if(arlHoaDonBanHang.size() > 0){
+        //Lấy HÓA ĐƠN BÁN HÀNG cuối cùng trong csdl
+            HoaDonBanHang hoaDonBanHang = arlHoaDonBanHang.get(arlHoaDonBanHang.size() - 1);   
+            return ControlUtils.taoMaHoaDonBanHang(hoaDonBanHang.mMaHoaDonBanHang);
+        }
+        else{
+            return ControlUtils.taoMaHoaDonBanHang("HD000000");
+        }
     }
 }

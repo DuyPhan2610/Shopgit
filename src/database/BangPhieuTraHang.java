@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import entities.PhieuTraHang;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -61,5 +62,19 @@ public class BangPhieuTraHang extends TruyVanDuLieu {
             Logger.getLogger(BangPhieuTraHang.class.getName()).log(Level.SEVERE, null, ex);
         }
             return arlPhieuTraHang;
+    }
+    
+    // Hàm tự động tạo mã phiếu trả hàng từ mã phiếu trả hàng cuối cùng
+    public String taoMaPhieuTraHang(){
+        ArrayList<PhieuTraHang> arlPhieuTraHang = this.layTatCaPhieuTraHangTrongCSDL();
+        
+        if(arlPhieuTraHang.size() > 0){
+        //Lấy phiếu trả hàng cuối cùng trong csdl
+            PhieuTraHang phieuTraHang = arlPhieuTraHang.get(arlPhieuTraHang.size() - 1);   
+            return ControlUtils.taoMaPhieuTraHang(phieuTraHang.mMaPhieuTraHang);
+        }
+        else{
+            return ControlUtils.taoMaPhieuTraHang("PTH00000");
+        }
     }
 }

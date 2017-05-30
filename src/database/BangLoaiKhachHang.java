@@ -5,6 +5,7 @@
  */
 package database;
 
+import control.ControlUtils;
 import entities.LoaiKhachHang;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,4 +55,17 @@ public class BangLoaiKhachHang extends TruyVanDuLieu{
             return arlLoaiKhachHang;
     }
     
+    // Hàm tự động tạo mã loại khách hàng từ loại khách hàng cuối cùng
+    public String taoMaLoaiKhachHang(){
+        ArrayList<LoaiKhachHang> arlLoaiKhachHang = this.layTatCaLoaiKhachHangTrongCSDL();
+        
+        if(arlLoaiKhachHang.size() > 0){
+        //Lấy loại khách hàng cuối cùng trong csdl
+            LoaiKhachHang loaiKhachHang = arlLoaiKhachHang.get(arlLoaiKhachHang.size() - 1);   
+            return ControlUtils.taoMaLoaiKhachHang(loaiKhachHang.mMaLoaiKhachHang);
+        }
+        else{
+            return ControlUtils.taoMaLoaiKhachHang("LKH00000");
+        }
+    }
 }

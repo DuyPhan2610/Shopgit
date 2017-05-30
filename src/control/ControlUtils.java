@@ -160,8 +160,21 @@ public class ControlUtils {
     
     //tạo mã phiếu trả hàng nhập lớn hơn mã cuối cùng trong csdl
     public static String taoMaPhieuTraHangNhap (int code){
-        String codeStr ="PTNH" +String.format("%04d", ++code);
+        String codeStr ="PTHN" +String.format("%04d", ++code);
         return codeStr;
     }
     
+    //tạo mã phiếu trả hàng nhập từ mã phiếu trả hàng nhập cuối cùng trong list
+    public static String taoMaLoaiKhachHang (String str){
+        String[] arStr =str.split("H");
+        String numStr =arStr[1];
+        int code =Integer.parseInt(numStr);
+        return taoMaLoaiKhachHang(code);
+    }
+    
+    //tạo mã phiếu trả hàng nhập lớn hơn mã cuối cùng trong csdl
+    public static String taoMaLoaiKhachHang (int code){
+        String codeStr ="LKH" +String.format("%05d", ++code);
+        return codeStr;
+    }
 }
