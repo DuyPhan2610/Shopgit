@@ -19,9 +19,12 @@ public class ConnectionUtils {
         String dbName = "shop";
         String userName = "root ";
         String password = "123456";
+       
         return getMySQLConnection(hostName, dbName, userName, password);
     }
     
+    
+    // tao truyền tham số cho vui thôi :))))))
     public Connection getMySQLConnection(String hostName, String dbName,
          String userName, String password) {
 

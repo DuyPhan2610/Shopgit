@@ -31,15 +31,14 @@ public class BangChiTietPhieuNhapHang extends TruyVanDuLieu {
     
     public void themChiTietPhieuNhapHang (ChiTietPhieuNhapHang chiTietPhieuNhapHang){
         try {
-            String sql = "insert into chitietphieunhaphang (MAHANGHOA, MAPHIEUNHAP, SOLUONG) values (?, ?, ?)";
+            String sql = "insert into chitietphieunhapnhang (MAHANGHOA, MAPHIEUNHAP, SOLUONG) values (?, ?, ?)";
             PreparedStatement preStatement = connection.prepareStatement(sql);
             preStatement.setString(1, chiTietPhieuNhapHang.mMaHangHoa);
             preStatement.setString(2, chiTietPhieuNhapHang.mMaPhieuNhap);
             preStatement.setInt(3, chiTietPhieuNhapHang.mSoLuong);
             
-            boolean checkSuccess = preStatement.execute();
-            if (checkSuccess)
-                System.out.print ("\n Thêm chi tiết phiếu nhập thành công");
+            preStatement.execute();
+            System.out.print ("\n Thêm chi tiết phiếu nhập thành công");
         } catch (SQLException ex)
         {
             System.out.print("\n Thêm chi tiết phiếu nhập không thành công");

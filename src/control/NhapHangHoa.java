@@ -195,7 +195,7 @@ public class NhapHangHoa {
         for(int i = 0; i < arlNCC.size(); i ++){
             NhaCungCap ncc = arlNCC.get(i);
             if(((String)comboBox.getSelectedItem()).equals(ncc.mTenNhaCungCap))
-                return ncc.mTenNhaCungCap;
+                return ncc.mMaNhaCungCap;
         }
         return null;
     }
