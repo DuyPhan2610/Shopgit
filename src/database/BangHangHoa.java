@@ -99,7 +99,7 @@ public class BangHangHoa extends TruyVanDuLieu{
             return ControlUtils.taoMaHangHoa(hangHoa.mMaHangHoa);
         }
         else{
-            return ControlUtils.taoMaHangHoa("SP0000000");
+            return ControlUtils.taoMaHangHoa("SP000000");
         }
     }
     

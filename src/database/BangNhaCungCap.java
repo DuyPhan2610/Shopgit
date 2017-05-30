@@ -107,7 +107,7 @@ public class BangNhaCungCap extends TruyVanDuLieu{
             return ControlUtils.taoMaHangHoa(nhaCungCap.mMaNhaCungCap);
         }
         else{
-            return ControlUtils.taoMaNhaCungCap("NCC000000");
+            return ControlUtils.taoMaNhaCungCap("NCC00000");
         }
     }
     
