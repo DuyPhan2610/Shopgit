@@ -8,6 +8,7 @@ package database;
 import control.NhapHangHoa;
 import entities.ChiTietHoaDonBanHang;
 import entities.HangHoa;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,6 +27,10 @@ public class BangChiTietHoaDonBanHang extends TruyVanDuLieu{
     public final static String MA_HANG_HOA = "MAHANGHOA";
     public final static String SO_LUONG = "SOLUONG";
     //...
+
+    public BangChiTietHoaDonBanHang(Connection connection) {
+        super(connection);
+    }
     
     public void themChiTietHoaDonBanHang (ChiTietHoaDonBanHang chiTietHoaDonBanHang){
         try {

@@ -6,9 +6,8 @@
 package database;
 
 import control.ControlUtils;
-import control.NhapHangHoa;
-import entities.HangHoa;
 import entities.PhieuNhapHang;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,12 +29,16 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
     public final static String CON_NO = "CONNO";
     public final static String THOI_GIAN = "THOIGIAN";
     public final static String GHI_CHU = "GHICHU";
+
+    public BangPhieuNhapHang(Connection connection) {
+        super(connection);
+    }
     
         // them 1 phiếu nhập vào csdl
    ////////////////////////////////////////////////////////////////////////////
    public void themPhieuNhapHang (PhieuNhapHang phieuNhapHang){
        try {
-           String sql = "insert into hanghoa (MAPHIEUNHAP, MANHACUNGCAP, TONGTIEN, GIAGIAM, TIENDATRA, CONNO, THOIGIAN, GHICHU) values (?, ?, ?, ?, ?, ?, ?, ?)";
+           String sql = "insert into phieunhaphang (MAPHIEUNHAP, MANHACUNGCAP, TONGTIEN, GIAGIAM, TIENDATRA, CONNO, THOIGIAN, GHICHU) values (?, ?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement preStatement = connection.prepareStatement(sql);
            preStatement.setString(1, phieuNhapHang.mMaPhieuNhap);
            preStatement.setString(2, phieuNhapHang.mMaNhaCungCap);
@@ -49,9 +52,9 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
            boolean checkSuccess = preStatement.execute();
            
            if(checkSuccess)
-                System.out.print("\n thêm dữ liệu thành công");
+                System.out.print("\n thêm phiếu nhập hàng thành công");
        } catch (SQLException ex) {
-          System.out.print("\n thêm dữ liệu không thành công");
+          System.out.print("\n thêm phiếu nhập hàng không thành công");
        }
    }
    
@@ -65,7 +68,6 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
             while(rs.next()){
                 arlPhieuNhapHang.add(new PhieuNhapHang(rs));
             }
-            this.closeDatabase();
             
         } catch (SQLException ex) {
             Logger.getLogger(BangPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);

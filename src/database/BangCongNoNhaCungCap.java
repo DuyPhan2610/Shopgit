@@ -7,6 +7,7 @@ package database;
 
 import control.ControlUtils;
 import entities.CongNoNhaCungCap;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,10 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
     public final static String TONG_NO ="TONGNO";
     public final static String NO_CAN_TRA ="NOCANTRA";
     public final static String GHI_CHU ="GHICHU";
+
+    public BangCongNoNhaCungCap(Connection connection) {
+        super(connection);
+    }
     
      public void themCongNoNhaCungCap (CongNoNhaCungCap congNoNhaCungCap){
         try {
@@ -37,16 +42,21 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
             boolean checkSuccess = preStatement.execute();
             
             if (checkSuccess)
-                System.out.print("\n Thêm dữ liệu thành công");
+                System.out.print("\n Thêm congnonhacungcap thành công");
         }catch (SQLException ex) {
-          System.out.print("\n thêm dữ liệu không thành công");
+          System.out.print("\n thêm congnonhacungcap không thành công");
        }
     }
     
+     
+     
+     //Update lại công nợ
+     
+     
     //Lấy tất cả các chi tiết công nợ nhà cung cấp trong csdl
      public ArrayList<CongNoNhaCungCap> layTatCaConNoNhaCungCapTrongCSDL() {
          ArrayList<CongNoNhaCungCap> arlCongNoNhaCungCap = new ArrayList<>();
-              // mở kết nối csdl
+         
 
             // thực hiện câu truy vấn đưa kết quả vào result set
          ResultSet rs = this.selectData(CauTruyVan.selectedStatement("congnonhacungcap"));
@@ -65,12 +75,12 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
         ArrayList<CongNoNhaCungCap> arlCongNoNhaCungCap = this.layTatCaConNoNhaCungCapTrongCSDL();
         
         if(arlCongNoNhaCungCap.size() > 0){
-        //Lấy hàng hóa cuối cùng trong csdl
+            //Lấy công nợ cuối cùng trong csdl
             CongNoNhaCungCap congNoNhaCungCap = arlCongNoNhaCungCap.get(arlCongNoNhaCungCap.size() - 1);   
-            return ControlUtils.taoMaHangHoa(congNoNhaCungCap.mMaCongNoNhaCungCap);
+            return ControlUtils.taoMaCongNoNhaCungCap(congNoNhaCungCap.mMaCongNoNhaCungCap);
         }
         else{
-            return ControlUtils.taoMaNhaCungCap("MCN00000");
+            return ControlUtils.taoMaCongNoNhaCungCap("MCN00000");
         }
     }
 }

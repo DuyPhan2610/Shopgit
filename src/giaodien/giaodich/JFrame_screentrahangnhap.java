@@ -50,7 +50,6 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        tf_screentrahangnhap_timnhacungcap = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
@@ -60,9 +59,6 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
@@ -72,6 +68,7 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jTextField7 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
@@ -145,9 +142,6 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(218, 247, 233));
 
-        tf_screentrahangnhap_timnhacungcap.setForeground(new java.awt.Color(102, 102, 102));
-        tf_screentrahangnhap_timnhacungcap.setToolTipText("Tìm nhà cung cấp...");
-
         jButton3.setBackground(new java.awt.Color(34, 139, 34));
         jButton3.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,7 +196,7 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton4)
                             .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 257, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -221,20 +215,7 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(218, 247, 233));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel5.setText("Tổng tiền hàng ");
-
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField5.setText("0");
-
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel6.setText("Giảm giá");
-
-        jLabel7.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel7.setText("!");
-        jLabel7.setToolTipText("Giảm giá hóa đơn sẽ được phân bổ vào giá nhập theo tỉ lệ thành tiền của mỗi mặt hàng.");
-        jLabel7.setOpaque(true);
+        jLabel5.setText("Tổng tiền hàng đã trả ");
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -267,24 +248,15 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -293,13 +265,7 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel7)))
-                .addGap(18, 18, 18)
+                .addGap(69, 69, 69)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -337,7 +303,7 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton8)
                 .addContainerGap())
@@ -365,8 +331,8 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(tf_screentrahangnhap_timnhacungcap, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)))
                 .addContainerGap())
         );
@@ -376,14 +342,14 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3)
-                    .addComponent(tf_screentrahangnhap_timnhacungcap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -592,36 +558,20 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
 
         tb_screentrahangnhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "Mã hàng hóa", "Tên hàng", "Giá nhập", "Số lượng", "Thành tiền"
+                "Mã hàng hóa", "Tên hàng", "Nhóm hàng hóa", "Đơn giá", "Số lượng"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tb_screentrahangnhap);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -629,8 +579,8 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
+                .addGap(175, 175, 175))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -761,6 +711,7 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -774,8 +725,6 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -795,11 +744,9 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTable tb_screentrahangnhap;
     private javax.swing.JTextField tf_screentrahangnhap_timhanghoa;
-    private javax.swing.JTextField tf_screentrahangnhap_timnhacungcap;
     // End of variables declaration//GEN-END:variables
 }

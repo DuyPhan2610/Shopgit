@@ -7,8 +7,8 @@ package database;
 
 import control.ControlUtils;
 import control.NhapHangHoa;
-import entities.HangHoa;
 import entities.NhaCungCap;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,12 +24,16 @@ public class BangNhaCungCap extends TruyVanDuLieu{
 
     public final static String MA_NHA_CUNG_CAP = "MANHACUNGCAP";
     public final static String MA_CONG_NO_NHA_CUNG_CAP = "MACONGNONHACUNGCAP";
-    public final static String TEN_NHA_CUNG_CAP = "MACONGNONHACUNGCAP";
+    public final static String TEN_CUA_NHA_CUNG_CAP = "TENNHACUNGCAP";
     public final static String NHOM_NHA_CUNG_CAP = "NHOMNHACUNGCAP";
     public final static String DIA_CHI = "DIACHI";
     public final static String EMAIL = "EMAIL";
     public final static String TONG_MUA = "TONGMUA";
     public final static String GHI_CHU = "GHICHU";
+
+    public BangNhaCungCap(Connection connection) {
+        super(connection);
+    }
     
     
     
@@ -63,7 +67,7 @@ public class BangNhaCungCap extends TruyVanDuLieu{
    // lấy Nha Cung Cấp từ tên nhà cung cấp
    public NhaCungCap layNhaCungCap(String tenNhaCungCap){
        NhaCungCap nhaCungCap = null;
-       String sql = "select MANHACUNGCAP from nhacungcap ncc where ncc.TENNHACUNGCAP = ?";
+       String sql = "select * from nhacungcap ncc where ncc.TENNHACUNGCAP = ?";
        PreparedStatement preStatement;
        try {
            preStatement = connection.prepareStatement(sql);
@@ -81,7 +85,6 @@ public class BangNhaCungCap extends TruyVanDuLieu{
         
         ArrayList<NhaCungCap> arlNhaCungCap = new ArrayList<>();
         try {
-            // mở kết nối csdl
 
             // thực hiện câu truy vấn đưa kết quả vào result set
             ResultSet rs = this.selectData(CauTruyVan.selectedStatement("nhacungcap"));
@@ -97,8 +100,8 @@ public class BangNhaCungCap extends TruyVanDuLieu{
     }
    
    
-   // Hàm tự động tạo mã hàng hóa từ hàng hóa cuối cùng
-    public String taoMaHangHoa(){
+   // Hàm tự động tạo mã nhà cung cấp
+    public String taoMaNhaCungCap(){
         ArrayList<NhaCungCap> arlNhaCungCap = this.layTatCaNhaCungCapTrongCSDL();
         
         if(arlNhaCungCap.size() > 0){

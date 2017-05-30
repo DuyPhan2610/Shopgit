@@ -11,16 +11,20 @@ import database.BangCongNoNhaCungCap;
 import database.BangHangHoa;
 import database.BangNhaCungCap;
 import database.BangPhieuNhapHang;
+import database.ConnectionUtils;
+import entities.ChiTietCongNoNhaCungCap;
 import entities.ChiTietPhieuNhapHang;
+import entities.CongNoNhaCungCap;
 import entities.HangHoa;
 import entities.HangNhap;
 import entities.NhaCungCap;
 import entities.PhieuNhapHang;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.control.ComboBox;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -43,33 +47,44 @@ public class NhapHangHoa {
     public BangCongNoNhaCungCap bangCongNoNhaCungCap;
     public BangChiTietCongNoNhaCungCap bangChiTietCongNoNhaCungCap;
     public JComboBox<String> comboBox;
+    public Connection connection;
     
     public DocFile docFile;
     
     
     public NhapHangHoa(JTable table, JComboBox comboBox){
         this.tb_screennhaphang = table;
-        this.comboBox = comboBox;
-        model = (DefaultTableModel) tb_screennhaphang.getModel();
-        bangHangHoa = new BangHangHoa();
-        bangNhaCungCap = new BangNhaCungCap();
-        bangPhieuNhapHang = new BangPhieuNhapHang();
-        bangChiTietPhieuNhapHang = new BangChiTietPhieuNhapHang();
-        bangCongNoNhaCungCap = new BangCongNoNhaCungCap();
-        bangChiTietCongNoNhaCungCap = new BangChiTietCongNoNhaCungCap();      
+        try {
+            connection = new ConnectionUtils().getMySQLConnection();
+            this.comboBox = comboBox;
+            model = (DefaultTableModel) tb_screennhaphang.getModel();
+            bangHangHoa = new BangHangHoa(connection);
+            bangNhaCungCap = new BangNhaCungCap(connection);
+            bangPhieuNhapHang = new BangPhieuNhapHang(connection);
+            bangChiTietPhieuNhapHang = new BangChiTietPhieuNhapHang(connection);
+            bangCongNoNhaCungCap = new BangCongNoNhaCungCap(connection);
+            bangChiTietCongNoNhaCungCap = new BangChiTietCongNoNhaCungCap(connection);
+            System.out.println("\nKet noi co so du lieu thanh cong");
+        } catch (SQLException ex) {
+            System.out.println("\nKet noi co so du lieu khong thanh cong");
+        } catch (ClassNotFoundException ex) {
+            System.out.println("\nKet noi co so du lieu khong thanh cong");
+        }
+              
     }
     
     // Thêm danh sach nhà cung cấp vào comboBox
     public void themNCCVaoComboBox(){
-        ArrayList<String> arlTenNhaCungCap = new ArrayList<>();
-        arlTenNhaCungCap.add("Chọn nhà cung cấp");
-        for(int i = 0; i < arlTenNhaCungCap.size(); i++){
-            comboBox.addItem(arlTenNhaCungCap.get(i));
+        ArrayList<NhaCungCap> arlTenNhaCungCap = bangNhaCungCap.layTatCaNhaCungCapTrongCSDL();
+        if(arlTenNhaCungCap.size() > 0){
+            for(int i = 0; i < arlTenNhaCungCap.size(); i++){
+                comboBox.addItem(arlTenNhaCungCap.get(i).mTenNhaCungCap);
+            }
+            comboBox.setSelectedIndex(0);
         }
-        comboBox.setSelectedIndex(0);
     }
     
-
+    
     
     // Khi click vào IMPORT
     // Mở jChooser và lấy đường dẫn file và mở file rồi đưa dữ liệu vào bảng
@@ -176,8 +191,23 @@ public class NhapHangHoa {
     // Lấy mã nhà cung cấp từ comboBox
     public String layMaNCCTrongComboBox(){
         // lấy mã nhà cung cấp từ bảng nhà cung cấp
-        return bangNhaCungCap.layNhaCungCap((String)comboBox.getSelectedItem()).mMaNhaCungCap;
+        ArrayList<NhaCungCap> arlNCC = bangNhaCungCap.layTatCaNhaCungCapTrongCSDL();
+        for(int i = 0; i < arlNCC.size(); i ++){
+            NhaCungCap ncc = arlNCC.get(i);
+            if(((String)comboBox.getSelectedItem()).equals(ncc.mTenNhaCungCap))
+                return ncc.mTenNhaCungCap;
+        }
+        return null;
     }
+    
+    //Lấy mã công nợ trong ComboBox
+    public String layMaCongNoNCCTrongComboBox(){
+        // lấy mã nhà cung cấp từ bảng nhà cung cấp
+        return bangNhaCungCap.layNhaCungCap((String)comboBox.getSelectedItem()).mMaCongNoNhaCungCap;
+    }
+    
+    
+    // Cập nhật lại công nợ của nhà cung cấp
     
     
     //Lấy tổng tiền của các hàng nhập trong bảng
@@ -191,7 +221,30 @@ public class NhapHangHoa {
         }
         return tongTien;
     }
-     
+    
+    
+    
+    // Tạo mới nhà cung cấp(trước hết phải tạo công nợ của nhà cung cấp)
+    public void taoNhaCungCap(String maNhaCungCap, String tenNhaCungCap, String maCongNo,
+           String nhomNhaCungCap, String diaChi, String email,
+           String ghiChu, int tongMua){
+       
+        CongNoNhaCungCap congNoNhaCungCap = new CongNoNhaCungCap(maCongNo, "", 0 , 0);
+        
+        //thêm bảng công nợ nhà cung cấp vào csdl
+        bangCongNoNhaCungCap.themCongNoNhaCungCap(congNoNhaCungCap);
+        
+        NhaCungCap nhaCungCap = new NhaCungCap(maNhaCungCap, tenNhaCungCap, nhomNhaCungCap, maCongNo
+                                            , diaChi, email, ghiChu, tongMua);
+        
+        bangNhaCungCap.themNhaCungCap(nhaCungCap);
+    }
+    
+    // Tạo chi tiết công nợ nhà cung cấp
+     public void taoChiTietCongNo(String maNhaCungCap, String maPhieuNhap, int tongNo){
+         ChiTietCongNoNhaCungCap chiTietCongNoNhaCungcap = new ChiTietCongNoNhaCungCap(maNhaCungCap, maPhieuNhap, tongNo);
+         bangChiTietCongNoNhaCungCap.themChiTietCongNoNhaCungCap(chiTietCongNoNhaCungcap);
+     }
     
     // khi nhấn nút lưu thì kiểm tra
     //kiểm tra có trùng mã hàng hóa khi nhập dữ liệu không

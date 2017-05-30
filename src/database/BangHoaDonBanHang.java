@@ -5,8 +5,8 @@
  */
 package database;
 import control.ControlUtils;
-import control.NhapHangHoa;
 import entities.HoaDonBanHang;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,6 +28,10 @@ public class BangHoaDonBanHang extends TruyVanDuLieu{
     public final static String CON_NO ="CONNO";
     public final static String GHI_CHU ="GHICHU";
     public final static String THOI_GIAN ="THOIGIAN";
+
+    public BangHoaDonBanHang(Connection connection) {
+        super(connection);
+    }
     
     public void themHoaDonBanHang (HoaDonBanHang hoaDonBanHang){
         try{

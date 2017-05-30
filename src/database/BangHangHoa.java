@@ -10,6 +10,7 @@ import control.NhapHangHoa;
 
 
 import entities.HangHoa;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,6 +33,10 @@ public class BangHangHoa extends TruyVanDuLieu{
     public final static String HANG_HOA_NHOM_HANG_HOA = "NHOMHANGHOA";
     public final static String HANG_HOA_TON_IT_NHAT = "DINHMUCTONITNHAT";
     public final static String HANG_HOA_TON_NHIEU_NHAT = "DINHMUCTONNHIEUNHAT";
+
+    public BangHangHoa(Connection connection) {
+        super(connection);
+    }
 
     
     
@@ -60,9 +65,9 @@ public class BangHangHoa extends TruyVanDuLieu{
            boolean checkSuccess = preStatement.execute();
            
            if(checkSuccess)
-                System.out.print("\n thêm dữ liệu thành công");
+                System.out.print("\n thêm hàng hóa thành công");
        } catch (SQLException ex) {
-          System.out.print("\n thêm dữ liệu không thành công");
+          System.out.print("\n thêm hàng hóa không thành công");
        }
    }
    

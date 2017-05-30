@@ -7,6 +7,7 @@ package database;
 
 import control.ControlUtils;
 import entities.KhachHang;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,6 +28,10 @@ public class BangKhachHang extends TruyVanDuLieu {
     public final static String DIEN_THOAI ="DIENTHOAI";
     public final static String NGAY_SINH ="NGAYSINH";
     public final static String GIOI_TINH ="GIOITINH";
+
+    public BangKhachHang(Connection connection) {
+        super(connection);
+    }
     
     public void themKhachHang(KhachHang khachHang){
         try {

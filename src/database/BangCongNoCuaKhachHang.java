@@ -7,6 +7,7 @@ package database;
 
 import control.ControlUtils;
 import entities.CongNoCuaKhachHang;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,6 +25,10 @@ public class BangCongNoCuaKhachHang extends TruyVanDuLieu{
     public final static String TONG_NO = "TONGNO";
     public final static String NO_CAN_TRA = "NOCANTRA";
     public final static String GHI_CHU = "GHICHU";
+
+    public BangCongNoCuaKhachHang(Connection connection) {
+        super(connection);
+    }
     
     public void themCongNoCuaKhachHang (CongNoCuaKhachHang congNoCuaKhachHang){
         try {

@@ -7,6 +7,7 @@ package database;
 
 import control.ControlUtils;
 import entities.LoaiKhachHang;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,6 +23,10 @@ public class BangLoaiKhachHang extends TruyVanDuLieu{
     //lay du lieu ve phai biet ten column
     public final static String MA_LOAI_KHACH_HANG ="MALOAIKHACHHANG";
     public final static String LOAI_KHACH_HANG ="LOAIKHACHHANG";
+
+    public BangLoaiKhachHang(Connection connection) {
+        super(connection);
+    }
     
     public void themLoaiKhachHang(LoaiKhachHang loaiKhachHang){
         try {

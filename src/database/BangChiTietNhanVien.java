@@ -6,6 +6,7 @@
 package database;
 
 import entities.ChiTietNhanVien;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,6 +31,10 @@ public class BangChiTietNhanVien extends TruyVanDuLieu {
     public final static String TONG_LUONG = "TONGLUONG";
     public final static String GHI_CHU = "GHICHU";
     public final static String NGAY_VAO_LAM = "NGAYVAOLAM";
+
+    public BangChiTietNhanVien(Connection connection) {
+        super(connection);
+    }
     
     public void themChiTietNhanVien (ChiTietNhanVien chiTietNhanVien){
         try {

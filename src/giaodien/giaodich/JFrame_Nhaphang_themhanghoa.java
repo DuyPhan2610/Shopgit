@@ -64,7 +64,6 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jComboBoxNhomHangHoa = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldSoLuong = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
@@ -122,27 +121,18 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
+        jComboBoxNhomHangHoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quần áo", "Giày dép", "Phụ kiện" }));
         jComboBoxNhomHangHoa.setToolTipText("");
-
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 51));
-        jButton1.setText("+");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jComboBoxNhomHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jComboBoxNhomHangHoa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jComboBoxNhomHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jComboBoxNhomHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -201,10 +191,10 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGap(57, 57, 57)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldDonGia)
+                                    .addComponent(jTextFieldDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jTextFieldTenHangHoa)
-                                        .addComponent(jTextFieldMaHangHoa)
+                                        .addComponent(jTextFieldMaHangHoa, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
                                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
@@ -314,7 +304,6 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
 
     private NhapHangHoa mNhapHangHoa;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBoxNhomHangHoa;

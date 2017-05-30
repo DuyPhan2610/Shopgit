@@ -6,6 +6,7 @@
 package database;
 
 import entities.ChiTietPhieuNhapHang;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,6 +24,10 @@ public class BangChiTietPhieuNhapHang extends TruyVanDuLieu {
     public final static String MA_HANG_HOA ="MAHANGHOA";
     public final static String MA_PHIEU_NHAP ="MAPHIEUNHAP";
     public final static String SO_LUONG = "SOLUONG";
+
+    public BangChiTietPhieuNhapHang(Connection connection) {
+        super(connection);
+    }
     
     public void themChiTietPhieuNhapHang (ChiTietPhieuNhapHang chiTietPhieuNhapHang){
         try {
@@ -34,10 +39,10 @@ public class BangChiTietPhieuNhapHang extends TruyVanDuLieu {
             
             boolean checkSuccess = preStatement.execute();
             if (checkSuccess)
-                System.out.print ("\n Thêm dữ liệu thành công");
+                System.out.print ("\n Thêm chi tiết phiếu nhập thành công");
         } catch (SQLException ex)
         {
-            System.out.print("\n Thêm dữ liệu không thành công");
+            System.out.print("\n Thêm chi tiết phiếu nhập không thành công");
         }
     }
     

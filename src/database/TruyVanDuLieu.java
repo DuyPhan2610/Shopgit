@@ -5,9 +5,7 @@
  */
 package database;
 
-import entities.PhieuNhapHang;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -26,14 +24,9 @@ public class TruyVanDuLieu {
    //private PreparedStatement preStatement;
    //private Statement statement;
    //private ResultSet resultSet;
-   public TruyVanDuLieu(){
-       try {
-           connection = new ConnectionUtils().getMySQLConnection();
-       } catch (SQLException ex) {
-           Logger.getLogger(TruyVanDuLieu.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (ClassNotFoundException ex) {
-           Logger.getLogger(TruyVanDuLieu.class.getName()).log(Level.SEVERE, null, ex);
-       }
+   public TruyVanDuLieu(Connection connection){
+           this.connection = connection;
+       
    }
    
    // Câu lệnh query tổng quát
@@ -61,35 +54,6 @@ public class TruyVanDuLieu {
        
    }
    
-   
-   
-   // Thêm Phiếu nhập hàng vào cơ sở dữ liệu
-   public void themPhieuNhapHang(PhieuNhapHang phieuNhapHang){
-       try {
-           String sql = "insert into phieunhaphang (MAPHIEUNHAP, MANHACUNGCAP, TONGTIEN, GIAGIAM, TIENDATRA, CONNO, THOIGIAN, GHICHU) values (?, ?, ?, ?, ?, ?, ?, ?)";
-           PreparedStatement preStatement = connection.prepareStatement(sql);
-           preStatement.setString(1, phieuNhapHang.mMaPhieuNhap);
-           preStatement.setString(2, phieuNhapHang.mMaNhaCungCap);
-           preStatement.setInt(3, phieuNhapHang.mTongTien);
-           preStatement.setInt(4, phieuNhapHang.mGiaGiam);
-           preStatement.setInt(5, phieuNhapHang.mTienDaTra);
-           preStatement.setInt(6, phieuNhapHang.mConNo);
-           preStatement.setString(7,phieuNhapHang.mThoiGian);
-           preStatement.setString(8, phieuNhapHang.mGhiChu);
-
-
-             int i = preStatement.executeUpdate();
-           
-           if(i > 0)
-                System.out.print("\n thêm dữ liệu thành công");
-           else{
-               System.out.print("\n Không thêm được phiếu nhập hàng");
-           }
-       } catch (SQLException ex) {
-          System.out.print("\n thêm dữ liệu không thành công");
-       }
-       
-   }
    
    public void clearAllData(String tableName){
        try {

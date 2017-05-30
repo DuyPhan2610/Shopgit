@@ -16,10 +16,14 @@ public class ControlUtils {
     
     //Hàm lấy thời gian hiện tại của hệ thông
     public static String layThoiGian(){
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("YYYY-MM-DD HH:MM:SS");
-        LocalDateTime now = LocalDateTime.now();
-        return dtf.format(now);
+        java.util.Date dt = new java.util.Date();
+
+    java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String currentTime = sdf.format(dt);
+        return currentTime;
     }
+    
+    
     
     
     // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
@@ -66,7 +70,7 @@ public class ControlUtils {
         return codeStr;
     }
     
-    // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
+    // Tạo mã công nợ từ mã công nợ cuối cùng trong list
     public static String taoMaCongNoNhaCungCap(String str){
         String[] arStr = str.split("N");
         String numStr = arStr[1];
