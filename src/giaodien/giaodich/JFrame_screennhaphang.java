@@ -99,7 +99,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        btnThemtructiepncc = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -159,7 +159,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         });
 
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setText("Tìm hàng hóa theo mã hoặc tên...");
+        jTextField1.setToolTipText("Tìm hàng hóa theo mã hoặc tên...");
 
         btnImport.setBackground(new java.awt.Color(0, 153, 51));
         btnImport.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
@@ -208,13 +208,13 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(218, 247, 233));
 
-        jButton3.setBackground(new java.awt.Color(34, 139, 34));
-        jButton3.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("+");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnThemtructiepncc.setBackground(new java.awt.Color(34, 139, 34));
+        btnThemtructiepncc.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
+        btnThemtructiepncc.setForeground(new java.awt.Color(255, 255, 255));
+        btnThemtructiepncc.setText("+");
+        btnThemtructiepncc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnThemtructiepnccActionPerformed(evt);
             }
         });
 
@@ -236,7 +236,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jLabel2.setText("Mã phiếu nhập:");
 
         jTextFieldMaPhieuNhap.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldMaPhieuNhap.setText("Mã phiếu nhập");
+        jTextFieldMaPhieuNhap.setToolTipText("Mã phiếu nhập");
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
@@ -446,7 +446,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jComboBoxNCC, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)))
+                        .addComponent(btnThemtructiepncc)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -454,7 +454,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnThemtructiepncc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBoxNCC))
                 .addGap(18, 18, 18)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -770,10 +770,10 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnThemtructiepnccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemtructiepnccActionPerformed
 
             // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnThemtructiepnccActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -914,10 +914,10 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImport;
     private javax.swing.JButton btnNhaphang_themhanghoa;
+    private javax.swing.JButton btnThemtructiepncc;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

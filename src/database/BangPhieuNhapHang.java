@@ -68,7 +68,7 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
             this.closeDatabase();
             
         } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BangPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return arlPhieuNhapHang;

@@ -82,7 +82,7 @@ public class BangHangHoa extends TruyVanDuLieu{
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return arlHangHoa;
