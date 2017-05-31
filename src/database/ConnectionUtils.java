@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class ConnectionUtils {
     public Connection getMySQLConnection() throws SQLException, ClassNotFoundException{
         String hostName = "localhost";
-        String dbName = "shop";
+        String dbName = "shop1";
         String userName = "root ";
         String password = "123456";
        
@@ -28,7 +28,7 @@ public class ConnectionUtils {
     public Connection getMySQLConnection(String hostName, String dbName,
          String userName, String password) {
 
-     String connectionURL = "jdbc:mysql://localhost:3306/shop?useSSL=false";
+     String connectionURL = "jdbc:mysql://localhost:3306/shop1?useSSL=false";
      Connection conn = null;
         try {
             conn = DriverManager.getConnection(connectionURL, "root", "123456");

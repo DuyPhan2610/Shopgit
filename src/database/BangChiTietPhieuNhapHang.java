@@ -31,8 +31,8 @@ public class BangChiTietPhieuNhapHang extends TruyVanDuLieu {
     
     public void themChiTietPhieuNhapHang (ChiTietPhieuNhapHang chiTietPhieuNhapHang){
         try {
-            String sql = "insert into chitietphieunhapnhang (MAHANGHOA, MAPHIEUNHAP, SOLUONG) values (?, ?, ?)";
-            PreparedStatement preStatement = connection.prepareStatement(sql);
+            String insertChiTietPhieuNhap = "insert into chitietphieunhapnhang (MAHANGHOA, MAPHIEUNHAP, SOLUONG) values (?, ?, ?)";
+            PreparedStatement preStatement = connection.prepareStatement(insertChiTietPhieuNhap);
             preStatement.setString(1, chiTietPhieuNhapHang.mMaHangHoa);
             preStatement.setString(2, chiTietPhieuNhapHang.mMaPhieuNhap);
             preStatement.setInt(3, chiTietPhieuNhapHang.mSoLuong);
@@ -51,7 +51,7 @@ public class BangChiTietPhieuNhapHang extends TruyVanDuLieu {
               // mở kết nối csdl
 
             // thực hiện câu truy vấn đưa kết quả vào result set
-         ResultSet rs = this.selectData(CauTruyVan.selectedStatement("chitietphieunhaphang"));
+         ResultSet rs = this.selectData(CauTruyVan.selectedStatement("chitietphieunhapnhang"));
         try {
             while (rs.next()){
                 arlChiTietPhieuNhapHang.add(new ChiTietPhieuNhapHang(rs));

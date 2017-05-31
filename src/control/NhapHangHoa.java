@@ -145,14 +145,14 @@ public class NhapHangHoa {
     //Đưa hàng nhập vào trong csdl Hàng Hóa
     public void choHangNhapVaoCSDL(){
         ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
-        
+        ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
         if(arlHangNhap.size() > 0){
-            ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
             for(int i = 0; i < arlHangNhap.size(); i ++){
                 // tạo hàng hóa từ hàng nhập
                 arlHangHoa.add(new HangHoa(arlHangNhap.get(i)));
             }
         }
+        bangHangHoa.themDuLieuVaoHangHoa(arlHangHoa);
     }
     
     // Tạo phiếu nhập

@@ -42,10 +42,10 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
            PreparedStatement preStatement = connection.prepareStatement(sql);
            preStatement.setString(1, phieuNhapHang.mMaPhieuNhap);
            preStatement.setString(2, phieuNhapHang.mMaNhaCungCap);
-           preStatement.setInt(3, 1000000);
+           preStatement.setInt(3, phieuNhapHang.mTongTien);
            preStatement.setInt(4, phieuNhapHang.mGiaGiam);
            preStatement.setInt(5, phieuNhapHang.mTienDaTra);
-           preStatement.setInt(6, 1000000);
+           preStatement.setInt(6, phieuNhapHang.mConNo);
            preStatement.setString(7,phieuNhapHang.mThoiGian);
            preStatement.setString(8, phieuNhapHang.mGhiChu);
           

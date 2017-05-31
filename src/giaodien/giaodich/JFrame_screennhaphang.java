@@ -42,6 +42,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
        
        String maPhieuNhap = nhapHangHoa.bangPhieuNhapHang.taoMaPhieuNhap();
        jTextFieldMaPhieuNhap.setText(maPhieuNhap);
+       
        this.init();
     }
     
