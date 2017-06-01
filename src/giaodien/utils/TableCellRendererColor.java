@@ -25,7 +25,7 @@ public class TableCellRendererColor extends DefaultTableCellRenderer{
         {
          componente.setBackground(Color.white);
         } else {
-            componente.setBackground(Color.LIGHT_GRAY);
+            componente.setBackground(Color.lightGray);
         }
         if(isSelected)
         {

@@ -24,7 +24,7 @@ public class JPanel_Trahangnhap extends javax.swing.JPanel {
     public JPanel_Trahangnhap() {
         initComponents();
         JTableHeader theader = tb_phieutrahangnhap.getTableHeader();
-        tb_phieutrahangnhap.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
+        tb_phieutrahangnhap.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
        theader.setFont(new Font("Arial", Font.BOLD,12));
       
@@ -504,7 +504,7 @@ public class JPanel_Trahangnhap extends javax.swing.JPanel {
 
     private void btnTrahangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrahangnhapActionPerformed
         // TODO add your handling code here:
-        JPanel_Trahangnhap jp1 = new JPanel_Trahangnhap();
+        CuaSoTraHangNhap jp1 = new CuaSoTraHangNhap();
         jp1.setVisible(true);
     }//GEN-LAST:event_btnTrahangnhapActionPerformed
 

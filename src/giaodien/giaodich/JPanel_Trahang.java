@@ -25,7 +25,7 @@ public class JPanel_Trahang extends javax.swing.JPanel {
     public JPanel_Trahang() {
         initComponents();
         JTableHeader theader = tb_trahang.getTableHeader();
-        tb_trahang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
+        tb_trahang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
        theader.setFont(new Font("Arial", Font.BOLD,20));
       
@@ -500,7 +500,8 @@ public class JPanel_Trahang extends javax.swing.JPanel {
 
     private void btnTrahangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrahangActionPerformed
         // TODO add your handling code here:
-      
+      JFrame_screentrahangtrongbanhang jf1 = new JFrame_screentrahangtrongbanhang();
+      jf1.setVisible(true);
     }//GEN-LAST:event_btnTrahangActionPerformed
 
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
