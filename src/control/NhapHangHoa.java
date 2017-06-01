@@ -11,7 +11,7 @@ import database.BangCongNoNhaCungCap;
 import database.BangHangHoa;
 import database.BangNhaCungCap;
 import database.BangPhieuNhapHang;
-import database.ConnectionUtils;
+import DatabaseConnection.ConnectionUtils;
 import entities.ChiTietCongNoNhaCungCap;
 import entities.ChiTietPhieuNhapHang;
 import entities.CongNoNhaCungCap;

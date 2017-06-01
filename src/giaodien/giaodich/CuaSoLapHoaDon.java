@@ -11,7 +11,7 @@ import javax.swing.JFrame;
  *
  * @author USER
  */
-public class JFrame_Hoadon extends JFrame{
+public class CuaSoLapHoaDon extends JFrame{
     //public JFrame_Hoadon(){
     //}
     

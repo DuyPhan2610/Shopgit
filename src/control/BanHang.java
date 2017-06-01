@@ -11,7 +11,7 @@ import database.BangCongNoCuaKhachHang;
 import database.BangHangHoa;
 import database.BangHoaDonBanHang;
 import database.BangKhachHang;
-import database.ConnectionUtils;
+import DatabaseConnection.ConnectionUtils;
 import entities.HoaDonBanHang;
 import entities.KhachHang;
 import java.sql.Connection;

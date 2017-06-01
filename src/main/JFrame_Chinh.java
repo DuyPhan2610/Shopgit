@@ -7,7 +7,7 @@ package main;
 
 import giaodien.doitac.DoiTacKhachHang;
 import giaodien.doitac.DoiTacNhaCungCap;
-import giaodien.giaodich.JFrame_Banhang;
+import giaodien.giaodich.CuaSoBanHang;
 import giaodien.giaodich.JFrame_Thoigian1;
 import giaodien.giaodich.JPanel_Hoadon1;
 import giaodien.giaodich.JPanel_Nhaphang1;

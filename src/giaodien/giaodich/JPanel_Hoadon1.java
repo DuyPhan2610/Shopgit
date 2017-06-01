@@ -806,7 +806,7 @@ public class JPanel_Hoadon1 extends javax.swing.JPanel {
 
     private void jButton7jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7jButton1ActionPerformed
         // TODO add your handling code here:
-        JFrame_Banhang jf1 = new JFrame_Banhang();
+        CuaSoBanHang jf1 = new CuaSoBanHang();
         jf1.setVisible(true);
     }//GEN-LAST:event_jButton7jButton1ActionPerformed
 

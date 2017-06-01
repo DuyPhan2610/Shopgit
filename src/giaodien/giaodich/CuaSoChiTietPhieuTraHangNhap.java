@@ -15,12 +15,12 @@ import javax.swing.table.JTableHeader;
  *
  * @author USER
  */
-public class JFrame_Manhinhchitietphieutrahangnhap extends javax.swing.JFrame {
+public class CuaSoChiTietPhieuTraHangNhap extends javax.swing.JFrame {
 
     /**
      * Creates new form JFrame_Manhinhchitietphieutrahangnhap
      */
-    public JFrame_Manhinhchitietphieutrahangnhap() {
+    public CuaSoChiTietPhieuTraHangNhap() {
         initComponents();
          JTableHeader theader = jTableChiTietPhieuTraHangNhap.getTableHeader();
         jTableChiTietPhieuTraHangNhap.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
@@ -360,20 +360,21 @@ public class JFrame_Manhinhchitietphieutrahangnhap extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrame_Manhinhchitietphieutrahangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuaSoChiTietPhieuTraHangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrame_Manhinhchitietphieutrahangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuaSoChiTietPhieuTraHangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrame_Manhinhchitietphieutrahangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuaSoChiTietPhieuTraHangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrame_Manhinhchitietphieutrahangnhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CuaSoChiTietPhieuTraHangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrame_Manhinhchitietphieutrahangnhap().setVisible(true);
+                new CuaSoChiTietPhieuTraHangNhap().setVisible(true);
             }
         });
     }
