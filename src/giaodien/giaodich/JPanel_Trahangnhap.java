@@ -504,7 +504,7 @@ public class JPanel_Trahangnhap extends javax.swing.JPanel {
 
     private void btnTrahangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrahangnhapActionPerformed
         // TODO add your handling code here:
-        JFrame_screentrahangnhap jp1 = new JFrame_screentrahangnhap();
+        JPanel_Trahangnhap jp1 = new JPanel_Trahangnhap();
         jp1.setVisible(true);
     }//GEN-LAST:event_btnTrahangnhapActionPerformed
 

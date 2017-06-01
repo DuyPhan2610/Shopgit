@@ -9,12 +9,12 @@ import giaodien.doitac.DoiTacKhachHang;
 import giaodien.doitac.DoiTacNhaCungCap;
 import giaodien.giaodich.JFrame_Banhang;
 import giaodien.giaodich.JFrame_Thoigian1;
-import giaodien.giaodich.JFrame_screentrahangnhap;
 import giaodien.giaodich.JPanel_Hoadon1;
 import giaodien.giaodich.JPanel_Nhaphang1;
 import giaodien.giaodich.JPanel_Trahang;
 import giaodien.giaodich.JPanel_Trahangnhap;
 import giaodien.hanghoa.DanhMuc;
+import giaodien.tongquan.TongQuan;
 import java.awt.Window;
 import javax.swing.JFrame;
 
@@ -29,12 +29,13 @@ public class JFrame_Chinh extends javax.swing.JFrame {
      */
     public JFrame_Chinh() {
         jPanelDanhMuc = new DanhMuc();
-        //jPanelTongQuan = new TongQuan();
+        jPanelTongQuan = new TongQuan();
         jPanelHoaDon = new JPanel_Hoadon1();
         jPanelTraHang = new JPanel_Trahang();
         jPanelNhapHang = new JPanel_Nhaphang1();
-        jPanelTraHangNhap = new JPanel_Trahangnhap();
-        
+        //jPanelTraHangNhap = new JPanel_Trahangnhap();
+        jPanelKhachHang = new DoiTacKhachHang();
+        jPanelNhaCungCap = new DoiTacNhaCungCap();
         
         initComponents();
         
@@ -45,7 +46,7 @@ public class JFrame_Chinh extends javax.swing.JFrame {
         jPanelContent.revalidate();
         
         //vẽ panel tong quan
-        jPanelContent.add(jPanelDanhMuc);
+        jPanelContent.add(jPanelTongQuan);
         jPanelContent.repaint();
         jPanelContent.revalidate();
     }
@@ -278,14 +279,14 @@ public class JFrame_Chinh extends javax.swing.JFrame {
     private void jMenuItemTraHangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTraHangNhapActionPerformed
         // TODO add your handling code here:
          //xóa panel hiện tại
-        jPanelContent.removeAll();
-        jPanelContent.repaint();
-        jPanelContent.revalidate();
+        //jPanelContent.removeAll();
+        //jPanelContent.repaint();
+        //jPanelContent.revalidate();
         
         //vẽ panel tong quan
-        jPanelContent.add(jPanelTraHangNhap);
-        jPanelContent.repaint();
-        jPanelContent.revalidate();
+        //jPanelContent.add(jPanelTraHangNhap);
+        //jPanelContent.repaint();
+        //jPanelContent.revalidate();
        
     }//GEN-LAST:event_jMenuItemTraHangNhapActionPerformed
 
@@ -377,11 +378,11 @@ public class JFrame_Chinh extends javax.swing.JFrame {
     }
     
     private DanhMuc jPanelDanhMuc;
-    //private TongQuan jPanelTongQuan;
+    private TongQuan jPanelTongQuan;
     private JPanel_Hoadon1 jPanelHoaDon;
     private JPanel_Trahang jPanelTraHang; 
     private JPanel_Nhaphang1 jPanelNhapHang;
-    private JPanel_Trahangnhap jPanelTraHangNhap;
+    //private JPanel_Trahangnhap jPanelTraHangNhap;
     private DoiTacKhachHang jPanelKhachHang;
     private DoiTacNhaCungCap jPanelNhaCungCap;
     
