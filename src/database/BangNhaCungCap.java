@@ -28,7 +28,6 @@ public class BangNhaCungCap extends TruyVanDuLieu{
     public final static String NHOM_NHA_CUNG_CAP = "NHOMNHACUNGCAP";
     public final static String DIA_CHI = "DIACHI";
     public final static String EMAIL = "EMAIL";
-    public final static String TONG_MUA = "TONGMUA";
     public final static String GHI_CHU = "GHICHU";
 
     public BangNhaCungCap(Connection connection) {
@@ -42,8 +41,8 @@ public class BangNhaCungCap extends TruyVanDuLieu{
    public void themNhaCungCap (NhaCungCap nhaCungCap){
        try {
            String sql = "insert into nhacungcap (MANHACUNGCAP, MACONGNONHACUNGCAP, TENNHACUNGCAP, "
-                   + "NHOMNHACUNGCAP, DIACHI, EMAIL, TONGMUA, GHICHU) "
-                   + "values (?, ?, ?, ?, ?, ?, ?, ?)";
+                   + "NHOMNHACUNGCAP, DIACHI, EMAIL, GHICHU) "
+                   + "values (?, ?, ?, ?, ?, ?, ?)";
            PreparedStatement preStatement = connection.prepareStatement(sql);
            preStatement.setString(1, nhaCungCap.mMaNhaCungCap);
            preStatement.setString(2, nhaCungCap.mMaCongNoNhaCungCap);
@@ -51,8 +50,7 @@ public class BangNhaCungCap extends TruyVanDuLieu{
            preStatement.setString(4, nhaCungCap.mNhomNhaCungCap);
            preStatement.setString(5, nhaCungCap.mDiaChi);
            preStatement.setString(6, nhaCungCap.mEmail);
-           preStatement.setInt(7,nhaCungCap.mTongMua);
-           preStatement.setString(8, nhaCungCap.mGhiChu);
+           preStatement.setString(7, nhaCungCap.mGhiChu);
           
            boolean checkSuccess = preStatement.execute();
            

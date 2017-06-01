@@ -6,10 +6,8 @@
 package giaodien.giaodich;
 
 import control.NhapHangHoa;
-import database.BangHangHoa;
 import entities.HangNhap;
 import java.util.ArrayList;
-import javax.swing.JFrame;
 
 /**
  *
@@ -24,7 +22,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         initComponents();
         this.mNhapHangHoa = nhapHangHoa;
         
-        this.nhomHangHoaTrongComboBox();
+        //this.nhomHangHoaTrongComboBox();
         
         String maHangNhap = mNhapHangHoa.taoMaHangNhap();
         jTextFieldMaHangHoa.setText(maHangNhap);

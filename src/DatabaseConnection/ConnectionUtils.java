@@ -15,33 +15,33 @@ import java.sql.SQLException;
  */
 public class ConnectionUtils {
     public Connection getMySQLConnection() throws SQLException, ClassNotFoundException{
-        String hostName = "localhost";
-        String dbName = "shop1";
-        String userName = "root ";
-        String password = "123456";
+//        String hostName = "localhost";
+//        String dbName = "shop";
+//        String userName = "root ";
+//        String password = "123456";
        
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/shop1?useSSL=false", "root", "123456");  
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useSSL=false", "root", "123456");  
                 //getMySQLConnection(hostName, dbName, userName, password);
     }
     
     
-    // tao truyền tham số cho vui thôi :))))))
-    public Connection getMySQLConnection(String hostName, String dbName,
-         String userName, String password) {
-
-     String connectionURL = "jdbc:mysql://localhost:3306/shop1?useSSL=false";
-     
-     Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(connectionURL, "root", "123456");
-            System.out.print("Get connection successfully");
-        } catch (SQLException ex) {
-            
-            System.out.print("Get connection unsuccessfully");
-        }
-//    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop", "root", "123456");  
-         return conn;
-    }
+//    // tao truyền tham số cho vui thôi :))))))
+//    public Connection getMySQLConnection(String hostName, String dbName,
+//         String userName, String password) {
+//
+//     String connectionURL = "jdbc:mysql://localhost:3306/shop?useSSL=false";
+//     
+//     Connection conn = null;
+//        try {
+//            conn = DriverManager.getConnection(connectionURL, "root", "123456");
+//            System.out.print("Get connection successfully");
+//        } catch (SQLException ex) {
+//            
+//            System.out.print("Get connection unsuccessfully");
+//        }
+////    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/shop", "root", "123456");  
+//         return conn;
+//    }
     
 
 }

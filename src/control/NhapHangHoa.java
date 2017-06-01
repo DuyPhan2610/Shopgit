@@ -26,7 +26,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -38,26 +40,55 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class NhapHangHoa {
-    public javax.swing.JTable tb_screennhaphang;
-    public DefaultTableModel model;
+    
     public BangHangHoa bangHangHoa;
     public BangNhaCungCap bangNhaCungCap;
     public BangPhieuNhapHang bangPhieuNhapHang;
     public BangChiTietPhieuNhapHang bangChiTietPhieuNhapHang;
     public BangCongNoNhaCungCap bangCongNoNhaCungCap;
     public BangChiTietCongNoNhaCungCap bangChiTietCongNoNhaCungCap;
+    
+    
     public JComboBox<String> comboBox;
     public Connection connection;
+    public javax.swing.JTable bangHangNhap;
+    public DefaultTableModel model;
+    public JLabel mLabelMaPhieuNhap;
+    public JLabel mLabelTongTien;
+    public JTextField mTextFieldGiamGia;
+    public JTextField mTextFieldGhiChu;
+    public JTextField mTextFieldTraTruoc;
+    public JLabel mLabelConNo;
     
+    public ArrayList<HangNhap> dsHangNhapTrongBang;
+    public ArrayList<HangNhap> dsHangNhapBiTrung;
+    public ArrayList<NhaCungCap> dsNhaCungCapTrongCSDL;
+   
+    public String ghiChu = "";
+    public int giamGia = 0;
+    public int traTruoc = 0;
+    public int tongTien = 0;
+    public int conNo = 0;
+    public String maPhieuNhap;
     public DocFile docFile;
     
     
-    public NhapHangHoa(JTable table, JComboBox comboBox){
-        this.tb_screennhaphang = table;
+    public NhapHangHoa(JTable table, JComboBox comboBox, JLabel jLabelMaPhieuNhap, JLabel jLabelTongTien
+                        ,JLabel jLabelConNo, JTextField jTextFieldGiamGia, JTextField jTextFieldTraTruoc, JTextField jTextFieldGhiChu){
+        this.bangHangNhap = table;
         try {
             connection = new ConnectionUtils().getMySQLConnection();
             this.comboBox = comboBox;
-            model = (DefaultTableModel) tb_screennhaphang.getModel();
+            model = (DefaultTableModel) bangHangNhap.getModel();
+            
+            this.mLabelMaPhieuNhap = jLabelMaPhieuNhap;
+            this.mLabelTongTien = jLabelTongTien;
+            this.mTextFieldGiamGia = jTextFieldGiamGia;
+            this.mTextFieldTraTruoc = jTextFieldTraTruoc;
+            this.mLabelConNo = jLabelConNo;
+            this.mTextFieldGhiChu = jTextFieldGhiChu;
+            
+            this.dsHangNhapTrongBang = new ArrayList<>();
             bangHangHoa = new BangHangHoa(connection);
             bangNhaCungCap = new BangNhaCungCap(connection);
             bangPhieuNhapHang = new BangPhieuNhapHang(connection);
@@ -73,12 +104,37 @@ public class NhapHangHoa {
               
     }
     
+    // Khởi tạo giá trị ban đầu cho các Label và TextField
+    
+    public void capNhatManHinhPhieuNhapHang(){
+        
+        maPhieuNhap = this.bangPhieuNhapHang.taoMaPhieuNhap();
+        this.mLabelMaPhieuNhap.setText(maPhieuNhap);
+        this.ghiChu = this.mTextFieldGhiChu.getText();
+        
+        tongTien = this.layTongTien();
+        giamGia = Integer.parseInt(this.mTextFieldGiamGia.getText());
+        traTruoc = Integer.parseInt(this.mTextFieldTraTruoc.getText());
+        int conNo = tongTien - giamGia - traTruoc;
+        
+        this.mLabelTongTien.setText(String.valueOf(tongTien));
+        this.mLabelConNo.setText(String.valueOf(conNo));
+        
+    }
+    
+    
+    //lấy danh sách nhà cung cấp trong csdl
+    public void layDSNhaCungCap(){
+        this.dsNhaCungCapTrongCSDL = bangNhaCungCap.layTatCaNhaCungCapTrongCSDL();
+    }
+    
+    
     // Thêm danh sach nhà cung cấp vào comboBox
     public void themNCCVaoComboBox(){
-        ArrayList<NhaCungCap> arlTenNhaCungCap = bangNhaCungCap.layTatCaNhaCungCapTrongCSDL();
-        if(arlTenNhaCungCap.size() > 0){
-            for(int i = 0; i < arlTenNhaCungCap.size(); i++){
-                comboBox.addItem(arlTenNhaCungCap.get(i).mTenNhaCungCap);
+        this.layDSNhaCungCap();
+        if(dsNhaCungCapTrongCSDL.size() > 0 || dsNhaCungCapTrongCSDL == null){
+            for(int i = 0; i < dsNhaCungCapTrongCSDL.size(); i++){
+                comboBox.addItem(dsNhaCungCapTrongCSDL.get(i).mTenNhaCungCap);
             }
             comboBox.setSelectedIndex(0);
         }
@@ -124,8 +180,9 @@ public class NhapHangHoa {
     
     
     // lấy danh sách các hàng nhập trong table
-    public ArrayList<HangNhap> layDanhSachHangNhapTrongTable(){
-        ArrayList<HangNhap> arlHangNhap = new ArrayList<>();
+    public void capNhatDanhSachHangNhapTrongTable(){
+        this.dsHangNhapTrongBang = null;
+        this.dsHangNhapTrongBang = new ArrayList<>();
         for(int i = 0; i < model.getRowCount(); i++){
             String maHangNhap = model.getValueAt(i, 0).toString();
             String tenHangNhap = model.getValueAt(i, 1).toString();
@@ -134,9 +191,9 @@ public class NhapHangHoa {
             int donGia = Integer.parseInt(model.getValueAt(i, 3).toString());
             
             HangNhap hangNhap = new HangNhap(maHangNhap, tenHangNhap, donGia, soLuong, nhomHangNhap);
-            arlHangNhap.add(hangNhap);
+            this.dsHangNhapTrongBang.add(hangNhap);
         }
-        return arlHangNhap;
+        
     }
     
     
@@ -144,34 +201,26 @@ public class NhapHangHoa {
     
     //Đưa hàng nhập vào trong csdl Hàng Hóa
     public void choHangNhapVaoCSDL(){
-        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
+        
         ArrayList<HangHoa> arlHangHoa = new ArrayList<>();
-        if(arlHangNhap.size() > 0){
-            for(int i = 0; i < arlHangNhap.size(); i ++){
+        if(this.dsHangNhapTrongBang.size() > 0){
+            for(int i = 0; i < this.dsHangNhapTrongBang.size(); i ++){
                 // tạo hàng hóa từ hàng nhập
-                arlHangHoa.add(new HangHoa(arlHangNhap.get(i)));
+                arlHangHoa.add(new HangHoa(this.dsHangNhapTrongBang.get(i)));
             }
         }
         bangHangHoa.themDuLieuVaoHangHoa(arlHangHoa);
     }
     
-    // Tạo phiếu nhập
-    public void taoPhieuNhap(String maPhieuNhap, String maNhaCungCap,
-                    int tongTien, int giaGiam, int tienDaTra, int conNo, String thoiGian, String ghiChu){
-    
-        PhieuNhapHang phieuNhapHang = new PhieuNhapHang(maPhieuNhap, maNhaCungCap,
-            tongTien, giaGiam, tienDaTra, conNo, thoiGian, ghiChu);
-        bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
-    }
     
     // Tạo mã hàng nhập
     public String taoMaHangNhap(){
         String maHangNhap = null;
-        if(this.layDanhSachHangNhapTrongTable().size() <= 0){
+        if(this.dsHangNhapTrongBang.size() <= 0){
              maHangNhap = this.bangHangHoa.taoMaHangHoa();
         }
         else{
-            String maHangNhapMoiNhat = this.model.getValueAt(this.tb_screennhaphang.getRowCount() - 1, 0).toString();
+            String maHangNhapMoiNhat = this.model.getValueAt(this.bangHangNhap.getRowCount() - 1, 0).toString();
             maHangNhap = ControlUtils.taoMaHangHoa(maHangNhapMoiNhat);
         }
         return maHangNhap;
@@ -185,16 +234,15 @@ public class NhapHangHoa {
         chiTietCongNoNhaCungCap.mMaPhieuNhap = maPhieuNhap;
         chiTietCongNoNhaCungCap.mTongNo = conNo;
         bangChiTietCongNoNhaCungCap.themChiTietCongNoNhaCungCap(chiTietCongNoNhaCungCap);
-        
     }
     
     
     // Tạo chi tiết phiếu nhập hàng
     public void taoChiTietPhieuNhap(String maPhieuNhap){
-        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
-        for(int i = 0; i < arlHangNhap.size(); i ++){
-            ChiTietPhieuNhapHang chiTietPhieuNhapHang = new ChiTietPhieuNhapHang(arlHangNhap.get(i).mMaHangHoa,
-                                                            maPhieuNhap, arlHangNhap.get(i).mSoLuong);
+        
+        for(int i = 0; i < this.dsHangNhapTrongBang.size(); i ++){
+            ChiTietPhieuNhapHang chiTietPhieuNhapHang = new ChiTietPhieuNhapHang(this.dsHangNhapTrongBang.get(i).mMaHangHoa,
+                                                            maPhieuNhap, this.dsHangNhapTrongBang.get(i).mSoLuong);
             bangChiTietPhieuNhapHang.themChiTietPhieuNhapHang(chiTietPhieuNhapHang);
         }
     }
@@ -233,14 +281,28 @@ public class NhapHangHoa {
     
     //Lấy tổng tiền của các hàng nhập trong bảng
     public int layTongTien(){
-        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
+        
         int tongTien = 0;
-        if(arlHangNhap.size() > 0){
-            for(int i = 0; i < arlHangNhap.size(); i ++){
-                tongTien += (arlHangNhap.get(i).mGiaMua * arlHangNhap.get(i).mSoLuong);
+        this.capNhatDanhSachHangNhapTrongTable();
+        if(this.dsHangNhapTrongBang.size() > 0 || this.dsHangNhapTrongBang == null){
+            for(int i = 0; i < this.dsHangNhapTrongBang.size(); i ++){
+                tongTien += (this.dsHangNhapTrongBang.get(i).mGiaMua * this.dsHangNhapTrongBang.get(i).mSoLuong);
             }
         }
         return tongTien;
+    }
+    
+    // Tạo phiếu nhập hàng
+    public void taoPhieuNhapHang(){
+        PhieuNhapHang phieuNhapHang = new PhieuNhapHang();
+        phieuNhapHang.mTienDaTra = this.traTruoc;
+        phieuNhapHang.mMaPhieuNhap = this.maPhieuNhap;
+        phieuNhapHang.mMaNhaCungCap = this.layMaNCCTrongComboBox();
+        phieuNhapHang.mGhiChu = this.ghiChu;
+        phieuNhapHang.mGiaGiam = this.giamGia;
+        phieuNhapHang.mThoiGian = ControlUtils.layThoiGian();
+        phieuNhapHang.mTongTien = this.tongTien;
+        bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
     }
     
     
@@ -256,7 +318,7 @@ public class NhapHangHoa {
         bangCongNoNhaCungCap.themCongNoNhaCungCap(congNoNhaCungCap);
         
         NhaCungCap nhaCungCap = new NhaCungCap(maNhaCungCap, tenNhaCungCap, nhomNhaCungCap, maCongNo
-                                            , diaChi, email, ghiChu, tongMua);
+                                            , diaChi, email, ghiChu);
         
         bangNhaCungCap.themNhaCungCap(nhaCungCap);
     }
@@ -272,14 +334,14 @@ public class NhapHangHoa {
     // Nếu trùng thì hiện danh sách các hàng nhập bị trùng
     public  ArrayList<HangNhap>  kiemTraMaHangHoa(){
         ArrayList<HangHoa> arlHangHoa = bangHangHoa.layTatCaHangHoaTrongCSDL();
-        ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
+        
         
         //Danh sách các hàng nhập bị trùng mã sản phẩm
         ArrayList<HangNhap> hangNhapTrung = new ArrayList<>();
-        for(int i = 0; i < arlHangNhap.size(); i++){
+        for(int i = 0; i < this.dsHangNhapTrongBang.size(); i++){
             for(int j = 0; j < arlHangHoa.size(); j ++){
-                if(arlHangNhap.get(i).mMaHangHoa.equals(arlHangHoa.get(j).mMaHangHoa)){
-                    hangNhapTrung.add(arlHangNhap.get(i));
+                if(this.dsHangNhapTrongBang.get(i).mMaHangHoa.equals(arlHangHoa.get(j).mMaHangHoa)){
+                    hangNhapTrung.add(this.dsHangNhapTrongBang.get(i));
                 }
             }
         }

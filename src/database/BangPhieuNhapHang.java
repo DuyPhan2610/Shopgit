@@ -26,7 +26,6 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
     public final static String TONG_TIEN = "TONGTIEN";
     public final static String GIA_GIAM = "GIAGIAM";
     public final static String TIEN_DA_TRA = "TIENDATRA";
-    public final static String CON_NO = "CONNO";
     public final static String THOI_GIAN = "THOIGIAN";
     public final static String GHI_CHU = "GHICHU";
 
@@ -37,23 +36,25 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
         // them 1 phiếu nhập vào csdl
    ////////////////////////////////////////////////////////////////////////////
    public void themPhieuNhapHang (PhieuNhapHang phieuNhapHang){
-       try {
-           String sql = "insert into phieunhaphang (MAPHIEUNHAP, MANHACUNGCAP, TONGTIEN, GIAGIAM, TIENDATRA, CONNO, THOIGIAN, GHICHU) values (?, ?, ?, ?, ?, ?, ?, ?)";
-           PreparedStatement preStatement = connection.prepareStatement(sql);
+           String sql = "insert into phieunhaphang (MAPHIEUNHAP, MANHACUNGCAP, TONGTIEN, GIAGIAM, TIENDATRA, THOIGIAN, GHICHU) values (?, ?, ?, ?, ?, ?, ?)";
+           PreparedStatement preStatement;
+        try {
+           preStatement = connection.prepareStatement(sql);
            preStatement.setString(1, phieuNhapHang.mMaPhieuNhap);
            preStatement.setString(2, phieuNhapHang.mMaNhaCungCap);
            preStatement.setInt(3, phieuNhapHang.mTongTien);
            preStatement.setInt(4, phieuNhapHang.mGiaGiam);
            preStatement.setInt(5, phieuNhapHang.mTienDaTra);
-           preStatement.setInt(6, phieuNhapHang.mConNo);
-           preStatement.setString(7,phieuNhapHang.mThoiGian);
-           preStatement.setString(8, phieuNhapHang.mGhiChu);
+           preStatement.setString(6,phieuNhapHang.mThoiGian);
+           preStatement.setString(7, "");
           
            preStatement.execute();
-            System.out.print("\n thêm phiếu nhập hàng thành công");
-       } catch (SQLException ex) {
-          System.out.print("\n thêm phiếu nhập hàng không thành công");
-       }
+           System.out.print("\n thêm phiếu nhập hàng thành công");
+        } catch (SQLException ex) {
+            System.out.print("\n thêm phiếu nhập hàng không thành công");
+            Logger.getLogger(BangPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
    }
    
    
