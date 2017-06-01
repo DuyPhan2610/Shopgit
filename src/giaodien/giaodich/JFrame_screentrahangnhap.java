@@ -742,10 +742,6 @@ public class JFrame_screentrahangnhap extends javax.swing.JFrame {
         traHangNhap.bangPhieuTraHangNhap.themPhieuTraHangNhap(phieuTraHangNhap);
     }
     
-    //tạo chi tiết phiếu trả hàng nhập
-    public void taoChiTietPhieuTraHangNhap(){
-        
-    }
     /**
      * @param args the command line arguments
      */

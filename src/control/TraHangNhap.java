@@ -5,8 +5,10 @@
  */
 package control;
 
+import database.BangChiTietPhieuTraHangNhap;
 import database.BangPhieuTraHangNhap;
 import entities.ChiTietPhieuNhapHang;
+import entities.ChiTietPhieuTraHangNhap;
 import entities.HangHoa;
 import entities.HangNhap;
 import java.util.ArrayList;
@@ -20,10 +22,10 @@ import javax.swing.JTable;
 public class TraHangNhap extends NhapHangHoa{
     
     public BangPhieuTraHangNhap bangPhieuTraHangNhap;
-    
+    public BangChiTietPhieuTraHangNhap bangChiTietPhieuTraHangNhap;
     public TraHangNhap(JTable table, JComboBox comboBox) {
         super(table, comboBox);
-        
+        bangChiTietPhieuTraHangNhap = new BangChiTietPhieuTraHangNhap(connection);
         bangPhieuTraHangNhap = new BangPhieuTraHangNhap(connection);
     }
     
@@ -47,9 +49,9 @@ public class TraHangNhap extends NhapHangHoa{
     public void taoChiTietPhieuTraHangNhap(String maPhieuTraHangNhap){
         ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
         for(int i = 0; i < arlHangNhap.size(); i ++){
-            ChiTietPhieuNhapHang chiTietPhieuNhapHang = new ChiTietPhieuNhapHang(arlHangNhap.get(i).mMaHangHoa,
+            ChiTietPhieuTraHangNhap chiTietPhieuTraHangNhap = new ChiTietPhieuTraHangNhap(arlHangNhap.get(i).mMaHangHoa,
                                                             maPhieuTraHangNhap, arlHangNhap.get(i).mSoLuong);
-            bangChiTietPhieuNhapHang.themChiTietPhieuNhapHang(chiTietPhieuNhapHang);
+            bangChiTietPhieuTraHangNhap.themChiTietPhieuTraHangNhap(chiTietPhieuTraHangNhap);
         }
     }
     

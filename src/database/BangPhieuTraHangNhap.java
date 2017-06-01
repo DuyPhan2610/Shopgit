@@ -46,9 +46,9 @@ public class BangPhieuTraHangNhap extends TruyVanDuLieu{
             
             boolean checkSuccess = preStatement.execute();
             if (checkSuccess)
-                System.out.print("\n Thêm dữ liệu thành công");
+                System.out.print("\n Thêm phiếu trả hàng nhập thành công");
         } catch (SQLException ex) {
-                System.out.print("\n Thêm dữ liệu không thành công");
+                System.out.print("\n Thêm phiếu trả hàng nhập không thành công");
         }
     }
     
