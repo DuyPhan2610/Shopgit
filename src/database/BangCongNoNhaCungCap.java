@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +52,16 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
      
      
      //Update lại công nợ
+     public void capNhatCongNo(){
+         Statement statement;
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate("");
+        } catch (SQLException ex) {
+            Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+     }
      
      
     //Lấy tất cả các chi tiết công nợ nhà cung cấp trong csdl

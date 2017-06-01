@@ -40,7 +40,7 @@ public class BangPhieuTraHangNhap extends TruyVanDuLieu{
             preStatement.setString(1, phieuTraHangNhap.mMaPhieuTraHangNhap);
             preStatement.setString(2, phieuTraHangNhap.mMaNhaCungCap);
             preStatement.setInt(3, phieuTraHangNhap.mTienNhaCungCapDaTra);
-            preStatement.setInt(4,phieuTraHangNhap.mThoiGian);
+            preStatement.setString(4,phieuTraHangNhap.mThoiGian);
             preStatement.setString(5, phieuTraHangNhap.mTrangThai);
             preStatement.setString(6, phieuTraHangNhap.mGhiChu);
             
@@ -81,5 +81,9 @@ public class BangPhieuTraHangNhap extends TruyVanDuLieu{
         else{
             return ControlUtils.taoMaPhieuTraHangNhap("PTHN0000");
         }
+    }
+    
+    public static void main(String[] args){
+        
     }
 }

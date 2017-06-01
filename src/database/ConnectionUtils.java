@@ -20,7 +20,8 @@ public class ConnectionUtils {
         String userName = "root ";
         String password = "123456";
        
-        return getMySQLConnection(hostName, dbName, userName, password);
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/shop1?useSSL=false", "root", "123456");  
+                //getMySQLConnection(hostName, dbName, userName, password);
     }
     
     
@@ -29,6 +30,7 @@ public class ConnectionUtils {
          String userName, String password) {
 
      String connectionURL = "jdbc:mysql://localhost:3306/shop1?useSSL=false";
+     
      Connection conn = null;
         try {
             conn = DriverManager.getConnection(connectionURL, "root", "123456");

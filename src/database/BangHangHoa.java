@@ -39,6 +39,10 @@ public class BangHangHoa extends TruyVanDuLieu{
     }
 
     
+    public String xoaMotHangHoaTuMaHangHoa(String maHangHoa){
+        return "delete from hanghoa where MAHANGHOA = " + maHangHoa;
+    }
+    
     
     // Thêm danh sách các hàng hóa vào table hàng hóa
     public void themDuLieuVaoHangHoa(ArrayList<HangHoa> arlHangHoa){

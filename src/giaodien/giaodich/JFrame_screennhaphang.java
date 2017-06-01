@@ -25,6 +25,8 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
      * Creates new form screennhaphang
      */
     
+    
+    
     public JFrame_screennhaphang(){
         initComponents();
         JTableHeader theader = tb_screennhaphang.getTableHeader();
@@ -41,9 +43,9 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
        nhapHangHoa.themNCCVaoComboBox();
        
        String maPhieuNhap = nhapHangHoa.bangPhieuNhapHang.taoMaPhieuNhap();
-       jTextFieldMaPhieuNhap.setText(maPhieuNhap);
-       
+       jLabelMaPhieuNhpa.setText(maPhieuNhap);
        this.init();
+       
     }
     
     
@@ -90,10 +92,10 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jTextFieldMaNCC = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldMaPhieuNhap = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButtonThanhToan = new javax.swing.JButton();
+        jLabelMaPhieuNhpa = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldGiaGiam = new javax.swing.JTextField();
@@ -109,7 +111,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jButtonHoanThanh = new javax.swing.JButton();
         jComboBoxNCC = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
-        jTextField7 = new javax.swing.JTextField();
+        jTextFieldGhiChu = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
@@ -206,9 +208,6 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Mã phiếu nhập:");
 
-        jTextFieldMaPhieuNhap.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldMaPhieuNhap.setToolTipText("Mã phiếu nhập");
-
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Trạng thái:");
@@ -235,15 +234,16 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(31, 31, 31)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldMaPhieuNhap)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonThanhToan)
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addComponent(jLabelMaPhieuNhpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jButtonThanhToan)
+                    .addComponent(jLabel3))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -251,14 +251,14 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextFieldMaPhieuNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelMaPhieuNhpa, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(jButtonThanhToan)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanel7.setBackground(new java.awt.Color(218, 247, 233));
@@ -413,7 +413,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addComponent(jComboBoxNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextFieldMaNCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -426,9 +426,9 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(218, 247, 233));
 
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField7.setText("Ghi chú. . .");
+        jTextFieldGhiChu.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextFieldGhiChu.setForeground(new java.awt.Color(102, 102, 102));
+        jTextFieldGhiChu.setText("Ghi chú. . .");
 
         jPanel12.setBackground(new java.awt.Color(218, 247, 233));
 
@@ -589,7 +589,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField7)
+                    .addComponent(jTextFieldGhiChu)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jButton5)
@@ -601,7 +601,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldGhiChu, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -764,9 +764,13 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     private void jButtonHoanThanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHoanThanhActionPerformed
         // TODO add your handling code here:
         // lưu danh sách hàng nhập vào bảng hàng hóa
-        nhapHangHoa.choHangNhapVaoCSDL();
-        this.taoPhieuNhap();
-        this.taoChiTietPhieuNhap();
+        if(nhapHangHoa.layDanhSachHangNhapTrongTable().size() > 0){
+            nhapHangHoa.choHangNhapVaoCSDL();
+            this.taoPhieuNhap();
+            this.taoChiTietPhieuNhap();
+            //this.nhapHangHoa.capNhatCongNoVaChiTietCongNo(jLabelMaPhieuNhpa.getText(), Integer.parseInt(jLabelConNo.getText()));
+        }
+        
         //this.taoChiTietCongNo();
     }//GEN-LAST:event_jButtonHoanThanhActionPerformed
 
@@ -790,7 +794,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     //Tạo chi tiết công nợ
     public void taoChiTietCongNo(){
         String maCongNoNhaCungCap = nhapHangHoa.layMaCongNoNCCTrongComboBox();
-        String maPhieuNhap = jTextFieldMaPhieuNhap.getText();
+        String maPhieuNhap = jLabelMaPhieuNhpa.getText();
         int tongTien = nhapHangHoa.layTongTien();
         int giaGiam = Integer.parseInt(jTextFieldGiaGiam.getText());
         int tienDaTra = Integer.parseInt(jTextFieldTienTra.getText());
@@ -805,7 +809,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     public void taoPhieuNhap(){
         
         // Lấy mã phiếu nhập 
-        String maPhieuNhap = jTextFieldMaPhieuNhap.getText();
+        String maPhieuNhap = jLabelMaPhieuNhpa.getText();
         
         // Lấy mã nhà cung cấp từ tên nhà cung cấp trong comboBox
         String maNhaCungCap = nhapHangHoa.layMaNCCTrongComboBox();
@@ -814,48 +818,22 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         int tienDaTra = Integer.parseInt(jTextFieldTienTra.getText());
         int conNo = tongTien - giaGiam - tienDaTra;
         String thoiGian = ControlUtils.layThoiGian();
-        String ghiChu = "không có";
+        String ghiChu = jTextFieldGhiChu.getText();
         nhapHangHoa.taoPhieuNhap(maPhieuNhap, maNhaCungCap, tongTien, giaGiam, tienDaTra, conNo, thoiGian, ghiChu);
     }
     
     //Tạo chi tiết phiếu nhập
     public void taoChiTietPhieuNhap(){
-        nhapHangHoa.taoChiTietPhieuNhap(jTextFieldMaPhieuNhap.getText());
+        nhapHangHoa.taoChiTietPhieuNhap(jLabelMaPhieuNhpa.getText());
     }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrame_screennhaphang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrame_screennhaphang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrame_screennhaphang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrame_screennhaphang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrame_screennhaphang().setVisible(true);
-            }
-        });
+    
+    
+    public static void main(String[] args){
+        JFrame_screennhaphang nhapHang = new JFrame_screennhaphang();
+        nhapHang.setVisible(true);
     }
 
 
@@ -888,6 +866,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelConNo;
+    private javax.swing.JLabel jLabelMaPhieuNhpa;
     private javax.swing.JLabel jLabelTongTien;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
@@ -904,10 +883,9 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextFieldGhiChu;
     private javax.swing.JTextField jTextFieldGiaGiam;
     private javax.swing.JTextField jTextFieldMaNCC;
-    private javax.swing.JTextField jTextFieldMaPhieuNhap;
     private javax.swing.JTextField jTextFieldTienTra;
     private javax.swing.JTable tb_screennhaphang;
     // End of variables declaration//GEN-END:variables

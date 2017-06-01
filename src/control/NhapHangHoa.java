@@ -178,6 +178,17 @@ public class NhapHangHoa {
     }
     
     
+    //Cập nhật lại công nợ và chi tiết công nợ
+    public void capNhatCongNoVaChiTietCongNo(String maPhieuNhap, int conNo){
+        ChiTietCongNoNhaCungCap chiTietCongNoNhaCungCap = new ChiTietCongNoNhaCungCap();
+        chiTietCongNoNhaCungCap.mMaCongNoNhaCungCap = this.layMaCongNoNCCTrongComboBox();
+        chiTietCongNoNhaCungCap.mMaPhieuNhap = maPhieuNhap;
+        chiTietCongNoNhaCungCap.mTongNo = conNo;
+        bangChiTietCongNoNhaCungCap.themChiTietCongNoNhaCungCap(chiTietCongNoNhaCungCap);
+        
+    }
+    
+    
     // Tạo chi tiết phiếu nhập hàng
     public void taoChiTietPhieuNhap(String maPhieuNhap){
         ArrayList<HangNhap> arlHangNhap = this.layDanhSachHangNhapTrongTable();
@@ -196,6 +207,16 @@ public class NhapHangHoa {
             NhaCungCap ncc = arlNCC.get(i);
             if(((String)comboBox.getSelectedItem()).equals(ncc.mTenNhaCungCap))
                 return ncc.mMaNhaCungCap;
+        }
+        return null;
+    }
+    
+    public NhaCungCap layNCCTrongComboBox(){
+        ArrayList<NhaCungCap> arlNCC = bangNhaCungCap.layTatCaNhaCungCapTrongCSDL();
+        for(int i = 0; i < arlNCC.size(); i ++){
+            NhaCungCap ncc = arlNCC.get(i);
+            if(((String)comboBox.getSelectedItem()).equals(ncc.mTenNhaCungCap))
+                return ncc;
         }
         return null;
     }

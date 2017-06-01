@@ -12,7 +12,7 @@ public class PhieuTraHangNhap {
     public String mMaPhieuTraHangNhap;
     public String mMaNhaCungCap;
     public int mTienNhaCungCapDaTra;
-    public int mThoiGian;
+    public String mThoiGian;
     public String mTrangThai;
     public String mGhiChu;
     
@@ -20,7 +20,7 @@ public class PhieuTraHangNhap {
         
     }
     
-    public PhieuTraHangNhap(String maPhieuTraHangNhap, String maNhaCungCap, int tienNhaCungCapDaTra, int thoiGian, String trangThai, String ghiChu){
+    public PhieuTraHangNhap(String maPhieuTraHangNhap, String maNhaCungCap, int tienNhaCungCapDaTra, String thoiGian, String trangThai, String ghiChu){
         
         this.mMaPhieuTraHangNhap = maPhieuTraHangNhap;
         this.mMaNhaCungCap = maNhaCungCap;
@@ -37,7 +37,7 @@ public class PhieuTraHangNhap {
             this.mMaPhieuTraHangNhap =rs.getString(BangPhieuTraHangNhap.MA_PHIEU_TRA_HANG_NHAP);
             this.mMaNhaCungCap = rs.getString(BangPhieuTraHangNhap.MA_NHA_CUNG_CAP);
             this.mTienNhaCungCapDaTra =rs.getInt(BangPhieuTraHangNhap.TIEN_NHA_CUNG_CAP_DA_TRA);
-            this.mThoiGian = rs.getInt(BangPhieuTraHangNhap.THOI_GIAN);
+            this.mThoiGian = rs.getString(BangPhieuTraHangNhap.THOI_GIAN);
             this.mTrangThai = rs.getString(BangPhieuTraHangNhap.TRANG_THAI);
             this.mGhiChu =rs.getString(BangPhieuTraHangNhap.GHI_CHU);
         } catch (SQLException ex) {
