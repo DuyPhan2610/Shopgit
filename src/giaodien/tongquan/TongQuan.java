@@ -1,6 +1,8 @@
+package giaodien.tongquan;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -261,4 +263,12 @@ public class TongQuan extends javax.swing.JPanel {
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+public static void main (String[] args) {
+    JFrame frame_tongquan = new JFrame("TỔNG QUAN");
+    TongQuan jp_tongquan = new TongQuan();
+    frame_tongquan.setVisible(true);
+    frame_tongquan.setSize(1500, 1300);
+    frame_tongquan.add(jp_tongquan);
+    frame_tongquan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
 }

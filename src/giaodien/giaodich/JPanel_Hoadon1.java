@@ -265,9 +265,11 @@ public class JPanel_Hoadon1 extends javax.swing.JPanel {
         );
 
         tfHoadon_timkiem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfHoadon_timkiem1.setForeground(new java.awt.Color(102, 102, 102));
         tfHoadon_timkiem1.setText(" Theo mã hóa đơn");
 
         tfHoadon_Timkiem2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfHoadon_Timkiem2.setForeground(new java.awt.Color(102, 102, 102));
         tfHoadon_Timkiem2.setText(" Theo mã, tên hàng");
 
         btnMorong.setBackground(new java.awt.Color(255, 255, 255));
@@ -347,6 +349,7 @@ public class JPanel_Hoadon1 extends javax.swing.JPanel {
         );
 
         tfHoadon_Banggia.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfHoadon_Banggia.setForeground(new java.awt.Color(102, 102, 102));
         tfHoadon_Banggia.setText(" Chọn bảng giá...");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -408,6 +411,7 @@ public class JPanel_Hoadon1 extends javax.swing.JPanel {
         );
 
         tfHoadon_Phuongthuc.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfHoadon_Phuongthuc.setForeground(new java.awt.Color(102, 102, 102));
         tfHoadon_Phuongthuc.setText(" Chọn phương thức thanh toán...");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);

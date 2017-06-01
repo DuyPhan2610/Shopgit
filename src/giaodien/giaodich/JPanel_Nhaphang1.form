@@ -534,7 +534,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jRadioButton1" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton2" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonLuaChonKhac" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="63" max="32767" attributes="0"/>
                           </Group>
@@ -547,7 +547,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jRadioButton1" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonLuaChonKhac" min="-2" pref="32" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
@@ -616,7 +616,7 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+                    <Component class="javax.swing.JRadioButton" name="jRadioButtonLuaChonKhac">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -631,6 +631,9 @@
                           </Border>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonLuaChonKhacActionPerformed"/>
+                      </Events>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel13">
                       <Properties>

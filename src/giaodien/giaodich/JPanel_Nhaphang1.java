@@ -71,7 +71,7 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
         jPanel21 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButtonLuaChonKhac = new javax.swing.JRadioButton();
         jPanel13 = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -337,10 +337,15 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
         jRadioButton1.setText(" Toàn thời gian");
         jRadioButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jRadioButton2.setText(" Lựa chọn khác");
-        jRadioButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jRadioButtonLuaChonKhac.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButtonLuaChonKhac.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jRadioButtonLuaChonKhac.setText(" Lựa chọn khác");
+        jRadioButtonLuaChonKhac.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jRadioButtonLuaChonKhac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonLuaChonKhacActionPerformed(evt);
+            }
+        });
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -410,7 +415,7 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jRadioButtonLuaChonKhac, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
@@ -420,7 +425,7 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jRadioButtonLuaChonKhac, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -568,6 +573,12 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
         });
     }//GEN-LAST:event_btnTrangthaiActionPerformed
 
+    private void jRadioButtonLuaChonKhacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonLuaChonKhacActionPerformed
+        // TODO add your handling code here:
+        JFrame_Thoigian1 jf1 = new JFrame_Thoigian1();
+        jf1.setVisible(true);
+    }//GEN-LAST:event_jRadioButtonLuaChonKhacActionPerformed
+
               
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPNH_Nhaphang;
@@ -598,7 +609,7 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButtonLuaChonKhac;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tb_nhaphang;
