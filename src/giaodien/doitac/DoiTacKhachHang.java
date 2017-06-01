@@ -7,7 +7,7 @@ package giaodien.doitac;
  */
 
 
-import giaodien.giaodich.JPanel_Nhaphang1;
+import giaodien.giaodich.NhapHang;
 import giaodien.utils.TableCellRendererColor;
 import java.awt.Color;
 import java.awt.Component;

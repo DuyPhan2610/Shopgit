@@ -17,12 +17,12 @@ import javax.swing.table.JTableHeader;
  *
  * @author USER
  */
-public class JPanel_Nhaphang1 extends javax.swing.JPanel {
+public class NhapHang extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanel_Nhaphang1
      */
-    public JPanel_Nhaphang1() {
+    public NhapHang() {
         initComponents();
         JTableHeader theader = tb_nhaphang.getTableHeader();
         tb_nhaphang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
@@ -619,7 +619,7 @@ public class JPanel_Nhaphang1 extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
  public static void main (String[] args) {
     JFrame frame = new JFrame("NHẬP HÀNG");
-    JPanel_Nhaphang1 jp1 = new JPanel_Nhaphang1();
+    NhapHang jp1 = new NhapHang();
     frame.setVisible(true);
     frame.setSize(1300, 800);
     frame.add(jp1);

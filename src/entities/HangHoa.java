@@ -1,7 +1,6 @@
 package entities;
 
 import database.BangHangHoa;
-import database.DatabaseConsts;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;

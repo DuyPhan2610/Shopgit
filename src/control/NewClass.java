@@ -5,7 +5,13 @@
  */
 package control;
 
+import DatabaseConnection.ConnectionUtils;
+import database.BangPhieuNhapHang;
+import entities.PhieuNhapHang;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,14 +19,30 @@ import java.time.LocalDateTime;
  */
 public class NewClass {
     public static void main(String[] args){
-        System.out.println(taoMaHangHoa("MCN00000"));
-        java.util.Date dt = new java.util.Date();
-
-java.text.SimpleDateFormat sdf = 
-     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-String currentTime = sdf.format(dt);
-        System.out.println(currentTime);
+        
+        
+    }
+    
+    public void taoPhieuNhapHang(){
+        BangPhieuNhapHang bangPhieuNhapHang = null;
+        try {
+            bangPhieuNhapHang = new BangPhieuNhapHang(new ConnectionUtils().getMySQLConnection());
+        } catch (SQLException ex) {
+            Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        PhieuNhapHang phieuNhapHang = new PhieuNhapHang();
+        phieuNhapHang.mTienDaTra = 10000;
+        phieuNhapHang.mMaPhieuNhap = "PN000004";
+        phieuNhapHang.mMaNhaCungCap = "NCC00001";
+        phieuNhapHang.mGhiChu = "khong co";
+        phieuNhapHang.mGiaGiam = 1000;
+        phieuNhapHang.mThoiGian = ControlUtils.layThoiGian();
+        phieuNhapHang.mTongTien = 10000000;
+          bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
+        bangPhieuNhapHang.closeDatabase();
     }
     
     

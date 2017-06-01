@@ -17,7 +17,7 @@ public class CuaSoLapHoaDon extends JFrame{
     
 public static void main (String[] args) {
     JFrame frame_hoadon = new JFrame("HÓA ĐƠN BÁN HÀNG");
-    JPanel_Hoadon1 jp_hoadon = new JPanel_Hoadon1();
+    HoaDon jp_hoadon = new HoaDon();
     frame_hoadon.setVisible(true);
     frame_hoadon.setSize(1500, 1300);
     frame_hoadon.add(jp_hoadon);

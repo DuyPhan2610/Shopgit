@@ -755,11 +755,9 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         if(nhapHangHoa.dsHangNhapTrongBang.size() > 0){
             nhapHangHoa.choHangNhapVaoCSDL();
             nhapHangHoa.taoPhieuNhapHang();
-            //this.taoChiTietPhieuNhap();
+            nhapHangHoa.taoChiTietPhieuNhap();
             //this.nhapHangHoa.capNhatCongNoVaChiTietCongNo(jLabelMaPhieuNhpa.getText(), Integer.parseInt(jLabelConNo.getText()));
         }
-        
-        //this.taoChiTietCongNo();
     }//GEN-LAST:event_jButtonHoanThanhActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -791,29 +789,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         nhapHangHoa.taoChiTietCongNo(maCongNoNhaCungCap, maPhieuNhap, conNo);
     }
     
-    
-    
-    // Tạo phiếu nhập
-//    public void taoPhieuNhap(){
-//        
-//        // Lấy mã phiếu nhập 
-//        String maPhieuNhap = jLabelMaPhieuNhpa.getText();
-//        
-//        // Lấy mã nhà cung cấp từ tên nhà cung cấp trong comboBox
-//        String maNhaCungCap = nhapHangHoa.layMaNCCTrongComboBox();
-//        int tongTien = nhapHangHoa.layTongTien();
-//        int giaGiam = Integer.parseInt(jTextFieldGiaGiam.getText());
-//        int tienDaTra = Integer.parseInt(jTextFieldTienTra.getText());
-//        int conNo = tongTien - giaGiam - tienDaTra;
-//        String thoiGian = ControlUtils.layThoiGian();
-//        String ghiChu = jTextFieldGhiChu.getText();
-//        nhapHangHoa.taoPhieuNhap(maPhieuNhap, maNhaCungCap, tongTien, giaGiam, tienDaTra, conNo, thoiGian, ghiChu);
-//    }
-    
-    //Tạo chi tiết phiếu nhập
-    public void taoChiTietPhieuNhap(){
-        nhapHangHoa.taoChiTietPhieuNhap(jLabelMaPhieuNhpa.getText());
-    }
+
     /**
      * @param args the command line arguments
      */

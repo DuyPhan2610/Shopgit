@@ -16,12 +16,12 @@ import javax.swing.table.JTableHeader;
  *
  * @author USER
  */
-public class JPanel_Hoadon1 extends javax.swing.JPanel {
+public class HoaDon extends javax.swing.JPanel {
 
     /**
      * Creates new form NewJPanel
      */
-    public JPanel_Hoadon1() {
+    public HoaDon() {
         initComponents();
         JTableHeader theader = tb_hoadon.getTableHeader();
         tb_hoadon.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
@@ -925,7 +925,7 @@ public class JPanel_Hoadon1 extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 public static void main (String[] args) {
     JFrame frame_hoadon = new JFrame("HÓA ĐƠN BÁN HÀNG");
-    JPanel_Hoadon1 jp_hoadon = new JPanel_Hoadon1();
+    HoaDon jp_hoadon = new HoaDon();
     frame_hoadon.setVisible(true);
     frame_hoadon.setSize(1500, 1300);
     frame_hoadon.add(jp_hoadon);

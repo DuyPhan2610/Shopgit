@@ -89,12 +89,12 @@ public class NhapHangHoa {
             this.mTextFieldGhiChu = jTextFieldGhiChu;
             
             this.dsHangNhapTrongBang = new ArrayList<>();
-            bangHangHoa = new BangHangHoa(connection);
-            bangNhaCungCap = new BangNhaCungCap(connection);
-            bangPhieuNhapHang = new BangPhieuNhapHang(connection);
-            bangChiTietPhieuNhapHang = new BangChiTietPhieuNhapHang(connection);
-            bangCongNoNhaCungCap = new BangCongNoNhaCungCap(connection);
-            bangChiTietCongNoNhaCungCap = new BangChiTietCongNoNhaCungCap(connection);
+            bangHangHoa = new BangHangHoa(new ConnectionUtils().getMySQLConnection());
+            bangNhaCungCap = new BangNhaCungCap(new ConnectionUtils().getMySQLConnection());
+            bangPhieuNhapHang = new BangPhieuNhapHang(new ConnectionUtils().getMySQLConnection());
+            bangChiTietPhieuNhapHang = new BangChiTietPhieuNhapHang(new ConnectionUtils().getMySQLConnection());
+            bangCongNoNhaCungCap = new BangCongNoNhaCungCap(new ConnectionUtils().getMySQLConnection());
+            bangChiTietCongNoNhaCungCap = new BangChiTietCongNoNhaCungCap(new ConnectionUtils().getMySQLConnection());
             System.out.println("\nKet noi co so du lieu thanh cong");
         } catch (SQLException ex) {
             System.out.println("\nKet noi co so du lieu khong thanh cong");
@@ -238,11 +238,11 @@ public class NhapHangHoa {
     
     
     // Tạo chi tiết phiếu nhập hàng
-    public void taoChiTietPhieuNhap(String maPhieuNhap){
+    public void taoChiTietPhieuNhap(){
         
         for(int i = 0; i < this.dsHangNhapTrongBang.size(); i ++){
             ChiTietPhieuNhapHang chiTietPhieuNhapHang = new ChiTietPhieuNhapHang(this.dsHangNhapTrongBang.get(i).mMaHangHoa,
-                                                            maPhieuNhap, this.dsHangNhapTrongBang.get(i).mSoLuong);
+                                                            this.maPhieuNhap, this.dsHangNhapTrongBang.get(i).mSoLuong);
             bangChiTietPhieuNhapHang.themChiTietPhieuNhapHang(chiTietPhieuNhapHang);
         }
     }
@@ -295,6 +295,8 @@ public class NhapHangHoa {
     // Tạo phiếu nhập hàng
     public void taoPhieuNhapHang(){
         PhieuNhapHang phieuNhapHang = new PhieuNhapHang();
+
+
         phieuNhapHang.mTienDaTra = this.traTruoc;
         phieuNhapHang.mMaPhieuNhap = this.maPhieuNhap;
         phieuNhapHang.mMaNhaCungCap = this.layMaNCCTrongComboBox();

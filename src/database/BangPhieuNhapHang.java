@@ -46,10 +46,13 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
            preStatement.setInt(4, phieuNhapHang.mGiaGiam);
            preStatement.setInt(5, phieuNhapHang.mTienDaTra);
            preStatement.setString(6,phieuNhapHang.mThoiGian);
-           preStatement.setString(7, "");
+           preStatement.setString(7, phieuNhapHang.mGhiChu);
           
-           preStatement.execute();
-           System.out.print("\n thêm phiếu nhập hàng thành công");
+           boolean checkSuccess = preStatement.execute();
+           
+           if(checkSuccess)
+                System.out.print("\n thêm phiếu nhập hàng thành công");
+           
         } catch (SQLException ex) {
             System.out.print("\n thêm phiếu nhập hàng không thành công");
             Logger.getLogger(BangPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
