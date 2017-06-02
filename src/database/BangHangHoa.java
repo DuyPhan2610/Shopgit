@@ -5,6 +5,7 @@
  */
 package database;
 
+import DatabaseConnection.ConnectionUtils;
 import control.ControlUtils;
 
 
@@ -37,6 +38,31 @@ public class BangHangHoa extends TruyVanDuLieu{
         super(connection);
     }
 
+    
+    
+    
+    //lấy hàng hóa từ mã hàng hóa
+    public HangHoa layHangHoaTuMaHangHoa(String maHangHoa){
+        String sql = "select * from hanghoa where MAHANGHOA = ?";
+
+        try {
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maHangHoa);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                    rs.first();
+                    //System.out.println(rs.getString("MAHANGHOA"));
+                    HangHoa hangHoa = new HangHoa(rs);
+                    rs.close();
+                    return hangHoa;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       return null;
+    }
     
     public String xoaMotHangHoaTuMaHangHoa(String maHangHoa){
         return "delete from hanghoa where MAHANGHOA = " + maHangHoa;
