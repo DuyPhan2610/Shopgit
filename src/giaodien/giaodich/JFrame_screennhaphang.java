@@ -5,14 +5,10 @@
  */
 package giaodien.giaodich;
 
-import control.ControlUtils;
 import control.NhapHangHoa;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -334,6 +330,11 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Arial Unicode MS", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("Trở về");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(238, 150, 84));
         jButton7.setFont(new java.awt.Font("Arial Unicode MS", 1, 12)); // NOI18N
@@ -777,18 +778,13 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         this.capNhatPhieuNhap();
     }//GEN-LAST:event_tb_screennhaphangAncestorAdded
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        nhapHangHoa.taoLai();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     
-    //Tạo chi tiết công nợ
-    public void taoChiTietCongNo(){
-        String maCongNoNhaCungCap = nhapHangHoa.layMaCongNoNCCTrongComboBox();
-        String maPhieuNhap = jLabelMaPhieuNhpa.getText();
-        int tongTien = nhapHangHoa.layTongTien();
-        int giaGiam = Integer.parseInt(jTextFieldGiaGiam.getText());
-        int tienDaTra = Integer.parseInt(jTextFieldTienTra.getText());
-        int conNo = tongTien - giaGiam - tienDaTra;
-        
-        nhapHangHoa.taoChiTietCongNo(maCongNoNhaCungCap, maPhieuNhap, conNo);
-    }
+
     
 
     /**

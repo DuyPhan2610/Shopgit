@@ -51,12 +51,13 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
     
      
      
-     //Update lại công nợ
-     public void capNhatCongNo(){
+     //Update lại công nợ của từ mã nhà cung cấp
+     public void capNhatCongNo(String maNhaCungCap){
          Statement statement;
         try {
+            String sql = "";
             statement = connection.createStatement();
-            statement.executeUpdate("");
+            statement.executeUpdate(sql);
         } catch (SQLException ex) {
             Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
         }

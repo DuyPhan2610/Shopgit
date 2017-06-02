@@ -78,20 +78,39 @@ public class BangNhaCungCap extends TruyVanDuLieu{
      return nhaCungCap;
    }
    
+   //Lấy mã NCC từ tên NCC
+   // lấy Nha Cung Cấp từ tên nhà cung cấp
+   public String layMaNhaCungCap(String tenNhaCungCap){
+       String maNhaCungCap = null;
+       String sql = "select * from nhacungcap ncc where ncc.TENNHACUNGCAP = ?";
+       PreparedStatement preStatement;
+       try {
+           preStatement = connection.prepareStatement(sql);
+           preStatement.setString(1, tenNhaCungCap);
+           ResultSet rs = preStatement.executeQuery();
+           maNhaCungCap = rs.getString("MANHACUNGCAP");
+       } catch (SQLException ex) {
+           Logger.getLogger(BangNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+       }
+     return maNhaCungCap;
+   }
+   
+   
    //Lấy tất cả các nhà cung cấp có trong csdl
     public ArrayList<NhaCungCap> layTatCaNhaCungCapTrongCSDL(){
         
         ArrayList<NhaCungCap> arlNhaCungCap = new ArrayList<>();
-        try {
-
             // thực hiện câu truy vấn đưa kết quả vào result set
             ResultSet rs = this.selectData(CauTruyVan.selectedStatement("nhacungcap"));
+            
+        try {
+            int size = rs.getRow();
             while(rs.next()){
                 arlNhaCungCap.add(new NhaCungCap(rs));
+                
             }
-            
         } catch (SQLException ex) {
-            Logger.getLogger(NhapHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BangNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return arlNhaCungCap;

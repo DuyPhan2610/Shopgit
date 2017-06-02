@@ -71,7 +71,7 @@ public class NhapHangHoa {
     public int conNo = 0;
     public String maPhieuNhap;
     public DocFile docFile;
-    
+   
     
     public NhapHangHoa(JTable table, JComboBox comboBox, JLabel jLabelMaPhieuNhap, JLabel jLabelTongTien
                         ,JLabel jLabelConNo, JTextField jTextFieldGiamGia, JTextField jTextFieldTraTruoc, JTextField jTextFieldGhiChu){
@@ -115,7 +115,7 @@ public class NhapHangHoa {
         tongTien = this.layTongTien();
         giamGia = Integer.parseInt(this.mTextFieldGiamGia.getText());
         traTruoc = Integer.parseInt(this.mTextFieldTraTruoc.getText());
-        int conNo = tongTien - giamGia - traTruoc;
+        conNo = tongTien - giamGia - traTruoc;
         
         this.mLabelTongTien.setText(String.valueOf(tongTien));
         this.mLabelConNo.setText(String.valueOf(conNo));
@@ -227,12 +227,12 @@ public class NhapHangHoa {
     }
     
     
-    //Cập nhật lại công nợ và chi tiết công nợ
-    public void capNhatCongNoVaChiTietCongNo(String maPhieuNhap, int conNo){
+    //Tạo chi tiết công nợ sau đó cập nhật lại công nợ nhà cung cấp
+    public void capNhatCongNoVaChiTietCongNo(){
         ChiTietCongNoNhaCungCap chiTietCongNoNhaCungCap = new ChiTietCongNoNhaCungCap();
         chiTietCongNoNhaCungCap.mMaCongNoNhaCungCap = this.layMaCongNoNCCTrongComboBox();
-        chiTietCongNoNhaCungCap.mMaPhieuNhap = maPhieuNhap;
-        chiTietCongNoNhaCungCap.mTongNo = conNo;
+        chiTietCongNoNhaCungCap.mMaPhieuNhap = this.maPhieuNhap;
+        chiTietCongNoNhaCungCap.mTongNo = this.conNo;
         bangChiTietCongNoNhaCungCap.themChiTietCongNoNhaCungCap(chiTietCongNoNhaCungCap);
     }
     
@@ -269,10 +269,18 @@ public class NhapHangHoa {
         return null;
     }
     
-    //Lấy mã công nợ trong ComboBox
+    
+    //Tạo lại bảng hàng hóa và phiếu nhập hàng
+    public void taoLai(){
+        this.model.setRowCount(0);
+        this.capNhatManHinhPhieuNhapHang();
+    }
+    
+    //Lấy mã công nợ NCC trong ComboBox
     public String layMaCongNoNCCTrongComboBox(){
         // lấy mã nhà cung cấp từ bảng nhà cung cấp
-        return bangNhaCungCap.layNhaCungCap((String)comboBox.getSelectedItem()).mMaCongNoNhaCungCap;
+        NhaCungCap ncc = this.layNCCTrongComboBox();
+        return ncc.mMaCongNoNhaCungCap;
     }
     
     
@@ -325,11 +333,6 @@ public class NhapHangHoa {
         bangNhaCungCap.themNhaCungCap(nhaCungCap);
     }
     
-    // Tạo chi tiết công nợ nhà cung cấp
-     public void taoChiTietCongNo(String maNhaCungCap, String maPhieuNhap, int tongNo){
-         ChiTietCongNoNhaCungCap chiTietCongNoNhaCungcap = new ChiTietCongNoNhaCungCap(maNhaCungCap, maPhieuNhap, tongNo);
-         bangChiTietCongNoNhaCungCap.themChiTietCongNoNhaCungCap(chiTietCongNoNhaCungcap);
-     }
     
     // khi nhấn nút lưu thì kiểm tra
     //kiểm tra có trùng mã hàng hóa khi nhập dữ liệu không

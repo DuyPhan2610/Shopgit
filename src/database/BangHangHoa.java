@@ -6,7 +6,6 @@
 package database;
 
 import control.ControlUtils;
-import control.NhapHangHoa;
 
 
 import entities.HangHoa;

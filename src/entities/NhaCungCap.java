@@ -33,6 +33,7 @@ public class NhaCungCap {
    }
    
    public NhaCungCap(ResultSet rs){
+
         try {
             this.mTenNhaCungCap = rs.getString(BangNhaCungCap.TEN_CUA_NHA_CUNG_CAP);
             this.mDiaChi = rs.getString(BangNhaCungCap.DIA_CHI);
@@ -44,5 +45,7 @@ public class NhaCungCap {
         } catch (SQLException ex) {
             Logger.getLogger(NhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
         }
+            
+        
    }
 }

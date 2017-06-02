@@ -7,7 +7,6 @@ package control;
 
 import database.BangChiTietPhieuTraHangNhap;
 import database.BangPhieuTraHangNhap;
-import entities.ChiTietPhieuNhapHang;
 import entities.ChiTietPhieuTraHangNhap;
 import entities.HangHoa;
 import entities.HangNhap;
