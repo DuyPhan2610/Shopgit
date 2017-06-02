@@ -12,8 +12,11 @@ import database.BangHangHoa;
 import database.BangHoaDonBanHang;
 import database.BangKhachHang;
 import DatabaseConnection.ConnectionUtils;
+import entities.HangHoa;
+import entities.HangNhap;
 import entities.HoaDonBanHang;
 import entities.KhachHang;
+import entities.NhanVien;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -31,18 +35,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class LapHoaDonBanHang {
     
-    public JTextField mTextFieldMaHangHoa;
+    
     public JTable mTableBangHangHoa;
     public DefaultTableModel model;
     public JComboBox<String> mComboBoxTenNhanVien;
+    
     public JLabel mLabelMaNhanVien;
     public JLabel mLabelMaHoaDonBanHang;
     public JLabel mLabelTenKhachHang;
     public JLabel mLabelMaKhachHang;
     public JLabel mLabelTongTien;
     public JLabel mLabelGiaGiam;
-    public JTextField mTextFieldDaTra;
     public JLabel mLabelConNo;
+    
+    public JTextField mTextFieldMaHangHoa;
+    public JTextField mTextFieldDaTra;
     public JTextField mTextFieldGhiChu;
     
     
@@ -55,26 +62,103 @@ public class LapHoaDonBanHang {
     public BangCongNoCuaKhachHang bangCongNoCuaKhachHang;
     public BangChiTietNoCuaKhachHang bangChiTietNoCuaKhachHang;
     
+    public String maHangHoa;
     
-    public LapHoaDonBanHang (JTextField mTextFieldMaHangHoa, JTable mTableBangHangHoa,
-            DefaultTableModel model, JComboBox<String> mComboBoxTenNhanVien,
-     JLabel mLabelMaNhanVien,JLabel mLabelMaHoaDonBanHang,
-     JLabel mLabelTenKhachHang,JLabel mLabelMaKhachHang,
-     JLabel mLabelTongTien,JLabel mLabelGiaGiam,
-     JTextField mTextFieldDaTra,JLabel mLabelConNo,JTextField mTextFieldGhiChu) {
+    public LapHoaDonBanHang (JTextField textFieldMaHangHoa, JTable tableBangHangHoa,
+                    JComboBox<String> comboBoxTenNhanVien,
+                    JLabel labelMaNhanVien,JLabel labelMaHoaDonBanHang,
+                    JLabel labelTenKhachHang,JLabel labelMaKhachHang,
+                    JLabel labelTongTien,JLabel labelGiaGiam,
+                    JTextField textFieldDaTra,JLabel labelConNo,JTextField textFieldGhiChu) {
         
+        this.mComboBoxTenNhanVien = comboBoxTenNhanVien;
+        this.mTableBangHangHoa = tableBangHangHoa;
+        
+        this.mLabelMaNhanVien = labelMaNhanVien;
+        this.mLabelConNo = labelConNo;
+        this.mLabelGiaGiam = labelGiaGiam;
+        this.mLabelMaHoaDonBanHang = labelMaHoaDonBanHang;
+        this.mLabelMaKhachHang = labelMaKhachHang;
+        this.mLabelTongTien = labelTongTien;
+        this.mLabelTenKhachHang = labelTenKhachHang;
+        
+        this.mTextFieldDaTra = textFieldDaTra;
+        this.mTextFieldGhiChu = textFieldGhiChu;
+        this.mTextFieldMaHangHoa = textFieldMaHangHoa;
+        
+        
+        try {
+            this.bangChiTietHoaDonBanHang = new BangChiTietHoaDonBanHang(new ConnectionUtils().getMySQLConnection());
+            this.bangChiTietNoCuaKhachHang = new BangChiTietNoCuaKhachHang(new ConnectionUtils().getMySQLConnection());
+            this.bangCongNoCuaKhachHang = new BangCongNoCuaKhachHang(new ConnectionUtils().getMySQLConnection());
+            this.bangHangHoa = new BangHangHoa(new ConnectionUtils().getMySQLConnection());
+            this.bangHoaDonBanHang = new BangHoaDonBanHang(new ConnectionUtils().getMySQLConnection());
+            this.bangKhachHang = new BangKhachHang(new ConnectionUtils().getMySQLConnection());
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(LapHoaDonBanHang.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LapHoaDonBanHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    //cập nhật các textField
+    public void capNhapCacTextField(){
+        this.maHangHoa = this.mTextFieldMaHangHoa.getText();
+    }
+    
+    
+    
+    //thêm hàng hóa tìm được vào bảng
+    public void themHangHoaVaoBang(){
+        HangHoa hangHoa = bangHangHoa.layHangHoaTuMaHangHoa(this.maHangHoa);
+        // nếu không tìm thấy hàng hóa phù hợp thì hiện thông báo
+        if(hangHoa == null){
+            JOptionPane.showMessageDialog(null, "Mã hàng hóa không đúng", "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+            if(hangHoa.mTonKho < 1){
+                JOptionPane.showMessageDialog(null, "Hàng hóa đã hết!", "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+            model.addRow(new Object[]{hangHoa.mMaHangHoa, hangHoa.mTenHangHoa,
+                                1,  hangHoa.mGiaBan, 0, hangHoa.mGiaBan});
+            }
+        }
+    }
+    
+    
+    //cập nhật lại bảng khi thay đổi số lượng hàng hóa
+    public void capNhatBangKhiSuaSoLuong(){
+        if(this.model.getRowCount() > 0){
+            for(int i = 0; i < this.model.getRowCount(); i ++){
+                int thanhTien = (Integer)this.model.getValueAt(i, 2) * (Integer)this.model.getValueAt(i, 3)
+                                        - (Integer)this.model.getValueAt(i, 4) * (Integer)this.model.getValueAt(i, 2);
+                this.model.setValueAt(thanhTien, i, 5);
+            }
+        }
+    }
+    
+    
+    
+  
+    
+    //Lấy danh sách hàng hóa trong bảng
+    public ArrayList<HangHoa> layDSHangHoaTrongBang(){
+        
+        return null;
     }
     
     //Thêm danh sách khách hàng vào comboBox
-    public void themKhachHangVaoComboBox(){
-        ArrayList<KhachHang> arlKhachHang = bangKhachHang.layTatCaKhachHangTrongCSDL();
-        if(arlKhachHang.size() >0){
-            for (int i=0; i < arlKhachHang.size(); i++){
-                comboBox.addItem(arlKhachHang.get(i).mTenKhachHang); //lấy tên khách hàng thứ i và show lên màn hình
-            }
-            comboBox.setSelectedIndex(0);
-        }
-    }
+//    public void themKhachHangVaoComboBox(){
+//        ArrayList<KhachHang> arlKhachHang = bangKhachHang.layTatCaKhachHangTrongCSDL();
+//        if(arlKhachHang.size() >0){
+//            for (int i=0; i < arlKhachHang.size(); i++){
+//                this.mComboBoxTenNhanVien.addItem(arlKhachHang.get(i).mTenKhachHang); //lấy tên khách hàng thứ i và show lên màn hình
+//            }
+//            comboBox.setSelectedIndex(0);
+//        }
+//    }
     
     //Thêm từng dữ liệu vào table
     public void themMotHangBanVaoBang(HoaDonBanHang hoaDonBanHang){

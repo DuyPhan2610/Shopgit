@@ -113,8 +113,7 @@ public class NhapHangHoa {
         this.ghiChu = this.mTextFieldGhiChu.getText();
         
         this.mTextFieldGhiChu.setText("");
-        this.mTextFieldGiamGia.setText(String.valueOf(0));
-        this.mTextFieldTraTruoc.setText(String.valueOf(0));
+        
         
         tongTien = this.layTongTien();
         giamGia = Integer.parseInt(this.mTextFieldGiamGia.getText());
@@ -277,6 +276,8 @@ public class NhapHangHoa {
     //Tạo lại bảng hàng hóa và phiếu nhập hàng
     public void taoLai(){
         this.model.setRowCount(0);
+        this.mTextFieldGiamGia.setText(String.valueOf(0));
+        this.mTextFieldTraTruoc.setText(String.valueOf(0));
         this.capNhatManHinhPhieuNhapHang();
     }
     

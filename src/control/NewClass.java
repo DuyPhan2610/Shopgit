@@ -6,8 +6,12 @@
 package control;
 
 import DatabaseConnection.ConnectionUtils;
+import database.BangHangHoa;
 import database.BangPhieuNhapHang;
+import entities.HangHoa;
 import entities.PhieuNhapHang;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.logging.Level;
@@ -19,33 +23,34 @@ import java.util.logging.Logger;
  */
 public class NewClass {
     public static void main(String[] args){
-        
-        
+        System.out.println(layHangHoaTuMaHangHoa("SP000008").mMaHangHoa);
+            
     }
     
-    public void taoPhieuNhapHang(){
-        BangPhieuNhapHang bangPhieuNhapHang = null;
+    //lấy hàng hóa từ mã hàng hóa
+    public static HangHoa layHangHoaTuMaHangHoa(String maHangHoa){
+        String sql = "select * from hanghoa where MAHANGHOA = ?";
+
         try {
-            bangPhieuNhapHang = new BangPhieuNhapHang(new ConnectionUtils().getMySQLConnection());
+            PreparedStatement preStatement = new ConnectionUtils().getMySQLConnection().prepareStatement(sql);
+            preStatement.setString(1, maHangHoa);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                    rs.first();
+                    //System.out.println(rs.getString("MAHANGHOA"));
+                    HangHoa hangHoa = new HangHoa(rs);
+                    rs.close();
+                    return hangHoa;
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        PhieuNhapHang phieuNhapHang = new PhieuNhapHang();
-        phieuNhapHang.mTienDaTra = 10000;
-        phieuNhapHang.mMaPhieuNhap = "PN000004";
-        phieuNhapHang.mMaNhaCungCap = "NCC00001";
-        phieuNhapHang.mGhiChu = "khong co";
-        phieuNhapHang.mGiaGiam = 1000;
-        phieuNhapHang.mThoiGian = ControlUtils.layThoiGian();
-        phieuNhapHang.mTongTien = 10000000;
-          bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
-        bangPhieuNhapHang.closeDatabase();
+
+       return null;
     }
-    
-    
     
      // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
     public static String taoMaHangHoa(String str){
