@@ -541,7 +541,7 @@ public class NhapHang extends javax.swing.JPanel {
 
     private void btnPNH_NhaphangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPNH_NhaphangActionPerformed
         // TODO add your handling code here:
-       JFrame_screennhaphang jp2 = new JFrame_screennhaphang();
+       CuaSoNhapHang jp2 = new CuaSoNhapHang();
        jp2.setVisible(true);
     }//GEN-LAST:event_btnPNH_NhaphangActionPerformed
 

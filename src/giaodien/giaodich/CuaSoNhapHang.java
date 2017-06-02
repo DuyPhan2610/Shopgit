@@ -18,7 +18,7 @@ import javax.swing.table.JTableHeader;
  *
  * @author USER
  */
-public class JFrame_screennhaphang extends javax.swing.JFrame {
+public class CuaSoNhapHang extends javax.swing.JFrame {
 
     /**
      * Creates new form screennhaphang
@@ -26,7 +26,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     
     
     
-    public JFrame_screennhaphang(){
+    public CuaSoNhapHang(){
         initComponents();
         JTableHeader theader = tb_screennhaphang.getTableHeader();
         tb_screennhaphang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
@@ -793,7 +793,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
     
     
     public static void main(String[] args){
-        JFrame_screennhaphang nhapHang = new JFrame_screennhaphang();
+        CuaSoNhapHang nhapHang = new CuaSoNhapHang();
         nhapHang.setVisible(true);
     }
 
