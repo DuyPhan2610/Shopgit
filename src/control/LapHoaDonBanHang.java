@@ -20,43 +20,49 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author USER
  */
-public class BanHang {
-    public javax.swing.JTable tb_banhang;
+public class LapHoaDonBanHang {
+    
+    public JTextField mTextFieldMaHangHoa;
+    public JTable mTableBangHangHoa;
     public DefaultTableModel model;
+    public JComboBox<String> mComboBoxTenNhanVien;
+    public JLabel mLabelMaNhanVien;
+    public JLabel mLabelMaHoaDonBanHang;
+    public JLabel mLabelTenKhachHang;
+    public JLabel mLabelMaKhachHang;
+    public JLabel mLabelTongTien;
+    public JLabel mLabelGiaGiam;
+    public JTextField mTextFieldDaTra;
+    public JLabel mLabelConNo;
+    public JTextField mTextFieldGhiChu;
+    
+    
+    
+  
     public BangHangHoa bangHangHoa;
     public BangKhachHang bangKhachHang;
     public BangHoaDonBanHang bangHoaDonBanHang;
     public BangChiTietHoaDonBanHang bangChiTietHoaDonBanHang;
     public BangCongNoCuaKhachHang bangCongNoCuaKhachHang;
     public BangChiTietNoCuaKhachHang bangChiTietNoCuaKhachHang;
-    public JComboBox<String> comboBox;
-    public Connection connection;
     
-    public BanHang (JTable table, JComboBox comboBox) {
-        this.tb_banhang = table;
-        try {
-            connection = new ConnectionUtils().getMySQLConnection();
-            this.comboBox =comboBox;
-            model = (DefaultTableModel) tb_banhang.getModel();
-            bangHangHoa = new BangHangHoa(connection);
-            bangKhachHang = new BangKhachHang(connection);
-            bangHoaDonBanHang = new BangHoaDonBanHang(connection);
-            bangChiTietHoaDonBanHang = new BangChiTietHoaDonBanHang(connection);
-            bangCongNoCuaKhachHang = new BangCongNoCuaKhachHang(connection);
-            bangChiTietNoCuaKhachHang = new BangChiTietNoCuaKhachHang(connection);
-            System.out.println("\n Ket noi co so du lieu thanh cong");
-        } catch (SQLException ex) {
-            System.out.println("\n Ket noi co so du lieu khong thanh cong");
-        } catch (ClassNotFoundException ex) {
-            System.out.println("\n Ket noi co so du lieu khong thanh cong");
-        }
+    
+    public LapHoaDonBanHang (JTextField mTextFieldMaHangHoa, JTable mTableBangHangHoa,
+            DefaultTableModel model, JComboBox<String> mComboBoxTenNhanVien,
+     JLabel mLabelMaNhanVien,JLabel mLabelMaHoaDonBanHang,
+     JLabel mLabelTenKhachHang,JLabel mLabelMaKhachHang,
+     JLabel mLabelTongTien,JLabel mLabelGiaGiam,
+     JTextField mTextFieldDaTra,JLabel mLabelConNo,JTextField mTextFieldGhiChu) {
+        
     }
     
     //Thêm danh sách khách hàng vào comboBox

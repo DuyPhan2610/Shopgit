@@ -112,6 +112,10 @@ public class NhapHangHoa {
         this.mLabelMaPhieuNhap.setText(maPhieuNhap);
         this.ghiChu = this.mTextFieldGhiChu.getText();
         
+        this.mTextFieldGhiChu.setText("");
+        this.mTextFieldGiamGia.setText(String.valueOf(0));
+        this.mTextFieldTraTruoc.setText(String.valueOf(0));
+        
         tongTien = this.layTongTien();
         giamGia = Integer.parseInt(this.mTextFieldGiamGia.getText());
         traTruoc = Integer.parseInt(this.mTextFieldTraTruoc.getText());
