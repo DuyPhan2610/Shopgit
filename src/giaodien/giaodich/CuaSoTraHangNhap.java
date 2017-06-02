@@ -159,7 +159,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         });
 
         jTextField3.setBackground(new java.awt.Color(218, 247, 233));
-        jTextField3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(102, 102, 102));
         jTextField3.setText("Nhà cung cấp chưa xác định");
         jTextField3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -171,14 +171,14 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(218, 247, 233));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Mã phiếu nhập:");
 
         jTextField4.setForeground(new java.awt.Color(102, 102, 102));
         jTextField4.setToolTipText("Mã phiếu tự động");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Trạng thái:");
 
@@ -220,14 +220,14 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(218, 247, 233));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Tổng tiền hàng ");
 
         jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField5.setText("0");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Giảm giá");
 
         jLabel7.setBackground(new java.awt.Color(153, 153, 153));
@@ -240,7 +240,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("0 ");
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Tiền nhà cung cấp đã trả ");
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -252,7 +252,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Tính vào công nợ");
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -379,7 +379,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
                     .addComponent(tf_screentrahangnhap_timnhacungcap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

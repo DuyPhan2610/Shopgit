@@ -84,11 +84,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jButtonLuu" min="-2" pref="79" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButtonBoQua" max="32767" attributes="0"/>
+                          <Component id="jButtonBoQua" pref="133" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jTextFieldGhiChu" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextFieldEmail" min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="jTextFieldEmail" pref="230" max="32767" attributes="0"/>
                       <Component id="jTextFieldDiaChi" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
@@ -98,7 +98,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jComboBox1" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -118,43 +127,31 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextFieldDiaChi" min="-2" pref="34" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldDiaChi" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="jTextFieldMaCongNoNhaCungCap" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="jTextFieldTenNhaCungCap" min="-2" pref="34" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldGhiChu" min="-2" pref="83" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldTenNhaCungCap" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jComboBox1" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <EmptySpace pref="97" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonBoQua" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="jButtonLuu" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
@@ -196,7 +193,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial" size="30" style="1"/>
+                  <Font name="Tahoma" size="30" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -209,7 +206,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe0; cung c&#x1ea5;p"/>
           </Properties>
@@ -217,7 +214,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="M&#xe3; c&#xf4;ng n&#x1ee3; nh&#xe0; cung c&#x1ea5;p"/>
           </Properties>
@@ -225,7 +222,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nh&#xf3;m nh&#xe0; cung c&#x1ea5;p"/>
           </Properties>
@@ -233,7 +230,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
           </Properties>
@@ -241,7 +238,7 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
@@ -249,7 +246,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ghi ch&#xfa;"/>
           </Properties>
@@ -257,7 +254,7 @@
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="16" style="1"/>
+              <Font name="Tahoma" size="16" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe0; cung c&#x1ea5;p"/>
           </Properties>
@@ -274,8 +271,6 @@
         <Component class="javax.swing.JTextField" name="jTextFieldEmail">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldDiaChi">
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldGhiChu">
         </Component>
         <Component class="javax.swing.JButton" name="jButtonLuu">
           <Properties>
@@ -325,6 +320,21 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextAreaGhiChu">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

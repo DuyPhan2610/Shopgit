@@ -121,7 +121,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setText("Nhập hàng");
 
         btnNhaphang_themhanghoa.setBackground(new java.awt.Color(0, 135, 51));
@@ -179,7 +179,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(218, 247, 233));
 
         jTextFieldMaNCC.setBackground(new java.awt.Color(218, 247, 233));
-        jTextFieldMaNCC.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jTextFieldMaNCC.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextFieldMaNCC.setForeground(new java.awt.Color(102, 102, 102));
         jTextFieldMaNCC.setText("Nhà cung cấp chưa xác định");
         jTextFieldMaNCC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -191,14 +191,15 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(218, 247, 233));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Mã phiếu nhập:");
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Trạng thái:");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Phiếu tạm");
 
@@ -223,12 +224,12 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(104, 104, 104)
-                                .addComponent(jLabelMaPhieuNhpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jLabelMaPhieuNhpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addComponent(jButtonThanhToan)
                     .addComponent(jLabel3))
                 .addContainerGap())
@@ -250,28 +251,28 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(218, 247, 233));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Tổng tiền ");
 
         jTextFieldGiaGiam.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextFieldGiaGiam.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldGiaGiam.setText("0");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Giảm giá");
 
         jLabelTongTien.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabelTongTien.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelTongTien.setText("0 ");
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Tiền trả cho nhà cung cấp");
 
         jTextFieldTienTra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextFieldTienTra.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldTienTra.setText("0");
 
-        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Còn nợ");
 
         jLabelConNo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -400,7 +401,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addComponent(jComboBoxNCC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jTextFieldMaNCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -595,7 +596,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ghi chú", jPanel5);
@@ -670,7 +671,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 113, Short.MAX_VALUE))
+                        .addGap(0, 103, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -686,7 +687,7 @@ public class JFrame_screennhaphang extends javax.swing.JFrame {
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );

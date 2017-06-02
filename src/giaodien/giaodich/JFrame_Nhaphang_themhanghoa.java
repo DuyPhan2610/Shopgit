@@ -75,7 +75,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 51));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Thêm hàng hóa");
 
@@ -98,7 +98,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Mã hàng hóa");
 
         jTextFieldMaHangHoa.setForeground(new java.awt.Color(102, 102, 102));
@@ -109,12 +109,12 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Tên hàng");
 
         jTextFieldTenHangHoa.setForeground(new java.awt.Color(102, 102, 102));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Nhóm hàng");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -133,7 +133,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
             .addComponent(jComboBoxNhomHangHoa, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Số lượng");
 
         jTextFieldSoLuong.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -142,7 +142,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         jTextFieldSoLuong.setText("0");
 
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Lưu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +152,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 199, 126));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Arial Unicode MS", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Bỏ qua");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +166,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         jTextFieldDonGia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldDonGia.setText("0");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Đơn giá");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -176,26 +176,23 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel6))
-                                .addGap(57, 57, 57)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextFieldTenHangHoa)
-                                        .addComponent(jTextFieldMaHangHoa, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6))
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldDonGia, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldTenHangHoa)
+                                .addComponent(jTextFieldMaHangHoa, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

@@ -233,7 +233,7 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                              <EmptySpace pref="23" max="32767" attributes="0"/>
                               <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
@@ -276,7 +276,7 @@
                           <Color blue="e9" green="f7" red="da" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Arial" size="11" style="1"/>
+                          <Font name="Tahoma" size="11" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
@@ -342,7 +342,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel2">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
+                              <Font name="Tahoma" size="14" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -361,7 +361,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel3">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
+                              <Font name="Tahoma" size="14" style="0"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="66" green="66" red="66" type="rgb"/>
@@ -462,7 +462,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel5">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
+                              <Font name="Tahoma" size="14" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="T&#x1ed5;ng ti&#x1ec1;n h&#xe0;ng "/>
                           </Properties>
@@ -479,7 +479,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel6">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
+                              <Font name="Tahoma" size="14" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Gi&#x1ea3;m gi&#xe1;"/>
                           </Properties>
@@ -509,7 +509,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel11">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="0"/>
+                              <Font name="Tahoma" size="14" style="0"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="Ti&#x1ec1;n nh&#xe0; cung c&#x1ea5;p &#x111;&#xe3; tr&#x1ea3; "/>
                           </Properties>
@@ -529,7 +529,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel12">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Arial" size="14" style="1"/>
+                              <Font name="Tahoma" size="14" style="1"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="T&#xed;nh v&#xe0;o c&#xf4;ng n&#x1ee3;"/>
                           </Properties>

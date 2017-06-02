@@ -106,7 +106,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel2.setText("Mã nhập hàng:");
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -116,12 +116,12 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabel3.setToolTipText("Gucci");
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel4.setText("Thời gian:");
 
         jTextField1.setToolTipText("VD: 25/7/2017 21:00");
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setText("Nhà cung cấp:");
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -129,7 +129,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabel6.setText(" PN000001");
         jLabel6.setToolTipText("VD: PN000001");
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel7.setText("Trạng thái:");
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -158,7 +158,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTableChiTietPhieuNhapHang);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Ghi chú ...");
 
@@ -201,28 +201,28 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel14.setText("Tổng tiền: ");
 
         jTextFieldGiaGiam1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextFieldGiaGiam1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldGiaGiam1.setText("0");
 
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel15.setText("Giảm giá:");
 
         jLabelTongTien1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabelTongTien1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelTongTien1.setText("0 ");
 
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel16.setText("Tiền trả cho nhà cung cấp:");
 
         jTextFieldTienTra1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextFieldTienTra1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldTienTra1.setText("0");
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Còn nợ");
 
         jLabelConNo1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -230,7 +230,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabelConNo1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelConNo1.setText("0 ");
 
-        jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel18.setText("Tổng số mặt hàng:");
 
         jLabelTongTien2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -253,12 +253,12 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabelConNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addComponent(jTextFieldTienTra1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                         .addComponent(jLabelTongTien2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -340,7 +340,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)))))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -417,7 +417,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
 
         pack();

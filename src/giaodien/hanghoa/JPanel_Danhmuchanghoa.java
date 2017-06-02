@@ -8,6 +8,7 @@ package giaodien.hanghoa;
 import giaodien.utils.TableCellRendererColor;
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -690,8 +691,7 @@ public class JPanel_Danhmuchanghoa extends javax.swing.JPanel {
 
     private void btn_themmoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_themmoiActionPerformed
         // TODO add your handling code here:
-        JFrame_Themhanghoa jf1 = new JFrame_Themhanghoa();
-        jf1.setVisible(true);
+      
     }//GEN-LAST:event_btn_themmoiActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
@@ -776,4 +776,14 @@ public class JPanel_Danhmuchanghoa extends javax.swing.JPanel {
     private javax.swing.JPanel panel_muctonkho;
     private javax.swing.JTextField tf_timkiem;
     // End of variables declaration//GEN-END:variables
+public static void main (String[] args) {
+    JFrame frame = new JFrame("DANH MỤC HÀNG HÓA");
+    JPanel_Danhmuchanghoa jp1 = new JPanel_Danhmuchanghoa();
+    frame.setVisible(true);
+    frame.setSize(1300,800);
+    frame.add(jp1);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+     
+    
+}
 }

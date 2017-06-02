@@ -93,7 +93,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
 
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
         jTextField1.setText("Tìm mặt hàng . . .");
-        jTextField1.setToolTipText("");
+        jTextField1.setToolTipText("Tìm mặt hàng . . .");
 
         jComboBox1.setBackground(new java.awt.Color(0, 153, 51));
         jComboBox1.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
@@ -239,7 +239,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
         jTextField4.setToolTipText("Thời gian");
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Bảng giá chung");
         jLabel1.setOpaque(true);
 
@@ -289,28 +289,28 @@ public class CuaSoBanHang extends javax.swing.JFrame {
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel9.setText("Tổng tiền hàng");
 
         jTextFieldGiaGiam2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextFieldGiaGiam2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldGiaGiam2.setText("0");
 
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("Giảm giá");
 
         jLabelTongTien2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabelTongTien2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelTongTien2.setText("0 ");
 
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setText("Khách cần trả");
 
         jTextFieldTienTra2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextFieldTienTra2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldTienTra2.setText("0");
 
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel16.setText("Tiền thừa trả khách");
 
         jLabelConNo2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -318,17 +318,17 @@ public class CuaSoBanHang extends javax.swing.JFrame {
         jLabelConNo2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelConNo2.setText("0 ");
 
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel17.setText("Mã hàng hóa");
 
         jLabel2.setToolTipText("VD : SP000001");
 
-        jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setText("Tên hàng");
 
         jLabel3.setToolTipText("VD: Sơ mi  Dior");
 
-        jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setText("Số lượng");
 
         jLabel4.setToolTipText("VD: 2");
@@ -358,7 +358,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
                             .addComponent(jLabel15)
                             .addComponent(jLabel9)
                             .addComponent(jLabel16))
-                        .addGap(180, 214, Short.MAX_VALUE)
+                        .addGap(180, 218, Short.MAX_VALUE)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelConNo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabelTongTien2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -415,7 +415,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(102, 102, 102));
         jLabel20.setText("Ghi chú");
 
@@ -444,7 +444,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabelTenNhanVien.setText("jLabel5");
+        jLabelTenNhanVien.setText(" Tên nhân viên bán hàng");
         jLabelTenNhanVien.setToolTipText("VD: Duy");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -458,7 +458,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabelTenNhanVien)
+                        .addComponent(jLabelTenNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

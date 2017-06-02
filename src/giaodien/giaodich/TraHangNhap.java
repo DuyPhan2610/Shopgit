@@ -61,7 +61,6 @@ public class TraHangNhap extends javax.swing.JPanel {
         jPanel12 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnTrangthai = new javax.swing.JButton();
-        checkBox_trangthai1 = new javax.swing.JCheckBox();
         checkBox_trangthai2 = new javax.swing.JCheckBox();
         checkBox_trangthai3 = new javax.swing.JCheckBox();
         jPanel20 = new javax.swing.JPanel();
@@ -78,7 +77,7 @@ public class TraHangNhap extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_phieutrahangnhap = new javax.swing.JTable();
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setText("Phiếu trả hàng nhập");
 
         btnTrahangnhap.setBackground(new java.awt.Color(0, 135, 204));
@@ -133,7 +132,7 @@ public class TraHangNhap extends javax.swing.JPanel {
         jPanel28.setBackground(new java.awt.Color(0, 153, 51));
 
         jLabel13.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText(" Tìm kiếm");
         jLabel13.setOpaque(true);
@@ -222,7 +221,7 @@ public class TraHangNhap extends javax.swing.JPanel {
         jPanel12.setBackground(new java.awt.Color(0, 153, 51));
 
         jLabel5.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" Trạng thái");
         jLabel5.setOpaque(true);
@@ -256,16 +255,12 @@ public class TraHangNhap extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        checkBox_trangthai1.setBackground(new java.awt.Color(255, 255, 255));
-        checkBox_trangthai1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        checkBox_trangthai1.setText("Phiếu tạm");
-
         checkBox_trangthai2.setBackground(new java.awt.Color(255, 255, 255));
-        checkBox_trangthai2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        checkBox_trangthai2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBox_trangthai2.setText(" Đã hủy");
 
         checkBox_trangthai3.setBackground(new java.awt.Color(255, 255, 255));
-        checkBox_trangthai3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        checkBox_trangthai3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBox_trangthai3.setText("Đã trả hàng");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -279,19 +274,16 @@ public class TraHangNhap extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(checkBox_trangthai3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkBox_trangthai2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkBox_trangthai1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(checkBox_trangthai2, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(checkBox_trangthai1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addComponent(checkBox_trangthai3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(checkBox_trangthai2)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -301,7 +293,7 @@ public class TraHangNhap extends javax.swing.JPanel {
         jPanel21.setBackground(new java.awt.Color(0, 153, 51));
 
         jLabel9.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText(" Thời gian");
         jLabel9.setOpaque(true);
@@ -323,12 +315,12 @@ public class TraHangNhap extends javax.swing.JPanel {
         );
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton1.setText(" Toàn thời gian");
         jRadioButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setText(" Lựa chọn khác");
         jRadioButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -336,22 +328,23 @@ public class TraHangNhap extends javax.swing.JPanel {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
         );
@@ -361,7 +354,7 @@ public class TraHangNhap extends javax.swing.JPanel {
         jPanel22.setBackground(new java.awt.Color(0, 153, 51));
 
         jLabel10.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText(" Lựa chọn hiển thị");
         jLabel10.setOpaque(true);
@@ -378,10 +371,10 @@ public class TraHangNhap extends javax.swing.JPanel {
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(jLabel10)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText(" Số bản ghi:");
 
         jComboBox3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -498,7 +491,7 @@ public class TraHangNhap extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -525,12 +518,12 @@ public class TraHangNhap extends javax.swing.JPanel {
     private void btnTrangthaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrangthaiActionPerformed
         // TODO add your handling code here:
         btnTrangthai.addActionListener(e -> {
-            if (!checkBox_trangthai1.isVisible() && !checkBox_trangthai2.isVisible()) {
-                checkBox_trangthai1.setVisible(true);
+            if ( !checkBox_trangthai2.isVisible()) {
+                
                 checkBox_trangthai2.setVisible(true);
             } else
             {
-                checkBox_trangthai1.setVisible(false);
+               
                 checkBox_trangthai2.setVisible(false);
             }
         });
@@ -541,7 +534,6 @@ public class TraHangNhap extends javax.swing.JPanel {
     private javax.swing.JButton btnTimkiem;
     private javax.swing.JButton btnTrahangnhap;
     private javax.swing.JButton btnTrangthai;
-    private javax.swing.JCheckBox checkBox_trangthai1;
     private javax.swing.JCheckBox checkBox_trangthai2;
     private javax.swing.JCheckBox checkBox_trangthai3;
     private javax.swing.JButton jButton2;

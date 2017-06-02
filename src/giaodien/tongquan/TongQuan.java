@@ -106,23 +106,26 @@ public class TongQuan extends javax.swing.JPanel {
         Toppanel.setBackground(new java.awt.Color(255, 255, 255));
         Toppanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setText("Bán hàng hôm nay:");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("KẾT QUẢ BÁN HÀNG HÔM NAY");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Hoá đơn");
 
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Doanh số");
 
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
         jLabel7.setText("Trả hàng");
 
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setText("So với hôm qua");
 
         javax.swing.GroupLayout ToppanelLayout = new javax.swing.GroupLayout(Toppanel);
         Toppanel.setLayout(ToppanelLayout);
         ToppanelLayout.setHorizontalGroup(
             ToppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ToppanelLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(ToppanelLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addGroup(ToppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,6 +137,9 @@ public class TongQuan extends javax.swing.JPanel {
                         .addGap(138, 138, 138)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(123, Short.MAX_VALUE))
+            .addGroup(ToppanelLayout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         ToppanelLayout.setVerticalGroup(
             ToppanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,12 +161,12 @@ public class TongQuan extends javax.swing.JPanel {
         List.setPreferredSize(new java.awt.Dimension(200, 250));
         List.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setText("Các hoạt động gần đây:");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setText("CÁC HOẠT ĐỘNG GẦN ĐÂY");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         List.add(jLabel1, gridBagConstraints);
 
-        jList1.setBackground(new java.awt.Color(204, 204, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -182,13 +188,15 @@ public class TongQuan extends javax.swing.JPanel {
         Detailpanel.setBackground(new java.awt.Color(255, 255, 255));
         Detailpanel.setLayout(new java.awt.GridBagLayout());
 
-        jLabel5.setText("Nhật ký doanh thu");
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("NHẬT KÍ DOANH THU");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 66;
         Detailpanel.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setText("Top 5 sản phẩm bán chạy nhất:");
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setText("TOP 5 SẢN PHẨM BÁN CHẠY NHẤT");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -213,7 +221,7 @@ public class TongQuan extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         Detailpanel.add(jComboBox2, gridBagConstraints);
 
-        graph.setBackground(new java.awt.Color(153, 153, 255));
+        graph.setBackground(new java.awt.Color(255, 255, 255));
         graph.setLayout(new java.awt.BorderLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -225,7 +233,7 @@ public class TongQuan extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(4, 10, 2, 0);
         Detailpanel.add(graph, gridBagConstraints);
 
-        graph1.setBackground(new java.awt.Color(51, 255, 51));
+        graph1.setBackground(new java.awt.Color(255, 255, 255));
         graph1.setLayout(new java.awt.BorderLayout());
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
