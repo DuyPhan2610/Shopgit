@@ -72,7 +72,7 @@ public class HangHoa {
         this.mTenHangHoa = hangNhap.mTenHangHoa;
         this.mGiaBan = 0;
         this.mGiaVon = (int)hangNhap.mGiaMua;
-        this.mTonKho = 0;
+        this.mTonKho = (int)hangNhap.mSoLuong;
         this.mNhomHangHoa = hangNhap.mNhomHangHoa;
         this.mDinhMucTonItNhat = 0;
         this.mDinhMucTonNhieuNhat = 0;
