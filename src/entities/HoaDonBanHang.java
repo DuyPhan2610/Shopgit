@@ -2,19 +2,16 @@ package entities;
 
 
 import database.BangHoaDonBanHang;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 
 public class HoaDonBanHang {
     public String mMaHoaDonBanHang, mMaKhachHang, mGhiChu, mMaNhanVien;
     public String mThoiGian;
    
-    public int  mGiaGiam, mKhachDaTra, mConNo;
+    public int  mGiaGiam, mKhachDaTra, mTongTien;
     
     
     public HoaDonBanHang(){}
@@ -22,7 +19,7 @@ public class HoaDonBanHang {
             String ghiChu, int giaGiam, int khachDaTra, int conNo,
              String thoiGian ){
              
-        this.mConNo = conNo;
+        this.mTongTien = conNo;
         this.mGhiChu = ghiChu;
         this.mGiaGiam = giaGiam;
         this.mKhachDaTra = khachDaTra;
@@ -40,9 +37,9 @@ public class HoaDonBanHang {
             this.mMaKhachHang = rs.getString(BangHoaDonBanHang.MA_KHACH_HANG);
             this.mGiaGiam = rs.getInt(BangHoaDonBanHang.GIA_GIAM);
             this.mKhachDaTra = rs.getInt(BangHoaDonBanHang.KHACH_DA_TRA);
-            this.mConNo = rs.getInt(BangHoaDonBanHang.CON_NO);
-            this.mGhiChu =rs.getString(BangHoaDonBanHang.GHI_CHU);
-            this.mThoiGian =rs.getString(BangHoaDonBanHang.THOI_GIAN);
+            this.mTongTien = rs.getInt(BangHoaDonBanHang.TONG_TIEN);
+            this.mGhiChu = rs.getString(BangHoaDonBanHang.GHI_CHU);
+            this.mThoiGian = rs.getString(BangHoaDonBanHang.THOI_GIAN);
            
             
         } catch (SQLException ex) {

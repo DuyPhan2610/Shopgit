@@ -758,6 +758,8 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
             nhapHangHoa.choHangNhapVaoCSDL();
             nhapHangHoa.taoPhieuNhapHang();
             nhapHangHoa.taoChiTietPhieuNhap();
+            nhapHangHoa.capNhatChiTietCongNo();
+            nhapHangHoa.capNhatBangCongNoNCC();
             //this.nhapHangHoa.capNhatCongNoVaChiTietCongNo(jLabelMaPhieuNhpa.getText(), Integer.parseInt(jLabelConNo.getText()));
         }
     }//GEN-LAST:event_jButtonHoanThanhActionPerformed

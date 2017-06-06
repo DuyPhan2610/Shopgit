@@ -5,9 +5,7 @@
  */
 package database;
 
-import control.NhapHangHoa;
 import entities.ChiTietHoaDonBanHang;
-import entities.HangHoa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

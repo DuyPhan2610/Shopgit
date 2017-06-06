@@ -52,16 +52,51 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
      
      
      //Update lại công nợ của từ mã nhà cung cấp
-     public void capNhatCongNo(String maNhaCungCap){
-         Statement statement;
+     public void capNhatCongNo(String maCongNoNhaCungCap){
+         
+         ResultSet rs = null;
+         
+         
         try {
-            String sql = "";
-            statement = connection.createStatement();
-            statement.executeUpdate(sql);
+
+            String sql = "SELECT MACONGNONHACUNGCAP, SUM(TONGNO) as TONGTIEN "
+                    + "FROM chitietcongnonhacungcap where MACONGNONHACUNGCAP = ? "
+                    + "GROUP BY chitietcongnonhacungcap.MACONGNONHACUNGCAP";
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maCongNoNhaCungCap);
+            rs = preStatement.executeQuery();
+            System.out.println("\n Tính SUM bảng chitietcongnonhacungcap thành công");
+            // rs.getString(MACONGNONHACUNGCAP);
+            // rs.getInt(TONGTIEN);
         } catch (SQLException ex) {
             Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            
+                    
         }
          
+        if(rs != null){
+            try {
+                    rs.first();
+                    int tongTien = (int)rs.getInt("TONGTIEN");
+                    String maNCC = rs.getString("MACONGNONHACUNGCAP");
+                    
+                    String sql = "update congnonhacungcap SET TONGNO = ?, NOCANTRA = ? where MACONGNONHACUNGCAP = ?";
+                    PreparedStatement preStatement = connection.prepareStatement(sql);//
+                                      
+                    preStatement.setInt(1, tongTien);//
+                    preStatement.setInt(2, tongTien);//
+                    preStatement.setString(3, maNCC);
+
+                    int r = preStatement.executeUpdate();
+                    System.out.println("\n Cập nhật Bảng công nợ thành công" + tongTien+ r);
+
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
      }
      
      

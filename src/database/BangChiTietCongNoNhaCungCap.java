@@ -64,4 +64,6 @@ public class BangChiTietCongNoNhaCungCap extends TruyVanDuLieu{
         }
        return arlChiTietCongNoNhaCungCap;
     }
+     
+     
 }

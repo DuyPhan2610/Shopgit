@@ -231,12 +231,17 @@ public class NhapHangHoa {
     
     
     //Tạo chi tiết công nợ sau đó cập nhật lại công nợ nhà cung cấp
-    public void capNhatCongNoVaChiTietCongNo(){
+    public void capNhatChiTietCongNo(){
         ChiTietCongNoNhaCungCap chiTietCongNoNhaCungCap = new ChiTietCongNoNhaCungCap();
         chiTietCongNoNhaCungCap.mMaCongNoNhaCungCap = this.layMaCongNoNCCTrongComboBox();
         chiTietCongNoNhaCungCap.mMaPhieuNhap = this.maPhieuNhap;
         chiTietCongNoNhaCungCap.mTongNo = this.conNo;
         bangChiTietCongNoNhaCungCap.themChiTietCongNoNhaCungCap(chiTietCongNoNhaCungCap);
+    }
+    
+    //Cập nhật lại Bảng công nợ nhà cung cấp
+    public void capNhatBangCongNoNCC(){
+        this.bangCongNoNhaCungCap.capNhatCongNo(this.layMaCongNoNCCTrongComboBox());
     }
     
     
@@ -320,6 +325,8 @@ public class NhapHangHoa {
         bangPhieuNhapHang.themPhieuNhapHang(phieuNhapHang);
     }
     
+    
+    // cập nhật công nợ của nhà cung cấp
     
     
     // Tạo mới nhà cung cấp(trước hết phải tạo công nợ của nhà cung cấp)
