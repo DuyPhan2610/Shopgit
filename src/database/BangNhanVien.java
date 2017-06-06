@@ -24,7 +24,7 @@ public class BangNhanVien extends TruyVanDuLieu{
     public final static String MA_NHAN_VIEN ="MANHANVIEN";
     public final static String TEN_NHAN_VIEN ="TENNHANVIEN";
     public final static String SO_DIEN_THOAI ="SODIENTHOAI";
-    public final static String NGAY_SINH ="NGAY_SINH";
+    public final static String NGAY_SINH = "NGAYSINH";
     public final static String DIA_CHI ="DIACHI";
     public final static String GHI_CHU ="GHICHU";
 
@@ -39,7 +39,7 @@ public class BangNhanVien extends TruyVanDuLieu{
             preStatement.setString(1, nhanVien.mMaNhanVien);
             preStatement.setString(2, nhanVien.mTenNhanVien);
             preStatement.setString(3, nhanVien.mSoDienThoai);
-            preStatement.setInt(4, nhanVien.mNgaySinh);
+            preStatement.setString(4, nhanVien.mNgaySinh);
             preStatement.setString(5, nhanVien.mDiaChi);
             preStatement.setString(6, nhanVien.mGhiChu);
             
