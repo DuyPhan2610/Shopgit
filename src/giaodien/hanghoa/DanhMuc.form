@@ -894,17 +894,15 @@
                       <Font name="Arial" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="10" rowCount="8">
-                        <Column editable="true" title="M&#xe3; h&#xe0;ng h&#xf3;a" type="java.lang.Object"/>
-                        <Column editable="true" title="T&#xea;n h&#xe0;ng" type="java.lang.Object"/>
-                        <Column editable="true" title="Nh&#xf3;m h&#xe0;ng" type="java.lang.Object"/>
-                        <Column editable="true" title="Lo&#x1ea1;i h&#xe0;ng" type="java.lang.Object"/>
-                        <Column editable="true" title="Gi&#xe1; b&#xe1;n" type="java.lang.Object"/>
-                        <Column editable="true" title="Gi&#xe1; v&#x1ed1;n" type="java.lang.Object"/>
-                        <Column editable="true" title="T&#x1ed3;n kho" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;&#x1ecb;nh m&#x1ee9;c t&#x1ed3;n &#xed;t nh&#x1ea5;t" type="java.lang.Object"/>
-                        <Column editable="true" title="&#x110;&#x1ecb;nh m&#x1ee9;c t&#x1ed3;n nhi&#x1ec1;u nh&#x1ea5;t" type="java.lang.Object"/>
-                        <Column editable="true" title="Tr&#x1ea1;ng th&#xe1;i" type="java.lang.Object"/>
+                      <Table columnCount="8" rowCount="0">
+                        <Column editable="false" title="M&#xe3; h&#xe0;ng h&#xf3;a" type="java.lang.String"/>
+                        <Column editable="false" title="T&#xea;n h&#xe0;ng" type="java.lang.String"/>
+                        <Column editable="false" title="Nh&#xf3;m h&#xe0;ng" type="java.lang.String"/>
+                        <Column editable="false" title="Gi&#xe1; v&#x1ed1;n" type="java.lang.Integer"/>
+                        <Column editable="false" title="Gi&#xe1; b&#xe1;n" type="java.lang.Integer"/>
+                        <Column editable="false" title="T&#x1ed3;n kho" type="java.lang.Integer"/>
+                        <Column editable="false" title="&#x110;&#x1ecb;nh m&#x1ee9;c t&#x1ed3;n &#xed;t nh&#x1ea5;t" type="java.lang.Integer"/>
+                        <Column editable="false" title="&#x110;&#x1ecb;nh m&#x1ee9;c t&#x1ed3;n nhi&#x1ec1;u nh&#x1ea5;t" type="java.lang.Integer"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -934,11 +932,6 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
@@ -950,11 +943,6 @@
                           <Renderer/>
                         </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="200" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
