@@ -54,10 +54,10 @@ public class HangHoa {
         try {
             this.mMaHangHoa = rs.getString(BangHangHoa.HANG_HOA_MA_HANG_HOA);
             this.mTenHangHoa = rs.getString(BangHangHoa.HANG_HOA_TEN_HANG_HOA);
-            this.mNhomHangHoa = rs.getString(BangHangHoa.HANG_HOA_NHOM_HANG_HOA);
             this.mGiaBan = rs.getInt(BangHangHoa.HANG_HOA_GIA_BAN);
             this.mGiaVon = rs.getInt(BangHangHoa.HANG_HOA_GIA_VON);
             this.mTonKho = rs.getInt(BangHangHoa.HANG_HOA_TON_KHO);
+            this.mNhomHangHoa = rs.getString(BangHangHoa.HANG_HOA_NHOM_HANG_HOA);
             this.mDinhMucTonItNhat = rs.getInt(BangHangHoa.HANG_HOA_TON_IT_NHAT);
             this.mDinhMucTonNhieuNhat = rs.getInt(BangHangHoa.HANG_HOA_TON_NHIEU_NHAT);
             
