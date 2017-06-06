@@ -110,6 +110,7 @@ public class LapHoaDonBanHang {
             Logger.getLogger(LapHoaDonBanHang.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.taoMaHoaDon();
+        this.themTenNhanVienVaoComboBox();
     }
     
     //cập nhật các textField
@@ -137,7 +138,7 @@ public class LapHoaDonBanHang {
 //                                1,  hangHoa.mGiaBan, 0, hangHoa.mGiaBan});
             
                 model.addRow(new Object[]{hangHoa.mMaHangHoa, hangHoa.mTenHangHoa,
-                                1,  hangHoa.mGiaVon * 1.5, 0});
+                                1,  hangHoa.mGiaBan, 0});
             }
         }
     }
@@ -239,6 +240,8 @@ public class LapHoaDonBanHang {
     
     //cập nhật bảng hóa đơn bán hàng
     public void taoHoaDonBanHang(){
+        this.layMaNhanVienTrongComboBox();
+        this.tienDaTra = Integer.parseInt(this.mTextFieldDaTra.getText());
         HoaDonBanHang hoaDonBanHang = new HoaDonBanHang();
         hoaDonBanHang.mTongTien = this.tongTienHoaDon;
         hoaDonBanHang.mGhiChu = this.mTextFieldGhiChu.getText();
