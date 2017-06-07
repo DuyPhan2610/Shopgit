@@ -78,6 +78,31 @@ public class BangNhaCungCap extends TruyVanDuLieu{
      return nhaCungCap;
    }
    
+   
+   // lấy Nha Cung Cấp từ mã nhà cung cấp
+   public NhaCungCap layNhaCungCapTuMaNCC(String maNCC){
+       NhaCungCap nhaCungCap = null;
+       String sql = "select * from nhacungcap ncc where ncc.MANHACUNGCAP = ?";
+       PreparedStatement preStatement;
+       try {
+           preStatement = connection.prepareStatement(sql);
+           preStatement.setString(1, maNCC);
+           ResultSet rs = preStatement.executeQuery();
+           rs.first();
+           
+//           String maNCCap = rs.getString("MANHACUNGCAP");
+//           String maCongNoNCC = rs.getString("MACONGNONHACUNGCAP");
+           String tenNCC = rs.getString("TENNHACUNGCAP");
+           
+           //System.out.println("\n" + maNCCap + " " + maCongNoNCC + " " + tenNCC);
+           nhaCungCap = new NhaCungCap(rs);
+       } catch (SQLException ex) {
+           Logger.getLogger(BangNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+       }
+     return nhaCungCap;
+   }
+   
+   
    //Lấy mã NCC từ tên NCC
    // lấy Nha Cung Cấp từ tên nhà cung cấp
    public String layMaNhaCungCap(String tenNhaCungCap){

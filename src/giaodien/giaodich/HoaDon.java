@@ -5,6 +5,7 @@
  */
 package giaodien.giaodich;
 
+import control.CHoaDonBanHang;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JFrame;
@@ -21,6 +22,7 @@ public class HoaDon extends javax.swing.JPanel {
     /**
      * Creates new form NewJPanel
      */
+    CHoaDonBanHang hoaDonBanHang;
     public HoaDon() {
         initComponents();
         JTableHeader theader = tb_hoadon.getTableHeader();
@@ -32,6 +34,9 @@ public class HoaDon extends javax.swing.JPanel {
                .setHorizontalAlignment(JLabel.LEFT);
        tb_hoadon.setFont(new Font("Arial",Font.PLAIN,14));
        tb_hoadon.setRowHeight(30);
+       
+       this.hoaDonBanHang = new CHoaDonBanHang(tb_hoadon);
+       this.hoaDonBanHang.duaDuLieuVaoBang();
     }
 
     /**
@@ -166,39 +171,27 @@ public class HoaDon extends javax.swing.JPanel {
 
         tb_hoadon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Mã hóa đơn", "Thời gian", "Khách hàng", "Tổng tiền hàng", "Giam giá", "Khách đã trả"
+                "Mã hóa đơn", "Tổng tiền hàng", "Giảm giá", "Khách đã trả", "Thời gian", "Ghi chú"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tb_hoadon);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

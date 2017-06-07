@@ -34,11 +34,11 @@ public class PhieuNhapHang {
     
     public PhieuNhapHang(ResultSet rs){
         try {
-            this.mMaPhieuNhap = rs.getString(BangPhieuNhapHang.MA_PHIEU_NHAP);
-            this.mMaNhaCungCap = rs.getString(BangPhieuNhapHang.MA_PHIEU_NHAP);
-            this.mTongTien = rs.getInt(BangPhieuNhapHang.TONG_TIEN);
-            this.mTienDaTra = rs.getInt(BangPhieuNhapHang.TIEN_DA_TRA);
-            this.mGiaGiam = rs.getInt(BangPhieuNhapHang.GIA_GIAM);
+            this.mMaPhieuNhap = rs.getString(1);
+            this.mMaNhaCungCap = rs.getString(2);
+            this.mTongTien = rs.getInt(3);
+            this.mTienDaTra = rs.getInt(4);
+            this.mGiaGiam = rs.getInt(5);
             this.mThoiGian = rs.getString(BangPhieuNhapHang.THOI_GIAN);
             this.mGhiChu = rs.getString(BangPhieuNhapHang.GHI_CHU);
             

@@ -6,6 +6,7 @@ package giaodien.hanghoa;
  * and open the template in the editor.
  */
 
+import control.DanhMucHangHoa;
 import giaodien.utils.TableCellRendererColor;
 import database.TruyVanDuLieu;
 import control.DocFile;
@@ -28,6 +29,8 @@ public class DanhMuc extends javax.swing.JPanel {
     /**
      * Creates new form JPanel_Danhmuchanghoa
      */
+    public DanhMucHangHoa danhMucHangHoa;
+    
     public DanhMuc() {
         initComponents();
         JTableHeader theader = jTable3.getTableHeader();
@@ -37,6 +40,10 @@ public class DanhMuc extends javax.swing.JPanel {
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
        jTable3.setFont(new Font("Arial",Font.PLAIN,14));
+       
+       
+       this.danhMucHangHoa = new DanhMucHangHoa(jTable3);
+       this.danhMucHangHoa.duaDuLieuVaoBang();
     }
 
     /**

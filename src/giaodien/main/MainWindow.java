@@ -5,7 +5,7 @@ import giaodien.giaodich.TraHangNhap;
 import giaodien.doitac.DoiTacKhachHang;
 import giaodien.doitac.DoiTacNhaCungCap;
 import giaodien.giaodich.HoaDon;
-import giaodien.giaodich.NhapHang;
+import giaodien.giaodich.PhieuNhapHang;
 import giaodien.giaodich.TraHang;
 import giaodien.hanghoa.DanhMuc;
 import giaodien.hanghoa.ThietLapGia;
@@ -38,7 +38,7 @@ public class MainWindow extends javax.swing.JFrame {
         jPanelNhaCungCap = new DoiTacNhaCungCap();
     
         jPanelTraHangNhap = new TraHangNhap();
-        jPanelNhapHang = new NhapHang();
+        jPanelNhapHang = new PhieuNhapHang();
         jPanelTraHang = new TraHang();
         jPanelHoaDon = new HoaDon();
        
@@ -373,7 +373,7 @@ public class MainWindow extends javax.swing.JFrame {
     private DoiTacNhaCungCap jPanelNhaCungCap;
     
     private TraHangNhap jPanelTraHangNhap;
-    private NhapHang jPanelNhapHang;
+    private PhieuNhapHang jPanelNhapHang;
     private TraHang jPanelTraHang;
     private HoaDon jPanelHoaDon;
             

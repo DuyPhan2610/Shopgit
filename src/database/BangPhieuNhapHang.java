@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 public class BangPhieuNhapHang extends TruyVanDuLieu{
     
     public final static String MA_PHIEU_NHAP = "MAPHIEUNHAP";
-    public final static String MA_NHA_CUNG_CAP = "MANHACUNGCAP";
+    public final static String MA_NHA_CUNG_CAP = "phieunhaphang.MANHACUNGCAP";
     public final static String TONG_TIEN = "TONGTIEN";
     public final static String GIA_GIAM = "GIAGIAM";
     public final static String TIEN_DA_TRA = "TIENDATRA";
