@@ -77,6 +77,7 @@ public class CPhieuNhapHang {
     public void xemChiTietHoaDon(){
         int rowNum = this.mTable.getSelectedRow();
         String maPhieuNhap = (String)this.mModel.getValueAt(rowNum, 0);
+        
         CuaSoChiTietPhieuNhapHang cuaSoChiTietHoaDon = new CuaSoChiTietPhieuNhapHang(maPhieuNhap);
         cuaSoChiTietHoaDon.setVisible(true);
         

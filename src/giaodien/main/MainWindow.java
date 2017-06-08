@@ -30,23 +30,12 @@ public class MainWindow extends javax.swing.JFrame {
      * Creates new form MainWindow
      */
     public MainWindow() {
-        jPanelTongQuan = new TongQuan();
-        jPanelDanhMuc = new DanhMuc();
-        jPanelThietLapGia = new ThietLapGia();
-        
-        jPanelKhachHang = new DoiTacKhachHang();
-        jPanelNhaCungCap = new DoiTacNhaCungCap();
-    
-        jPanelTraHangNhap = new TraHangNhap();
-        jPanelNhapHang = new PhieuNhapHang();
-        jPanelTraHang = new TraHang();
-        jPanelHoaDon = new HoaDon();
-       
+
         
         initComponents();
         
         
-        this.veLaiFrame(jPanelTongQuan);
+        this.veLaiFrame(new TongQuan());
     }
 
     /**
@@ -260,12 +249,12 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jMenuItemThietLapGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemThietLapGiaActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelThietLapGia);
+        this.veLaiFrame(new ThietLapGia());
     }//GEN-LAST:event_jMenuItemThietLapGiaActionPerformed
 
     private void jMenuItemDanhMucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemDanhMucActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelDanhMuc);
+        this.veLaiFrame(new DanhMuc());
     }//GEN-LAST:event_jMenuItemDanhMucActionPerformed
 
     private void jMenuTongQuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuTongQuanActionPerformed
@@ -279,22 +268,22 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jMenuItemHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHoaDonActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelHoaDon);
+        this.veLaiFrame(new HoaDon());
     }//GEN-LAST:event_jMenuItemHoaDonActionPerformed
 
     private void jMenuItemTraHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTraHangActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelTraHang);
+        this.veLaiFrame(new TraHang());
     }//GEN-LAST:event_jMenuItemTraHangActionPerformed
 
     private void jMenuItemTraHangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTraHangNhapActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelTraHangNhap);
+        this.veLaiFrame(new TraHangNhap());
     }//GEN-LAST:event_jMenuItemTraHangNhapActionPerformed
 
     private void jMenuItemNhaCungCapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNhaCungCapActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelNhaCungCap);
+        this.veLaiFrame(new DoiTacNhaCungCap());
     }//GEN-LAST:event_jMenuItemNhaCungCapActionPerformed
 
     private void jMenuItemBCKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBCKhachHangActionPerformed
@@ -308,17 +297,17 @@ public class MainWindow extends javax.swing.JFrame {
     private void jMenuItemTongQuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTongQuanActionPerformed
         // TODO add your handling code here:
         
-        this.veLaiFrame(jPanelTongQuan);
+        this.veLaiFrame(new TongQuan());
     }//GEN-LAST:event_jMenuItemTongQuanActionPerformed
 
     private void jMenuItemNhapHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNhapHangActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelNhapHang);
+        this.veLaiFrame(new PhieuNhapHang());
     }//GEN-LAST:event_jMenuItemNhapHangActionPerformed
 
     private void jMenuItemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemKhachHangActionPerformed
         // TODO add your handling code here:
-        this.veLaiFrame(jPanelKhachHang);
+        this.veLaiFrame(new DoiTacKhachHang());
     }//GEN-LAST:event_jMenuItemKhachHangActionPerformed
 
     /**

@@ -121,7 +121,7 @@ public class JFrame_Nhaphang_themhanghoa extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         jComboBoxNhomHangHoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBoxNhomHangHoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quần áo", "Giày dép", "Phụ kiện" }));
+        jComboBoxNhomHangHoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Áo sơ mi", "Áo phông", "Quần", "Giày", "Phụ kiện" }));
         jComboBoxNhomHangHoa.setToolTipText("");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);

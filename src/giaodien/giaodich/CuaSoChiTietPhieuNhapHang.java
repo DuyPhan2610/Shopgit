@@ -45,7 +45,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
     
     public CuaSoChiTietPhieuNhapHang(String maPhieuNhap) {
         initComponents();
-        this.maPhieuNhap = maPhieuNhap;
+        
         JTableHeader theader = jTableChiTietPhieuNhapHang.getTableHeader();
         jTableChiTietPhieuNhapHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
@@ -55,8 +55,11 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
                .setHorizontalAlignment(JLabel.LEFT);
        jTableChiTietPhieuNhapHang.setFont(new Font("Arial",Font.PLAIN,14));
        jTableChiTietPhieuNhapHang.setRowHeight(30);
-       
        this.mModel = (DefaultTableModel) jTableChiTietPhieuNhapHang.getModel();
+       
+       this.maPhieuNhap = maPhieuNhap;
+       
+       
        
         try {
             this.bangChiTietPhieuNhapHang = new BangChiTietPhieuNhapHang(new ConnectionUtils().getMySQLConnection());
@@ -77,15 +80,18 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
     public void ganGiaTriChoCacLabel(){
         entities.PhieuNhapHang pnh = this.bangPhieuNhapHang.layPhieuNhapTuMaPhieuNhap(this.maPhieuNhap);
         NhaCungCap ncc = this.bangNhaCungCap.layNhaCungCapTuMaNCC(pnh.mMaNhaCungCap);
-        ArrayList<ChiTietPhieuNhapHang> dsCTPNH = bangChiTietPhieuNhapHang.layChiTietPhieuNhapTuMaPhieuNhap(maPhieuNhap);
+        ArrayList<ChiTietPhieuNhapHang> dsCTPNH = bangChiTietPhieuNhapHang.layChiTietPhieuNhapTuMaPhieuNhap(pnh.mMaPhieuNhap);
         int tongSo = 0;
         for(int i = 0; i < dsCTPNH.size(); i ++){
-            HangHoa hh = bangHangHoa.layHangHoaTuMaHangHoa(dsCTPNH.get(i).mMaHangHoa);
-
             int soLuong = dsCTPNH.get(i).mSoLuong;
             tongSo += soLuong;
-            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa
-                                , soLuong, hh.mGiaVon, soLuong * hh.mGiaVon});
+            HangHoa hh = bangHangHoa.layHangHoaTuMaHangHoa(dsCTPNH.get(i).mMaHangHoa);
+  
+           this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa
+                                , soLuong, hh.mGiaVon, (soLuong * hh.mGiaVon)});
+           
+           
+            
         }
         
         
@@ -203,11 +209,11 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mã hàng hóa", "Tên hàng", "Số lượng", "Gía mua", "Thành tiền"
+                "Mã hàng hóa", "Tên hàng", "Số lượng", "Đơn giá", "Thành tiền"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
