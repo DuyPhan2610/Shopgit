@@ -54,7 +54,7 @@ public class ThietLapGia extends javax.swing.JPanel {
         jPanelSideBarLeft = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldMaHH = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
@@ -85,10 +85,15 @@ public class ThietLapGia extends javax.swing.JPanel {
         jLabel3.setText(" Nhóm hàng");
         jLabel3.setOpaque(true);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextFieldMaHH.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất cả", "Áo sơ mi", "Áo phông", "Quần", "Giày", "Phụ kiện" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setBackground(new java.awt.Color(0, 135, 51));
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -120,7 +125,7 @@ public class ThietLapGia extends javax.swing.JPanel {
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanelSideBarLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldMaHH, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanelSideBarLeftLayout.setVerticalGroup(
@@ -129,7 +134,7 @@ public class ThietLapGia extends javax.swing.JPanel {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldMaHH, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addGap(18, 18, 18)
@@ -297,12 +302,30 @@ public class ThietLapGia extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        if(!this.jTextFieldMaHH.getText().toString().isEmpty()){
+            this.thayDoiHangHoa.timHangHoaBangMa(this.jTextFieldMaHH.getText());
+        }else{
+            this.thayDoiHangHoa.duaDuLieuVaoBang();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         this.thayDoiHangHoa.capNhatGia();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        String nhomHH = this.jComboBox3.getSelectedItem().toString();
+        
+        if(!nhomHH.equals(this.jComboBox3.getItemAt(0))){
+            this.thayDoiHangHoa.locTheoNhomHangHoa(nhomHH);
+        }
+        else
+            this.thayDoiHangHoa.duaDuLieuVaoBang();
+        
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -320,6 +343,6 @@ public class ThietLapGia extends javax.swing.JPanel {
     private javax.swing.JPanel jPanelTop;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldMaHH;
     // End of variables declaration//GEN-END:variables
 }

@@ -50,6 +50,9 @@ public class CThietLapGia {
     //thêm đưa danh sách dữ liệu hàng hóa vào bảng
     public void duaDuLieuVaoBang(){
         this.ganGiaTriChoDSHangHoa();
+        while(mModel.getRowCount() > 0){
+                mModel.removeRow(0);
+            }
         if(this.dsHangHoa != null){
             for(int i = 0; i < this.dsHangHoa.size(); i ++){
                 HangHoa hh = dsHangHoa.get(i);
@@ -98,5 +101,39 @@ public class CThietLapGia {
         ghiFile.taoFileBangGiaHangHoa(dsHHTrongTable);
     }
     
+    
+    // tìm hàng hóa bằng mã
+    public void timHangHoaBangMa(String maHangHoa){
+        
+        HangHoa hh = bangHangHoa.layHangHoaTuMaHangHoa(maHangHoa);
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
+        if(hh != null){
+            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan});
+        }
+    }
+    
+     // lọc theo nhóm quần áo
+    public void locTheoNhomHangHoa(String nhomHangHoa){
+
+            while(mModel.getRowCount() > 0){
+                mModel.removeRow(0);
+            }
+            this.ganGiaTriChoDSHangHoa();
+            if(this.dsHangHoa != null){
+                for(int i = 0; i < this.dsHangHoa.size(); i ++){
+                    HangHoa hh = dsHangHoa.get(i);
+                    if(hh.mNhomHangHoa.equals(nhomHangHoa)){
+                                this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                    hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                    , hh.mDinhMucTonNhieuNhat});
+                    }
+                }
+            }
+               
+       
+    }
     
 }

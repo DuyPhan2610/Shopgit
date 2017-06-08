@@ -49,6 +49,9 @@ public class CDanhMuc {
     //thêm đưa danh sách dữ liệu hàng hóa vào bảng
     public void duaDuLieuVaoBang(){
         this.ganGiaTriChoDSHangHoa();
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
         if(this.dsHangHoa != null){
             for(int i = 0; i < this.dsHangHoa.size(); i ++){
                 HangHoa hh = dsHangHoa.get(i);
@@ -208,9 +211,6 @@ public class CDanhMuc {
             while(mModel.getRowCount() > 0){
                 mModel.removeRow(0);
             }
-
-        
-            
             this.ganGiaTriChoDSHangHoa();
             if(this.dsHangHoa != null){
                 for(int i = 0; i < this.dsHangHoa.size(); i ++){

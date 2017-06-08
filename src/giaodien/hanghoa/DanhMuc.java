@@ -645,7 +645,13 @@ public class DanhMuc extends javax.swing.JPanel {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         String nhomHH = this.jComboBox1.getSelectedItem().toString();
-        this.danhMucHangHoa.locTheoNhomHangHoa(nhomHH);
+        
+        if(!nhomHH.equals(this.jComboBox1.getItemAt(0))){
+            this.danhMucHangHoa.locTheoNhomHangHoa(nhomHH);
+        }
+        else
+            this.danhMucHangHoa.duaDuLieuVaoBang();
+        
     }//GEN-LAST:event_jComboBox1ActionPerformed
     
     
