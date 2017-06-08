@@ -1,6 +1,7 @@
 package giaodien.main;
 
 
+import giaodien.baocao.ManHinhBaoCaoBanHang1;
 import giaodien.giaodich.TraHangNhap;
 import giaodien.doitac.DoiTacKhachHang;
 import giaodien.doitac.DoiTacNhaCungCap;
@@ -185,6 +186,11 @@ public class MainWindow extends javax.swing.JFrame {
         jMenuBaoCao.add(jMenuItemCuoiNgay);
 
         jMenuItemBanNgay.setText("Bán hàng");
+        jMenuItemBanNgay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemBanNgayActionPerformed(evt);
+            }
+        });
         jMenuBaoCao.add(jMenuItemBanNgay);
 
         jMenuItemHangHoa.setText("Hàng hóa");
@@ -292,6 +298,11 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.veLaiFrame(new DoiTacKhachHang());
     }//GEN-LAST:event_jMenuItemKhachHangActionPerformed
+
+    private void jMenuItemBanNgayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBanNgayActionPerformed
+        // TODO add your handling code here:
+        this.veLaiFrame(new ManHinhBaoCaoBanHang1());
+    }//GEN-LAST:event_jMenuItemBanNgayActionPerformed
 
     /**
      * @param args the command line arguments

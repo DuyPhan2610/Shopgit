@@ -77,7 +77,7 @@ public class HoaDon extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
 
         jPanel5.setBackground(new java.awt.Color(240, 244, 244));
-        jPanel5.setPreferredSize(new java.awt.Dimension(1300, 1000));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1200, 768));
 
         jPanel29.setBackground(new java.awt.Color(240, 244, 244));
 
@@ -366,7 +366,7 @@ public class HoaDon extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,7 +390,7 @@ public class HoaDon extends javax.swing.JPanel {
                         .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 425, Short.MAX_VALUE))
+                .addGap(0, 441, Short.MAX_VALUE))
         );
 
         scrollPane1.add(jPanel5);
