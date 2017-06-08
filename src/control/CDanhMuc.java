@@ -60,8 +60,6 @@ public class CDanhMuc {
     }
     
     
-    
-    
     // lấy danh sách hàng hóa trong table 
     public ArrayList<HangHoa> layDSHangHoaTrongTable(){
         ArrayList<HangHoa> dsHangHoa = new ArrayList();
