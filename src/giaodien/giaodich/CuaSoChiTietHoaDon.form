@@ -419,7 +419,7 @@
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="211" pref="93" max="32767" attributes="0"/>
+                                              <EmptySpace pref="103" max="32767" attributes="0"/>
                                               <Component id="jLabelTongTien" min="-2" pref="96" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
@@ -440,7 +440,6 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

@@ -178,7 +178,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setText("Mã phiếunhập hàng:");
+        jLabel2.setText("Mã phiếu nhập hàng:");
 
         jLabelNhaCungCap.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNhaCungCap.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
