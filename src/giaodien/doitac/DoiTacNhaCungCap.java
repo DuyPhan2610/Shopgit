@@ -7,17 +7,15 @@ package giaodien.doitac;
  */
 
 
+import control.CQuanLyNhaCungCap;
+import giaodien.giaodich.JFrame_Themtructiepnhacungcap;
 import giaodien.utils.TableCellRendererColor;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
-import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -28,6 +26,10 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
     /**
      * Creates new form ThietLapGia
      */
+    
+    public CQuanLyNhaCungCap quanLyNhaCungCap; 
+    
+    
     public DoiTacNhaCungCap() {
         initComponents();
         JTableHeader theader = jTable1.getTableHeader();
@@ -38,24 +40,12 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
                .setHorizontalAlignment(JLabel.LEFT);
        jTable1.setFont(new Font("Arial",Font.PLAIN,14));
         
-        
-//        jTable1.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
-//
-//        @Override
-//        public Component getTableCellRendererComponent(JTable table, Object value,
-//                boolean isSelected, boolean hasFocus, int row, int column) {
-//
-//            JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-//
-//            l.setBorder(new LineBorder(Color.black, 1));
-//            l.setAlignmentY(10);
-//            l.setBackground(new Color(174,245,222));
-//
-//            return l;
-//        }
-//    });
+       
+       this.quanLyNhaCungCap = new CQuanLyNhaCungCap(jTable1);
+       this.quanLyNhaCungCap.duaDuLieuVaoBang();
         
     }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -303,7 +293,7 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
             }
         });
 
-        jButton5.setText("Nhập dữ liệu");
+        jButton5.setText("XÓA");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -311,6 +301,11 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
         });
 
         jButton6.setText("Thêm nhà cung cấp");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelTopLayout = new javax.swing.GroupLayout(jPanelTop);
         jPanelTop.setLayout(jPanelTopLayout);
@@ -359,24 +354,22 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"KH001", "Bống Thị Lồ Lộ", "0962356232", null, "10234556", "50005500"},
-                {"MKH002", "Bán Thị Bông", "01222225453", null, "6556431", null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Mã nhà cung cấp", "Tên nhà cung cấp", "Điện thoại", "Email", "Nợ hiện tại", "Tổng bán"
+                "Mã nhà cung cấp", "Tên nhà cung cấp", "Nhóm nhà cung cấp", "Nợ hiện tại", "Email", "Địa chỉ"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true, false, false
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, true, true, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -392,8 +385,6 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
             jTable1.getColumnModel().getColumn(1).setResizable(false);
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(250);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
@@ -459,6 +450,7 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        this.quanLyNhaCungCap.taoFileExcel();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -467,6 +459,7 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        // TODO add your handling code here:
+       this.quanLyNhaCungCap.xoaRowTrongTable();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -487,6 +480,8 @@ public class DoiTacNhaCungCap extends javax.swing.JPanel {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        JFrame_Themtructiepnhacungcap themNCC = new JFrame_Themtructiepnhacungcap();
+        themNCC.setVisible(true);
         
     }//GEN-LAST:event_jButton6ActionPerformed
 

@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  */
 public class NewClass {
     public static void main(String[] args){
-        System.out.println(layHangHoaTuMaHangHoa("SP000008").mMaHangHoa);
+        System.out.println(taoMaNhaCungCap("NCC00010"));
             
     }
     
@@ -52,17 +52,17 @@ public class NewClass {
        return null;
     }
     
-     // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
-    public static String taoMaHangHoa(String str){
-        String[] arStr = str.split("N");
-        String numStr = arStr[1];
+     // Tạo mã mã nhà cung cấp từ mã sản phẩm cuối cùng trong list
+    public static String taoMaNhaCungCap(String str){
+        String[] arStr = str.split("C");
+        String numStr = arStr[2];
         int code = Integer.parseInt(numStr);
-        return createCode(code);
+        return taoMaNhaCungCap(code);
     }
     
-    // tạo mã hàng hóa lớn hơn mã cuối cùng trong csdl
-    public static String createCode(int code){
-        String codeStr = "MCN" + String.format("%05d", ++code);
+    // tạo mã nhà cung cấp lớn hơn mã cuối cùng trong csdl
+    public static String taoMaNhaCungCap(int code){
+        String codeStr = "NCC" + String.format("%05d", ++code);
         return codeStr;
     }
 }

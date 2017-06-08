@@ -5,9 +5,13 @@
  */
 package giaodien.giaodich;
 
-import control.NhapHangHoa;
+import DatabaseConnection.ConnectionUtils;
+import database.BangCongNoNhaCungCap;
+import database.BangNhaCungCap;
 import entities.NhaCungCap;
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,20 +19,28 @@ import java.util.ArrayList;
  */
 public class JFrame_Themtructiepnhacungcap extends javax.swing.JFrame {
 
-    private NhapHangHoa mNhapHangHoa;
+    private BangCongNoNhaCungCap bangCongNoNhaCungCap;
+    private BangNhaCungCap bangNhaCungCap;
     /**
-     * Creates new form JFrame_Themtructiepnhacungcap
+     * Creates new form 
      */
-    public JFrame_Themtructiepnhacungcap(NhapHangHoa nhapHangHoa) {
+    public JFrame_Themtructiepnhacungcap() {
         initComponents();
-        this.mNhapHangHoa = nhapHangHoa;
+        try {
+            bangCongNoNhaCungCap = new BangCongNoNhaCungCap(new ConnectionUtils().getMySQLConnection());
+            bangNhaCungCap = new BangNhaCungCap(new ConnectionUtils().getMySQLConnection());
+        } catch (SQLException ex) {
+            Logger.getLogger(JFrame_Themtructiepnhacungcap.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JFrame_Themtructiepnhacungcap.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.init();
         
     }
     
     public void init(){
-        jTextFieldMaCongNoNhaCungCap.setText(mNhapHangHoa.bangCongNoNhaCungCap.taoMaCongNoNhaCungCap());
-        jTextFieldMaNhaCungCap.setText(mNhapHangHoa.bangNhaCungCap.taoMaNhaCungCap());
+        jTextFieldMaCongNoNhaCungCap.setText(bangCongNoNhaCungCap.taoMaCongNoNhaCungCap());
+        jTextFieldMaNhaCungCap.setText(bangNhaCungCap.taoMaNhaCungCap());
     }
 
     /**
@@ -251,7 +263,10 @@ public class JFrame_Themtructiepnhacungcap extends javax.swing.JFrame {
         String diaChi = jTextFieldDiaChi.getText();
         String email = jTextFieldEmail.getText();
         String ghiChu = jTextAreaGhiChu.getText();
-        mNhapHangHoa.taoNhaCungCap(maNhaCungCap, tenNhaCungCap, maCongNo, nhomNhaCungCap, diaChi, email, ghiChu, 0);
+        bangCongNoNhaCungCap.themCongNoNhaCungCap();
+        NhaCungCap ncc = new NhaCungCap(maNhaCungCap, tenNhaCungCap, nhomNhaCungCap, maCongNo, diaChi, email, ghiChu);
+        
+        bangNhaCungCap.themNhaCungCap(ncc);
         
         this.dispose();
     }//GEN-LAST:event_jButtonLuuActionPerformed

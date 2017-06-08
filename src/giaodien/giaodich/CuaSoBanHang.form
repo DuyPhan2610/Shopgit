@@ -96,7 +96,7 @@
                       <Component id="jTextFieldNhapMaHangHoa" min="-2" pref="362" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="132" max="-2" attributes="0"/>
-                      <EmptySpace pref="396" max="32767" attributes="0"/>
+                      <EmptySpace pref="400" max="32767" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jComboBox1" min="-2" pref="107" max="-2" attributes="0"/>
@@ -452,17 +452,21 @@
                                           <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabelMaKhachHang" min="-2" pref="119" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel3" min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jTextFieldTienTra2" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                                  <Component id="jLabelGiaGiam" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                                  <Component id="jLabelTongTien" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
+                                                  <Component id="jLabelConNo" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Component id="jTextFieldTienTra2" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
-                                          <Component id="jLabelGiaGiam" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="jLabelTongTien" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
-                                          <Component id="jLabelConNo" alignment="1" min="-2" pref="119" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                                              <Component id="jTextFieldMaKH" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
@@ -477,8 +481,11 @@
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabelMaHoaDon" max="32767" attributes="0"/>
-                                          <Component id="jLabelTenKhachHang" pref="168" max="32767" attributes="0"/>
+                                          <Component id="jLabelMaHoaDon" min="-2" pref="168" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jTextFieldTenKH" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -496,24 +503,22 @@
                                   <Component id="jLabelMaHoaDon" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel5" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="jLabelTenKhachHang" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel5" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldTenKH" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="jLabelMaKhachHang" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                       <Component id="jLabel18" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldMaKH" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelTongTien" min="-2" pref="42" max="-2" attributes="0"/>
@@ -596,11 +601,6 @@
                         <Property name="text" type="java.lang.String" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel3">
-                      <Properties>
-                        <Property name="toolTipText" type="java.lang.String" value="VD: S&#x1a1; mi  Dior"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel5">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -635,9 +635,15 @@
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabelTenKhachHang">
+                    <Component class="javax.swing.JTextField" name="jTextFieldTenKH">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jTextField1"/>
+                      </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabelMaKhachHang">
+                    <Component class="javax.swing.JTextField" name="jTextFieldMaKH">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jTextField1"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>

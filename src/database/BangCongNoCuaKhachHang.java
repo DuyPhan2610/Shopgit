@@ -65,6 +65,60 @@ public class BangCongNoCuaKhachHang extends TruyVanDuLieu{
         return  arlCongNoCuaKhachHang;
      }
      
+     // thêm công nợ khách hàng
+     public void themCongNoKhachHang(){
+         CongNoCuaKhachHang congNoKH = new CongNoCuaKhachHang(this.taoMaCongNoCuaKhachHang(), 0, 0, "");
+         this.themCongNoCuaKhachHang(congNoKH);
+     }
+     
+     
+      //Update lại công nợ của từ mã nhà cung cấp
+     public void capNhatCongNo(String maCongNoCuaKhachHang){
+         
+         ResultSet rs = null;
+         
+         
+        try {
+
+            String sql = "SELECT MACONGNOCUAKHACHHANG, SUM(TIENNO) as TONGTIEN "
+                    + "FROM chitietnocuakhachhang where MACONGNOCUAKHACHHANG = ? "
+                    + "GROUP BY chitietnocuakhachhang.MACONGNOCUAKHACHHANG";
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maCongNoCuaKhachHang);
+            rs = preStatement.executeQuery();
+            System.out.println("\n Tính SUM bảng chitietnocuakhachhang không thành công");
+            // rs.getString(MACONGNONHACUNGCAP);
+            // rs.getInt(TONGTIEN);
+        } catch (SQLException ex) {
+            System.out.println("\n Tính SUM bảng chitietnocuakhachhang thành công");
+            Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+        if(rs != null){
+            try {
+                    rs.first();
+                    String maNCC = rs.getString("MACONGNOCUAKHACHHANG");
+                    int tongTien = (int)rs.getInt("TONGTIEN");
+                    
+                    
+                    String sql = "update congnocuakhachhang SET TONGNO = ?, NOCANTRA = ? where MACONGNOCUAKHACHHANG = ?";
+                    PreparedStatement preStatement = connection.prepareStatement(sql);//
+                                      
+                    preStatement.setInt(1, tongTien);//
+                    preStatement.setInt(2, tongTien);//
+                    preStatement.setString(3, maNCC);
+
+                    preStatement.execute();
+                    System.out.println("\n Cập nhật Bảng công nợ khách hàng thành công" + tongTien);
+
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+     }
+     
       // Hàm tự động tạo mã công nợ của khách hàng từ công nợ của kh cuối cùng
     public String taoMaCongNoCuaKhachHang(){
         ArrayList<CongNoCuaKhachHang> arlCongNoCuaKhachHang = this.layTatCaCongNoCuaKhachHangTrongCSDL();

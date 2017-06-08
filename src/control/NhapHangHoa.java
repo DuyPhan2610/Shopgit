@@ -196,7 +196,6 @@ public class NhapHangHoa {
             HangNhap hangNhap = new HangNhap(maHangNhap, tenHangNhap, donGia, soLuong, nhomHangNhap);
             this.dsHangNhapTrongBang.add(hangNhap);
         }
-        
     }
     
     
@@ -241,6 +240,7 @@ public class NhapHangHoa {
     
     //Cập nhật lại Bảng công nợ nhà cung cấp
     public void capNhatBangCongNoNCC(){
+        
         this.bangCongNoNhaCungCap.capNhatCongNo(this.layMaCongNoNCCTrongComboBox());
     }
     

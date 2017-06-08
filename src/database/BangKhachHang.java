@@ -22,7 +22,6 @@ import java.util.logging.Logger;
 public class BangKhachHang extends TruyVanDuLieu {
     //
     public final static String MA_KHACH_HANG ="MAKHACHHANG";
-    public final static String MA_LOAI_KHACH_HANG ="MALOAIKHACHHANG";
     public final static String MA_CONG_NO_CUA_KHACH_HANG ="MACONGNOCUAKHACHHANG";
     public final static String TEN_KHACH_HANG ="TENKHACHHANG";
     public final static String DIEN_THOAI ="DIENTHOAI";
@@ -35,24 +34,44 @@ public class BangKhachHang extends TruyVanDuLieu {
     
     public void themKhachHang(KhachHang khachHang){
         try {
-            String sql ="insert into khachhang (MAKHACHHANG, MALOAIKHACHHANG, MACONGNOCUAKHACHHANG, TENKHACHHANG, DIENTHOAI, NGAYSINH, GIOITINH) values (?, ?, ?, ?, ?, ?, ?)";
+            String sql ="insert into khachhang (MAKHACHHANG, MACONGNOCUAKHACHHANG, TENKHACHHANG, DIENTHOAI, NGAYSINH, GIOITINH) values (?, ?, ?, ?, ?, ?)";
             PreparedStatement preStatement = connection.prepareStatement(sql);
             preStatement.setString(1, khachHang.mMaKhachHang);
-            preStatement.setString(2, khachHang.mMaLoaiKhacHang);
-            preStatement.setString(3, khachHang.mMaCongNoCuaKhachHang);
-            preStatement.setString(4, khachHang.mTenKhachHang);
-            preStatement.setString(5, khachHang.mDienThoai);
-            preStatement.setInt(6, khachHang.mNgaySinh);
-            preStatement.setString(7, khachHang.mGioiTinh);
+            preStatement.setString(2, khachHang.mMaCongNoKhachHang);
+            preStatement.setString(3, khachHang.mTenKhachHang);
+            preStatement.setString(4, khachHang.mDienThoai);
+            preStatement.setString(5, khachHang.mNgaySinh);
+            preStatement.setString(6, khachHang.mGioiTinh);
             
-            boolean checkSuccess = preStatement.execute();
+            boolean checkSuccess = true;
+
+            preStatement.executeUpdate();
             if (checkSuccess)
-                System.out.print("\n Thêm dữ liệu thành công");
+                System.out.print("\n Thêm khach hang thành công");
         } catch (SQLException ex)
         {
-            System.out.print("\n Thêm dữ liệu không thành công");
+            System.out.print("\n Thêm khach hàng không thành công");
         }
     }
+    
+    //lấy khách hàng từ mã khách hàng
+    public KhachHang layKhachHangTuMaKH(String maKH){
+        
+        try {
+            String sql = "select * from khachhang where MAKHACHHANG = ?";
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maKH);
+            ResultSet rs = preStatement.executeQuery();
+            rs.first();
+            KhachHang kh = new KhachHang(rs);
+            return kh;
+        } catch (SQLException ex) {
+            Logger.getLogger(BangKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    
     
     //Lấy tất cả các khách hàng trong CSDL;
     public ArrayList<KhachHang> layTatCaKhachHangTrongCSDL(){

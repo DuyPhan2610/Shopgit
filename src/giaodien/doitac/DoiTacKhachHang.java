@@ -7,19 +7,13 @@ package giaodien.doitac;
  */
 
 
-import giaodien.giaodich.PhieuNhapHang;
-import giaodien.utils.TableCellRendererColor;
+import control.CQuanLyKhachHang;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
-import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -30,6 +24,8 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
     /**
      * Creates new form ThietLapGia
      */
+    public CQuanLyKhachHang quanLyKhachHang;
+    
     public DoiTacKhachHang() {
         initComponents();
         JTableHeader theader = jTable1.getTableHeader();
@@ -40,23 +36,9 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
                .setHorizontalAlignment(JLabel.LEFT);
        jTable1.setFont(new Font("Arial",Font.PLAIN,14));
         
-        
-//        jTable1.getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
-//
-//        @Override
-//        public Component getTableCellRendererComponent(JTable table, Object value,
-//                boolean isSelected, boolean hasFocus, int row, int column) {
-//
-//            JLabel l = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-//
-//            l.setBorder(new LineBorder(Color.black, 1));
-//            l.setAlignmentY(10);
-//            l.setBackground(new Color(174,245,222));
-//
-//            return l;
-//        }
-//    });
-        
+      this.quanLyKhachHang = new CQuanLyKhachHang(jTable1);
+      this.quanLyKhachHang.duaDuLieuVaoBang();
+       
     }
     
     /**
@@ -92,7 +74,6 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jButtonThemKhachHang = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jPanelSideBarRight = new javax.swing.JPanel();
         jPanelContent = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -307,7 +288,7 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
         jButton5.setBackground(new java.awt.Color(0, 135, 204));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Nhập dữ liệu");
+        jButton5.setText("XÓA");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -317,7 +298,6 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
         jButtonThemKhachHang.setBackground(new java.awt.Color(0, 135, 204));
         jButtonThemKhachHang.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonThemKhachHang.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonThemKhachHang.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\icon\\timkiem_16.png")); // NOI18N
         jButtonThemKhachHang.setText("Thêm khách hàng");
         jButtonThemKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,10 +307,6 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel6.setText("KHÁCH HÀNG");
-
-        jComboBox2.setBackground(new java.awt.Color(0, 135, 204));
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanelTopLayout = new javax.swing.GroupLayout(jPanelTop);
         jPanelTop.setLayout(jPanelTopLayout);
@@ -342,10 +318,9 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
                 .addComponent(jButtonThemKhachHang)
                 .addGap(40, 40, 40)
                 .addComponent(jButton5)
-                .addGap(18, 18, 18)
+                .addGap(49, 49, 49)
                 .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55))
         );
         jPanelTopLayout.setVerticalGroup(
             jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,7 +329,6 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
                 .addGroup(jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonThemKhachHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
@@ -381,24 +355,22 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"KH001", "Bống Thị Lồ Lộ", "0962356232", "10234556", "50005500", null},
-                {"MKH002", "Bán Thị Bông", "01222225453", "6556431", null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Mã Khách hàng", "Tên khách hàng", "Điện thoại", "Nợ hiện tại", "Tổng bán", "Tổng bán trừ trả hàng"
+                "Mã Khách hàng", "Tên khách hàng", "Nợ hiện tại", "Điện thoại", "Ngày sinh"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, true, false, true, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -418,8 +390,6 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
             jTable1.getColumnModel().getColumn(3).setResizable(false);
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(50);
         }
 
         javax.swing.GroupLayout jPanelContentLayout = new javax.swing.GroupLayout(jPanelContent);
@@ -431,9 +401,8 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
         jPanelContentLayout.setVerticalGroup(
             jPanelContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelContentLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 243, Short.MAX_VALUE))
         );
 
         jLabel1.setBackground(new java.awt.Color(0, 135, 51));
@@ -479,6 +448,7 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        this.quanLyKhachHang.taoFileExcel();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -487,6 +457,7 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        // TODO add your handling code here:
+       this.quanLyKhachHang.xoaRowTrongTable();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -511,9 +482,8 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
 
     private void jButtonThemKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonThemKhachHangActionPerformed
         // TODO add your handling code here:
-       JFrame_Themkhachhang jfThemKhachHang = new JFrame_Themkhachhang();
-       jfThemKhachHang.setVisible(true);
-      
+      JFrame_Themkhachhang themKH = new JFrame_Themkhachhang();
+      themKH.setVisible(true);
                
     }//GEN-LAST:event_jButtonThemKhachHangActionPerformed
 
@@ -529,7 +499,6 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButtonThemKhachHang;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

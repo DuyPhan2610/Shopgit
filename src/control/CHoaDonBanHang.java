@@ -26,6 +26,7 @@ public class CHoaDonBanHang {
     public DefaultTableModel mModel;
     public ArrayList<HoaDonBanHang> dsHoaDon = new ArrayList<>();
     public BangHoaDonBanHang bangHoaDonbanHang;
+
     
     public CHoaDonBanHang(JTable table) {
         
@@ -33,14 +34,43 @@ public class CHoaDonBanHang {
         this.mTable = table;
         this.mModel = (DefaultTableModel) mTable.getModel();
         
+        
         try {
             this.bangHoaDonbanHang = new BangHoaDonBanHang(new ConnectionUtils().getMySQLConnection());
         } catch (SQLException ex) {
-            Logger.getLogger(ThietLapGiaHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CThietLapGia.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ThietLapGiaHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CThietLapGia.class.getName()).log(Level.SEVERE, null, ex);
         }
        
+    }
+    
+    
+    // lấy danh sách hóa đơn trong table
+    public ArrayList<HoaDonBanHang> layDSHoaDonTrongTable(){
+        ArrayList<HoaDonBanHang> dsHoaDon = new ArrayList<>();
+        for(int i = 0; i < this.mModel.getRowCount(); i++){
+            HoaDonBanHang hd = new HoaDonBanHang();
+            hd.mMaHoaDonBanHang = mModel.getValueAt(i, 0).toString();
+            hd.mTongTien = (int)mModel.getValueAt(i, 1);
+            
+            hd.mGiaGiam = (int)mModel.getValueAt(i, 2);
+            
+            // số lượng bán
+            hd.mKhachDaTra = (int)(mModel.getValueAt(i, 3));
+            // đơn giá
+            hd.mThoiGian = (String)(mModel.getValueAt(i, 4));
+            
+            hd.mGhiChu = (String) (mModel.getValueAt(i, 5));
+            dsHoaDon.add(hd);
+        }
+        return dsHoaDon;
+    }
+    
+    // tạo file excel hóa đơn
+    public void taoFileExcel(){
+        GhiFile ghiFile = new GhiFile();
+        ghiFile.taoDanhSachHoaDoa(this.layDSHoaDonTrongTable());
     }
     
     // gán giá trị cho dsHangHoa
@@ -58,5 +88,12 @@ public class CHoaDonBanHang {
                                 hd.mThoiGian, hd.mGhiChu});
             }
         }
+    }
+    
+    // xóa row trong table
+    public void xoaRowTrongTable(){
+        int rowNum = this.mTable.getSelectedRow();
+        this.mModel.removeRow(rowNum);
+        this.mModel.fireTableDataChanged();
     }
 }

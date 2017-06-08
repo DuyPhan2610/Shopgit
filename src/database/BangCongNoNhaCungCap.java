@@ -38,7 +38,7 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
             preStatement.setString(1, congNoNhaCungCap.mMaCongNoNhaCungCap);
             preStatement.setInt(2, congNoNhaCungCap.mTongNo);
             preStatement.setInt(3, congNoNhaCungCap.mNoCanTra);
-            preStatement.setString(1, congNoNhaCungCap.mGhiChu);
+            preStatement.setString(4, congNoNhaCungCap.mGhiChu);
             
             boolean checkSuccess = preStatement.execute();
             
@@ -50,6 +50,11 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
     }
     
      
+    // thêm công nợ nhà cung cấp
+    public void themCongNoNhaCungCap(){
+        CongNoNhaCungCap congNoNhaCungCap = new CongNoNhaCungCap(this.taoMaCongNoNhaCungCap(), " ", 0, 0);
+        this.themCongNoNhaCungCap(congNoNhaCungCap);
+    }
      
      //Update lại công nợ của từ mã nhà cung cấp
      public void capNhatCongNo(String maCongNoNhaCungCap){
@@ -70,16 +75,14 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
             // rs.getInt(TONGTIEN);
         } catch (SQLException ex) {
             Logger.getLogger(BangCongNoNhaCungCap.class.getName()).log(Level.SEVERE, null, ex);
-        } finally{
-            
-                    
         }
          
         if(rs != null){
             try {
                     rs.first();
-                    int tongTien = (int)rs.getInt("TONGTIEN");
                     String maNCC = rs.getString("MACONGNONHACUNGCAP");
+                    int tongTien = (int)rs.getInt("TONGTIEN");
+                    
                     
                     String sql = "update congnonhacungcap SET TONGNO = ?, NOCANTRA = ? where MACONGNONHACUNGCAP = ?";
                     PreparedStatement preStatement = connection.prepareStatement(sql);//
@@ -88,8 +91,8 @@ public class BangCongNoNhaCungCap extends TruyVanDuLieu {
                     preStatement.setInt(2, tongTien);//
                     preStatement.setString(3, maNCC);
 
-                    int r = preStatement.executeUpdate();
-                    System.out.println("\n Cập nhật Bảng công nợ thành công" + tongTien+ r);
+                    preStatement.execute();
+                    System.out.println("\n Cập nhật Bảng công nợ thành công" + tongTien);
 
                 
             } catch (SQLException ex) {

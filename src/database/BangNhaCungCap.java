@@ -55,9 +55,9 @@ public class BangNhaCungCap extends TruyVanDuLieu{
            boolean checkSuccess = preStatement.execute();
            
            if(checkSuccess)
-                System.out.print("\n thêm dữ liệu thành công");
+                System.out.print("\n thêm nhà cung cấp thành công");
        } catch (SQLException ex) {
-          System.out.print("\n thêm dữ liệu không thành công");
+          System.out.print("\n thêm nhà cung cấp không thành công");
        }
    }
    
@@ -148,15 +148,14 @@ public class BangNhaCungCap extends TruyVanDuLieu{
         
         if(arlNhaCungCap.size() > 0){
         //Lấy hàng hóa cuối cùng trong csdl
-            NhaCungCap nhaCungCap = arlNhaCungCap.get(arlNhaCungCap.size() - 1);   
-            return ControlUtils.taoMaHangHoa(nhaCungCap.mMaNhaCungCap);
+            NhaCungCap nhaCungCap = arlNhaCungCap.get(arlNhaCungCap.size() - 1);
+            String maNCC = nhaCungCap.mMaNhaCungCap;
+            String ma = ControlUtils.taoMaNhaCungCap(maNCC);
+            return ma;
         }
         else{
             return ControlUtils.taoMaNhaCungCap("NCC00000");
         }
     }
-    
-    
-    
-    
+
 }

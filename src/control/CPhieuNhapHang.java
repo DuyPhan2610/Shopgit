@@ -37,9 +37,9 @@ public class CPhieuNhapHang {
             this.bangPhieuNhapHang = new BangPhieuNhapHang(new ConnectionUtils().getMySQLConnection());
             this.bangNhaCungCap = new BangNhaCungCap(new ConnectionUtils().getMySQLConnection());
         } catch (SQLException ex) {
-            Logger.getLogger(ThietLapGiaHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CThietLapGia.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ThietLapGiaHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CThietLapGia.class.getName()).log(Level.SEVERE, null, ex);
         }
        
     }

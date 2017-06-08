@@ -63,6 +63,44 @@ public class BangHangHoa extends TruyVanDuLieu{
        return null;
     }
     
+    // cập nhật số lượng hàng hóa
+    public void capNhatTonKho(String maHH, int soLuong){
+        
+        HangHoa hh = this.layHangHoaTuMaHangHoa(maHH);
+        
+        try {
+            String sql = "update hanghoa SET TONKHO = ? where MAHANGHOA = ?";
+            PreparedStatement preStatement = connection.prepareStatement(sql);//
+            
+            preStatement.setInt(1, (hh.mTonKho - soLuong));//
+            preStatement.setString(2, maHH);//
+            
+            preStatement.execute();
+            System.out.println("\n Cập nhật Bảng hàng hóa thành công" );
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    //Cập nhật giá và tên hàng hóa
+    // cập nhật số lượng hàng hóa
+    public void capNhatGia(String maHH, int gia){
+        
+        try {
+            String sql = "update hanghoa SET GIABAN = ? where MAHANGHOA = ?";
+            PreparedStatement preStatement = connection.prepareStatement(sql);//
+            
+            preStatement.setInt(1, (gia));//
+            preStatement.setString(2, maHH);//
+            
+            preStatement.execute();
+            System.out.println("\n Cập nhật giá thành công" );
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public String xoaMotHangHoaTuMaHangHoa(String maHangHoa){
         return "delete from hanghoa where MAHANGHOA = " + maHangHoa;
     }

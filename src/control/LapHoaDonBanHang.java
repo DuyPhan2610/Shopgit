@@ -14,6 +14,8 @@ import database.BangKhachHang;
 import DatabaseConnection.ConnectionUtils;
 import database.BangNhanVien;
 import entities.ChiTietHoaDonBanHang;
+import entities.ChiTietNoCuaKhachHang;
+import entities.CongNoCuaKhachHang;
 import entities.HangHoa;
 import entities.HangNhap;
 import entities.HoaDonBanHang;
@@ -41,8 +43,8 @@ public class LapHoaDonBanHang {
     public JComboBox<String> mComboBoxTenNhanVien;
     
     public JLabel mLabelMaHoaDonBanHang;
-    public JLabel mLabelTenKhachHang;
-    public JLabel mLabelMaKhachHang;
+    public JTextField mLabelTenKhachHang;
+    public JTextField mLabelMaKhachHang;
     public JLabel mLabelTongTien;
     public JLabel mLabelGiaGiam;
     public JLabel mLabelConNo;
@@ -74,7 +76,7 @@ public class LapHoaDonBanHang {
     
     public LapHoaDonBanHang (JTextField jTextFieldNhapMaHangHoa, JTable tableBangHangHoa,
                     JComboBox<String> comboBoxTenNhanVien, JLabel labelMaHoaDonBanHang,
-                    JLabel labelTenKhachHang,JLabel labelMaKhachHang,
+                    JTextField labelTenKhachHang,JTextField labelMaKhachHang,
                     JLabel labelTongTien,JLabel labelGiaGiam,
                     JTextField textFieldDaTra,JLabel labelConNo,JTextField textFieldGhiChu) {
         
@@ -270,21 +272,32 @@ public class LapHoaDonBanHang {
     }
     
     
+    // cập nhật lại dữ liệu hàng hóa trong kho
+    public void capNhatHangHoaTrongCSDL(){
+        ArrayList<HangHoa> dsHangHoa = this.layDanhSachHangHoaTrongTable();
+       
+        for(int i = 0; i < dsHangHoa.size(); i++){
+            String maHH = dsHangHoa.get(i).mMaHangHoa;
+            int soLuong = dsHangHoa.get(i).mTonKho;
+            bangHangHoa.capNhatTonKho(maHH, soLuong);
+        }
+    }
     
-  
     
+    // tạo chi tiết công nợ khách hàng và cập nhật công nợ khách hàng
+    public void capNhatCongNoKhachHang(){
+        String maKH = this.mLabelMaKhachHang.getText();
+        if(!maKH.isEmpty()){
+            String maCongNoKhachHang = bangKhachHang.layKhachHangTuMaKH(maKH).mMaCongNoKhachHang;
+            
+            // tạo chi tiết nợ của khách hàng
+            ChiTietNoCuaKhachHang chiTietNoCuaKhachHang = new ChiTietNoCuaKhachHang(maCongNoKhachHang, maHoaDon, conNo);
+            this.bangChiTietNoCuaKhachHang.themChiTietNoCuaKhachHang(chiTietNoCuaKhachHang);
+            
+            this.bangCongNoCuaKhachHang.capNhatCongNo(maCongNoKhachHang);
+        }
+    }
 
-    
-    //Thêm danh sách khách hàng vào comboBox
-//    public void themKhachHangVaoComboBox(){
-//        ArrayList<KhachHang> arlKhachHang = bangKhachHang.layTatCaKhachHangTrongCSDL();
-//        if(arlKhachHang.size() >0){
-//            for (int i=0; i < arlKhachHang.size(); i++){
-//                this.mComboBoxTenNhanVien.addItem(arlKhachHang.get(i).mTenKhachHang); //lấy tên khách hàng thứ i và show lên màn hình
-//            }
-//            comboBox.setSelectedIndex(0);
-//        }
-//    }
     
     //Thêm từng dữ liệu vào table
     public void themMotHangBanVaoBang(HoaDonBanHang hoaDonBanHang){

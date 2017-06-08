@@ -53,16 +53,16 @@ public class ControlUtils {
     }
     
     
-    // Tạo mã mã hàng hóa từ mã sản phẩm cuối cùng trong list
+    // Tạo mã mã nhà cung cấp từ mã sản phẩm cuối cùng trong list
     public static String taoMaNhaCungCap(String str){
         String[] arStr = str.split("C");
         String numStr = arStr[2];
         int code = Integer.parseInt(numStr);
-        return taoMaNhaCungCap(code);
+        return taoMaNhaCungCapTuSo(code);
     }
     
-    // tạo mã hàng hóa lớn hơn mã cuối cùng trong csdl
-    public static String taoMaNhaCungCap(int code){
+    // tạo mã nhà cung cấp lớn hơn mã cuối cùng trong csdl
+    public static String taoMaNhaCungCapTuSo(int code){
         String codeStr = "NCC" + String.format("%05d", ++code);
         return codeStr;
     }
