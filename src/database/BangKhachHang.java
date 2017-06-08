@@ -6,6 +6,7 @@
 package database;
 
 import control.ControlUtils;
+import entities.HoaDonBanHang;
 import entities.KhachHang;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -111,5 +112,29 @@ public class BangKhachHang extends TruyVanDuLieu {
         else{
             return ControlUtils.taoMaKhachHang("KH000000");
         }
+    }
+    
+    
+    //lấy khách hàng từ mã khách hàng
+    public KhachHang layKhachHangTuMaKhachHang(String maKhachHang){
+        String sql = "select * from khachhang where MAKHACHHANG = ?";
+
+        try {
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maKhachHang);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                    rs.first();
+                    //System.out.println(rs.getString("MAHANGHOA"));
+                    KhachHang kh = new KhachHang(rs);
+                    rs.close();
+                    return kh;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       return null;
     }
 }

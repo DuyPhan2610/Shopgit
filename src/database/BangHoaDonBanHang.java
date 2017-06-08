@@ -5,6 +5,7 @@
  */
 package database;
 import control.ControlUtils;
+import entities.ChiTietHoaDonBanHang;
 import entities.HoaDonBanHang;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -94,5 +95,29 @@ public class BangHoaDonBanHang extends TruyVanDuLieu{
         else{
             return ControlUtils.taoMaHoaDonBanHang("HD000000");
         }
+    }
+    
+    
+    //lấy chi tiết hóa đơn bán hàng từ mã hóa đơn
+    public HoaDonBanHang layHoaDonBanHangTuMaHoaDon(String maHoaDon){
+        String sql = "select * from hoadonbanhang where MAHOADONBANHANG = ?";
+
+        try {
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maHoaDon);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                    rs.first();
+                    //System.out.println(rs.getString("MAHANGHOA"));
+                    HoaDonBanHang hd = new HoaDonBanHang(rs);
+                    rs.close();
+                    return hd;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       return null;
     }
 }

@@ -6,10 +6,9 @@
 package control;
 
 import DatabaseConnection.ConnectionUtils;
-import database.BangHangHoa;
 import database.BangHoaDonBanHang;
-import entities.HangHoa;
 import entities.HoaDonBanHang;
+import giaodien.giaodich.CuaSoChiTietHoaDon;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -95,5 +94,14 @@ public class CHoaDonBanHang {
         int rowNum = this.mTable.getSelectedRow();
         this.mModel.removeRow(rowNum);
         this.mModel.fireTableDataChanged();
+    }
+    
+    // xem chi tiết hóa đơn
+    public void xemChiTietHoaDon(){
+        int rowNum = this.mTable.getSelectedRow();
+        String maHoaDon = (String)this.mModel.getValueAt(rowNum, 0);
+        CuaSoChiTietHoaDon cuaSoChiTietHoaDon = new CuaSoChiTietHoaDon(maHoaDon);
+        cuaSoChiTietHoaDon.setVisible(true);
+        
     }
 }

@@ -6,6 +6,7 @@
 package database;
 
 import control.ControlUtils;
+import entities.KhachHang;
 import entities.NhanVien;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -89,5 +90,28 @@ public class BangNhanVien extends TruyVanDuLieu{
         else{
             return ControlUtils.taoMaNhanVien("NV000000");
         }
+    }
+    
+    //lấy Nhân viên từ mà nhân viên
+    public NhanVien layNhanVienTuMaNhanVien(String maNhanVien){
+        String sql = "select * from nhanvien where MANHANVIEN = ?";
+
+        try {
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maNhanVien);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                    rs.first();
+                    //System.out.println(rs.getString("MAHANGHOA"));
+                    NhanVien nv = new NhanVien(rs);
+                    rs.close();
+                    return nv;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       return null;
     }
 }

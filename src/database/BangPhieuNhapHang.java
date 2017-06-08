@@ -6,6 +6,7 @@
 package database;
 
 import control.ControlUtils;
+import entities.HangHoa;
 import entities.PhieuNhapHang;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -99,6 +100,29 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
         else{
             return ControlUtils.taoMaPhieuNhap("PN000000");
         }
+    }
+    
+    // lấy phiếu nhập từ mã phiếu nhập
+    public PhieuNhapHang layPhieuNhapTuMaPhieuNhap(String maPhieuNhap){
+        String sql = "select * from phieunhaphang where MAPHIEUNHAP = ?";
+
+        try {
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maPhieuNhap);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                    rs.first();
+                    //System.out.println(rs.getString("MAHANGHOA"));
+                    PhieuNhapHang pnh = new PhieuNhapHang(rs);
+                    rs.close();
+                    return pnh;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
     }
     
     

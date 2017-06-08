@@ -35,6 +35,7 @@ public class HoaDon extends javax.swing.JPanel {
        tb_hoadon.setFont(new Font("Arial",Font.PLAIN,14));
        tb_hoadon.setRowHeight(30);
        this.jButton3.setText("XÓA");
+       this.jButtonXemChiTietHoaDon.setText("Xem chi tiết hóa đơn");
        
        this.hoaDonBanHang = new CHoaDonBanHang(tb_hoadon);
        this.hoaDonBanHang.duaDuLieuVaoBang();
@@ -56,6 +57,7 @@ public class HoaDon extends javax.swing.JPanel {
         jPanel28 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButtonXemChiTietHoaDon = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_hoadon = new javax.swing.JTable();
@@ -121,12 +123,21 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
 
+        jButtonXemChiTietHoaDon.setText("jButton5");
+        jButtonXemChiTietHoaDon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonXemChiTietHoaDonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
         jPanel28Layout.setHorizontalGroup(
             jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel28Layout.createSequentialGroup()
-                .addContainerGap(248, Short.MAX_VALUE)
+                .addGap(59, 59, 59)
+                .addComponent(jButtonXemChiTietHoaDon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addComponent(jButton4)
@@ -138,7 +149,8 @@ public class HoaDon extends javax.swing.JPanel {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jButtonXemChiTietHoaDon))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -148,7 +160,7 @@ public class HoaDon extends javax.swing.JPanel {
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel29Layout.setVerticalGroup(
@@ -778,6 +790,12 @@ public class HoaDon extends javax.swing.JPanel {
         this.hoaDonBanHang.xoaRowTrongTable();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButtonXemChiTietHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonXemChiTietHoaDonActionPerformed
+        // TODO add your handling code here:
+        
+        this.hoaDonBanHang.xemChiTietHoaDon();
+    }//GEN-LAST:event_jButtonXemChiTietHoaDonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHoadon_Banggia;
@@ -792,6 +810,7 @@ public class HoaDon extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButtonXemChiTietHoaDon;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;

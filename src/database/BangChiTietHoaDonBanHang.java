@@ -6,6 +6,7 @@
 package database;
 
 import entities.ChiTietHoaDonBanHang;
+import entities.HangHoa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,5 +66,30 @@ public class BangChiTietHoaDonBanHang extends TruyVanDuLieu{
         }
 
         return arlChiTietHoaDonBanHang;
+    }
+    
+    
+    //lấy chi các tiết hóa đơn bán hàng từ mã hóa đơn
+    public ArrayList<ChiTietHoaDonBanHang> layChiTietHoaDonBanHangTuMaHoaDon(String maHoaDon){
+        String sql = "select * from chitiethoadonbanhang where MAHOADONBANHANG = ?";
+
+        ArrayList<ChiTietHoaDonBanHang> dsCTHD = new ArrayList<>();
+        try {
+            PreparedStatement preStatement = connection.prepareStatement(sql);
+            preStatement.setString(1, maHoaDon);
+            ResultSet rs = preStatement.executeQuery();
+            
+            if((rs != null)){
+                while(rs.next()){
+                    
+                    ChiTietHoaDonBanHang cthd = new ChiTietHoaDonBanHang(rs);
+                    dsCTHD.add(cthd);
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+       return dsCTHD;
     }
 }

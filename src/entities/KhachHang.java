@@ -19,7 +19,7 @@ public class KhachHang {
         this.mMaKhachHang = maKhachHang;
         this.mNgaySinh = ngaySinh;
         this.mTenKhachHang = tenKhachHang;
-        this.mMaCongNoKhachHang =maCongNoKhachHang;
+        this.mMaCongNoKhachHang = maCongNoKhachHang;
     }
     public KhachHang(ResultSet rs) {
        
