@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -47,10 +48,17 @@ public class BangHoaDonBanHang extends TruyVanDuLieu{
         preStatement.setString(8, hoaDonBanHang.mThoiGian);
         
         boolean checkSuccess = preStatement.execute();
-        if (checkSuccess)
+        if (checkSuccess){
+            JOptionPane.showMessageDialog(null,
+                "Tạo hóa đơn thành công!");
             System.out.print("\n Thêm dữ liệu thành công");
+        }
         } catch (SQLException ex)
         {
+            JOptionPane.showMessageDialog(null,
+                "Tạo hóa đơn thất bại!",
+                "Lỗi",
+                JOptionPane.ERROR_MESSAGE);
             System.out.print("\n Thêm dữ liệu không thành công");
         }
     }

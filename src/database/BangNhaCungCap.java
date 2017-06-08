@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,9 +55,16 @@ public class BangNhaCungCap extends TruyVanDuLieu{
           
            boolean checkSuccess = preStatement.execute();
            
-           if(checkSuccess)
+           if(checkSuccess){
+               JOptionPane.showMessageDialog(null,
+                "Thêm nhà cung cấp thành công!");
                 System.out.print("\n thêm nhà cung cấp thành công");
+           }
        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null,
+                "Thêm nhà cung cấp thất bại!",
+                "Lỗi",
+                JOptionPane.ERROR_MESSAGE);
           System.out.print("\n thêm nhà cung cấp không thành công");
        }
    }

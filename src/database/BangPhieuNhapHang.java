@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,10 +51,17 @@ public class BangPhieuNhapHang extends TruyVanDuLieu{
           
            boolean checkSuccess = preStatement.execute();
            
-           if(checkSuccess)
+           if(checkSuccess){
+               JOptionPane.showMessageDialog(null,
+                "Thêm phiếu nhập thành công!");
                 System.out.print("\n thêm phiếu nhập hàng thành công");
+           }
            
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,
+                "Thêm phiếu nhập không thàng công!",
+                "Lỗi",
+                JOptionPane.ERROR_MESSAGE);
             System.out.print("\n thêm phiếu nhập hàng không thành công");
             Logger.getLogger(BangPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
         }

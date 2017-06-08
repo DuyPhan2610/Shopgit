@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -76,8 +77,16 @@ public class BangHangHoa extends TruyVanDuLieu{
             preStatement.setString(2, maHH);//
             
             preStatement.execute();
+            //default title and icon
+            JOptionPane.showMessageDialog(null,
+                "Cập nhật hàng hóa thành công!");
             System.out.println("\n Cập nhật Bảng hàng hóa thành công" );
         } catch (SQLException ex) {
+            //custom title, error icon
+            JOptionPane.showMessageDialog(null,
+                "Cập nhật hàng hóa thất bại!",
+                "Lỗi",
+                JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -95,8 +104,15 @@ public class BangHangHoa extends TruyVanDuLieu{
             preStatement.setString(2, maHH);//
             
             preStatement.execute();
+            //default title and icon
+            JOptionPane.showMessageDialog(null,
+                "Cập nhật hàng hóa thành công!");
             System.out.println("\n Cập nhật giá thành công" );
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,
+                "Cập nhật hàng hóa thất bại!",
+                "Lỗi",
+                JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(BangHangHoa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

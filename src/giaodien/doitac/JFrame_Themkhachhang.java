@@ -5,10 +5,15 @@
  */
 package giaodien.doitac;
 
+import DatabaseConnection.ConnectionUtils;
 import database.BangCongNoCuaKhachHang;
 import database.BangKhachHang;
+import entities.KhachHang;
 import java.awt.Image;
 import java.io.File;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -30,6 +35,19 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
     
     public JFrame_Themkhachhang() {
         initComponents();
+        
+        try {
+            bangConNoCuaKhachHang = new BangCongNoCuaKhachHang(new ConnectionUtils().getMySQLConnection());
+            bangKhachHang = new BangKhachHang(new ConnectionUtils().getMySQLConnection());
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(JFrame_Themkhachhang.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(JFrame_Themkhachhang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        this.jLabelMaCongNoKH.setText(bangConNoCuaKhachHang.taoMaCongNoCuaKhachHang());
+        this.jLabelMaKH.setText(bangKhachHang.taoMaKhachHang());
     }
 
     /**
@@ -281,8 +299,15 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
     private void jButtonLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLuuActionPerformed
         // TODO add your handling code here:
         // lưu danh sách hàng nhập vào bảng hàng hóa
-        
-        
+        KhachHang kh = new KhachHang();
+        kh.mMaKhachHang = this.jLabelMaKH.getText();
+        kh.mMaCongNoKhachHang = this.jLabelMaCongNoKH.getText();
+        kh.mTenKhachHang = this.tfTenKhachHang.getText();
+        kh.mDienThoai = this.tfDienThoai.getText();
+        kh.mGioiTinh = this.jComboBox1.getSelectedItem().toString();
+        kh.mNgaySinh = this.tfNgaySinh.getText();
+        this.bangConNoCuaKhachHang.themCongNoKhachHang();
+        this.bangKhachHang.themKhachHang(kh);
     }//GEN-LAST:event_jButtonLuuActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

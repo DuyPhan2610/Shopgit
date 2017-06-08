@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,10 +47,18 @@ public class BangKhachHang extends TruyVanDuLieu {
             boolean checkSuccess = true;
 
             preStatement.executeUpdate();
-            if (checkSuccess)
+            if (checkSuccess){
+                //default title and icon
+                JOptionPane.showMessageDialog(null,
+                    "Thêm khách hàng thành công!");
                 System.out.print("\n Thêm khach hang thành công");
+            }
         } catch (SQLException ex)
         {
+            JOptionPane.showMessageDialog(null,
+            "Thêm khách hàng không thành công",
+            "Lỗi",
+            JOptionPane.ERROR_MESSAGE);
             System.out.print("\n Thêm khach hàng không thành công");
         }
     }
