@@ -9,6 +9,8 @@ import DatabaseConnection.ConnectionUtils;
 import database.BangNhaCungCap;
 import database.BangPhieuNhapHang;
 import entities.PhieuNhapHang;
+import giaodien.giaodich.CuaSoChiTietHoaDon;
+import giaodien.giaodich.CuaSoChiTietPhieuNhapHang;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -62,6 +64,22 @@ public class CPhieuNhapHang {
                                 pnh.mTienDaTra, pnh.mThoiGian, pnh.mGhiChu});
             }
         }
+    }
+    
+    // xóa row trong table
+    public void xoaRowTrongTable(){
+        int rowNum = this.mTable.getSelectedRow();
+        this.mModel.removeRow(rowNum);
+        this.mModel.fireTableDataChanged();
+    }
+    
+    // xem chi tiết hóa đơn
+    public void xemChiTietHoaDon(){
+        int rowNum = this.mTable.getSelectedRow();
+        String maPhieuNhap = (String)this.mModel.getValueAt(rowNum, 0);
+        CuaSoChiTietPhieuNhapHang cuaSoChiTietHoaDon = new CuaSoChiTietPhieuNhapHang(maPhieuNhap);
+        cuaSoChiTietHoaDon.setVisible(true);
+        
     }
     
 }

@@ -10,9 +10,14 @@ import database.BangChiTietPhieuNhapHang;
 import database.BangHangHoa;
 import database.BangNhaCungCap;
 import database.BangPhieuNhapHang;
+import entities.ChiTietHoaDonBanHang;
+import entities.ChiTietPhieuNhapHang;
+import entities.HangHoa;
+import entities.NhaCungCap;
 import java.awt.Color;
 import java.awt.Font;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -63,13 +68,37 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(CuaSoChiTietPhieuNhapHang.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        this.ganGiaTriChoCacLabel();
     }
     
     
     // gán giá trị cho các label
     public void ganGiaTriChoCacLabel(){
-        this.bangPhieuNhapHang.layPhieuNhapTuMaPhieuNhap(this.maPhieuNhap);
+        entities.PhieuNhapHang pnh = this.bangPhieuNhapHang.layPhieuNhapTuMaPhieuNhap(this.maPhieuNhap);
+        NhaCungCap ncc = this.bangNhaCungCap.layNhaCungCapTuMaNCC(pnh.mMaNhaCungCap);
+        ArrayList<ChiTietPhieuNhapHang> dsCTPNH = bangChiTietPhieuNhapHang.layChiTietPhieuNhapTuMaPhieuNhap(maPhieuNhap);
+        int tongSo = 0;
+        for(int i = 0; i < dsCTPNH.size(); i ++){
+            HangHoa hh = bangHangHoa.layHangHoaTuMaHangHoa(dsCTPNH.get(i).mMaHangHoa);
+
+            int soLuong = dsCTPNH.get(i).mSoLuong;
+            tongSo += soLuong;
+            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa
+                                , soLuong, hh.mGiaVon, soLuong * hh.mGiaVon});
+        }
         
+        
+        this.jLabelMaNhaCungCap.setText(ncc.mMaNhaCungCap);
+        this.jLabelNhaCungCap.setText(ncc.mTenNhaCungCap);
+        this.jLabelMaPhieuNhap.setText(maPhieuNhap);
+        this.jLabelThoiGian.setText(pnh.mThoiGian);
+        this.jTextAreaGhiChu.setText(pnh.mGhiChu);
+        this.jLabelGiamGia.setText(String.valueOf(pnh.mGiaGiam));
+        this.jLabelTongTien2.setText(String.valueOf(pnh.mTongTien));
+        this.jLabelDaTra.setText(String.valueOf(pnh.mTienDaTra));
+        this.jLabelConNo1.setText(String.valueOf(pnh.mTongTien - pnh.mGiaGiam - pnh.mTienDaTra));
+        this.jLabelTongHang.setText(String.valueOf(tongSo));
     }
 
     /**
@@ -89,7 +118,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabelNhaCungCap = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabelMaPhieuNhap = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabelMaNhaCungCap = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -143,7 +172,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setText("Mã nhập hàng:");
+        jLabel2.setText("Mã phiếunhập hàng:");
 
         jLabelNhaCungCap.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNhaCungCap.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -157,10 +186,10 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setText("Nhà cung cấp:");
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText(" PN000001");
-        jLabel6.setToolTipText("VD: PN000001");
+        jLabelMaPhieuNhap.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabelMaPhieuNhap.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelMaPhieuNhap.setText(" PN000001");
+        jLabelMaPhieuNhap.setToolTipText("VD: PN000001");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel7.setText("Mã nhà cung cấp:");
@@ -327,7 +356,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
                                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                    .addComponent(jLabelMaPhieuNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                     .addComponent(jLabelThoiGian, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(114, 114, 114)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,7 +388,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelMaPhieuNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5)
                                 .addComponent(jLabelNhaCungCap, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(28, 28, 28)
@@ -430,13 +459,13 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelConNo1;
     private javax.swing.JLabel jLabelDaTra;
     private javax.swing.JLabel jLabelGiamGia;
     private javax.swing.JLabel jLabelMaNhaCungCap;
+    private javax.swing.JLabel jLabelMaPhieuNhap;
     private javax.swing.JLabel jLabelNhaCungCap;
     private javax.swing.JLabel jLabelThoiGian;
     private javax.swing.JLabel jLabelTongHang;

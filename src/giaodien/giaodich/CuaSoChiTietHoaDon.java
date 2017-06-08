@@ -91,7 +91,7 @@ public class CuaSoChiTietHoaDon extends javax.swing.JFrame {
             
             this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa
                                 , soLuong, hh.mGiaBan, soLuong * hh.mGiaBan});
-            }
+        }
   
         
         this.jLabelMaHoaDon.setText(maHoaDon);
