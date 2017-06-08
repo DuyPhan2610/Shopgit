@@ -367,8 +367,8 @@ public class ManHinhBaoCaoHangHoa extends javax.swing.JFrame {
                 Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useSSL=false", "root", "2610");
                  
                 
-                JasperDesign jd = JRXmlLoader.load("D:\\shopmanagement\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
-                JasperReport jr =JasperCompileManager.compileReport("D:\\shopmanagement\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+                JasperDesign jd = JRXmlLoader.load("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+                JasperReport jr =JasperCompileManager.compileReport("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
                 JasperPrint jp =JasperFillManager.fillReport(jr, new HashMap(), con);
                 //JasperViewer.viewReport(jp);
                 //desktopPane.add( new JRViewer(jp));
