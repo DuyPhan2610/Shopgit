@@ -55,7 +55,6 @@ public class MainWindow extends javax.swing.JFrame {
         jMenuHangHoa = new javax.swing.JMenu();
         jMenuItemDanhMuc = new javax.swing.JMenuItem();
         jMenuItemThietLapGia = new javax.swing.JMenuItem();
-        jMenuItemKiemKho = new javax.swing.JMenuItem();
         jMenuGiaoDich = new javax.swing.JMenu();
         jMenuItemHoaDon = new javax.swing.JMenuItem();
         jMenuItemTraHang = new javax.swing.JMenuItem();
@@ -121,14 +120,6 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
         jMenuHangHoa.add(jMenuItemThietLapGia);
-
-        jMenuItemKiemKho.setText("Kiểm kho");
-        jMenuItemKiemKho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemKiemKhoActionPerformed(evt);
-            }
-        });
-        jMenuHangHoa.add(jMenuItemKiemKho);
 
         jMenuBar.add(jMenuHangHoa);
 
@@ -238,12 +229,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItemKiemKhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemKiemKhoActionPerformed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_jMenuItemKiemKhoActionPerformed
 
     private void jMenuItemThietLapGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemThietLapGiaActionPerformed
         // TODO add your handling code here:
@@ -383,7 +368,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemHangHoa;
     private javax.swing.JMenuItem jMenuItemHoaDon;
     private javax.swing.JMenuItem jMenuItemKhachHang;
-    private javax.swing.JMenuItem jMenuItemKiemKho;
     private javax.swing.JMenuItem jMenuItemNhaCungCap;
     private javax.swing.JMenuItem jMenuItemNhanVien;
     private javax.swing.JMenuItem jMenuItemNhapHang;
