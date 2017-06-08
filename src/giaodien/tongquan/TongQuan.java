@@ -307,9 +307,9 @@ public class TongQuan extends javax.swing.JPanel {
         jScrollPane1.setBorder(null);
 
         jList1.setBackground(new java.awt.Color(240, 240, 240));
-        jList1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jList1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { " ", " ", "Quang Duy vừa bán", "\tSơ mi DS2 nhật bản size M", " ", " ", "Ngọc trinh vừa bán ", "\tỐp đt LV chữ 7", " ", " ", "Phú yên vừa ", "\tchỉnh sửa giá bán", " ", " ", "Huyền My vừa nhập hàng", " ", " ", "(Khách hàng VIP) Ronaldo vừa mua", "\t Ốp lưng Gucci hoa iphone 7" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
