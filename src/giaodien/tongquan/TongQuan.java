@@ -43,7 +43,8 @@ public class TongQuan extends javax.swing.JPanel {
     /**
      * Creates new form index
      */
-    int thang;
+    int thang = 1 + Calendar.getInstance().get(Calendar.MONTH);
+    
     public TongQuan() {
         
         
@@ -183,7 +184,7 @@ public class TongQuan extends javax.swing.JPanel {
         graph1.add(chartpanel1, BorderLayout.CENTER);
         graph1.validate();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -336,6 +337,7 @@ public class TongQuan extends javax.swing.JPanel {
         Detailpanel.add(jLabel5, gridBagConstraints);
 
         jcbThang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12" }));
+        jcbThang.setSelectedIndex( Calendar.getInstance().get(Calendar.MONTH));
         jcbThang.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jcbThangItemStateChanged(evt);
