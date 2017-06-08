@@ -75,14 +75,14 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabelTongTien2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Thông tin");
 
@@ -417,7 +417,7 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
         pack();

@@ -129,15 +129,15 @@ public class TraHangNhap extends javax.swing.JPanel {
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel28.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel28.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel13.setBackground(new java.awt.Color(0, 153, 51));
+        jLabel13.setBackground(new java.awt.Color(0, 135, 51));
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText(" Tìm kiếm");
         jLabel13.setOpaque(true);
 
-        btnTimkiem.setBackground(new java.awt.Color(0, 153, 51));
+        btnTimkiem.setBackground(new java.awt.Color(102, 102, 102));
         btnTimkiem.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnTimkiem.setForeground(new java.awt.Color(255, 255, 255));
         btnTimkiem.setText("...");
@@ -167,9 +167,11 @@ public class TraHangNhap extends javax.swing.JPanel {
         );
 
         tfTimkiem2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfTimkiem2.setForeground(new java.awt.Color(102, 102, 102));
         tfTimkiem2.setText(" Theo mã phiếu nhập");
 
         tfTimkiem3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfTimkiem3.setForeground(new java.awt.Color(102, 102, 102));
         tfTimkiem3.setText(" Theo tên hoặc mã hàng");
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
@@ -179,6 +181,7 @@ public class TraHangNhap extends javax.swing.JPanel {
         jButton3.setBorder(null);
 
         tfTimKiem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfTimKiem1.setForeground(new java.awt.Color(102, 102, 102));
         tfTimKiem1.setText(" Theo mã hóa đơn");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
@@ -218,9 +221,9 @@ public class TraHangNhap extends javax.swing.JPanel {
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel12.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel12.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel5.setBackground(new java.awt.Color(0, 153, 51));
+        jLabel5.setBackground(new java.awt.Color(0, 135, 51));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" Trạng thái");
@@ -290,9 +293,9 @@ public class TraHangNhap extends javax.swing.JPanel {
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel21.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel21.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel9.setBackground(new java.awt.Color(0, 153, 51));
+        jLabel9.setBackground(new java.awt.Color(0, 135, 51));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText(" Thời gian");
@@ -351,9 +354,9 @@ public class TraHangNhap extends javax.swing.JPanel {
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel22.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel22.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel10.setBackground(new java.awt.Color(0, 153, 51));
+        jLabel10.setBackground(new java.awt.Color(0, 135, 51));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText(" Lựa chọn hiển thị");
@@ -365,7 +368,7 @@ public class TraHangNhap extends javax.swing.JPanel {
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,7 +390,7 @@ public class TraHangNhap extends javax.swing.JPanel {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel13Layout.createSequentialGroup()
@@ -399,10 +402,9 @@ public class TraHangNhap extends javax.swing.JPanel {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -174,10 +174,10 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(218, 247, 233));
 
+        jTextFieldMaNCC.setEditable(false);
         jTextFieldMaNCC.setBackground(new java.awt.Color(218, 247, 233));
         jTextFieldMaNCC.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextFieldMaNCC.setForeground(new java.awt.Color(102, 102, 102));
-        jTextFieldMaNCC.setText("Nhà cung cấp chưa xác định");
         jTextFieldMaNCC.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextFieldMaNCC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,6 +247,7 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(218, 247, 233));
 
+        jLabel5.setBackground(new java.awt.Color(218, 247, 233));
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Tổng tiền ");
 
@@ -254,13 +255,16 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
         jTextFieldGiaGiam.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldGiaGiam.setText("0");
 
+        jLabel6.setBackground(new java.awt.Color(218, 247, 233));
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Giảm giá");
 
+        jLabelTongTien.setBackground(new java.awt.Color(218, 247, 233));
         jLabelTongTien.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabelTongTien.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelTongTien.setText("0 ");
 
+        jLabel11.setBackground(new java.awt.Color(218, 247, 233));
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Tiền trả cho nhà cung cấp");
 
@@ -268,9 +272,11 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
         jTextFieldTienTra.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextFieldTienTra.setText("0");
 
+        jLabel12.setBackground(new java.awt.Color(218, 247, 233));
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Còn nợ");
 
+        jLabelConNo.setBackground(new java.awt.Color(218, 247, 233));
         jLabelConNo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabelConNo.setForeground(java.awt.Color.blue);
         jLabelConNo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

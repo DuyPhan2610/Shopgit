@@ -50,8 +50,6 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
-        tf_screentrahangnhap_timnhacungcap = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -71,6 +69,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jTextField7 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
@@ -94,13 +93,13 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setText("Trả hàng nhập");
 
         tf_screentrahangnhap_timhanghoa.setForeground(new java.awt.Color(102, 102, 102));
         tf_screentrahangnhap_timhanghoa.setToolTipText("Tìm hàng hóa theo mã hoặc tên...");
 
-        btn_screentrahangnhap_import.setBackground(new java.awt.Color(0, 153, 51));
+        btn_screentrahangnhap_import.setBackground(new java.awt.Color(0, 135, 51));
         btn_screentrahangnhap_import.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
         btn_screentrahangnhap_import.setForeground(new java.awt.Color(255, 255, 255));
         btn_screentrahangnhap_import.setText("Import");
@@ -121,7 +120,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
                 .addComponent(tf_screentrahangnhap_timhanghoa, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_screentrahangnhap_import, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,23 +143,10 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(218, 247, 233));
 
-        tf_screentrahangnhap_timnhacungcap.setForeground(new java.awt.Color(102, 102, 102));
-        tf_screentrahangnhap_timnhacungcap.setToolTipText("Tìm nhà cung cấp...");
-
-        jButton3.setBackground(new java.awt.Color(34, 139, 34));
-        jButton3.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("+");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
+        jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(218, 247, 233));
         jTextField3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField3.setText("Nhà cung cấp chưa xác định");
         jTextField3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,19 +332,14 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(tf_screentrahangnhap_timnhacungcap, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(tf_screentrahangnhap_timnhacungcap, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
@@ -586,7 +567,8 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
         );
@@ -606,7 +588,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 14, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -631,7 +613,7 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1208, Short.MAX_VALUE)
+            .addGap(0, 1218, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -651,10 +633,6 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
         jp1.setVisible(true);
        
     }//GEN-LAST:event_btn_screentrahangnhap_importActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -715,12 +693,12 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -759,6 +737,5 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTable tb_screentrahangnhap;
     private javax.swing.JTextField tf_screentrahangnhap_timhanghoa;
-    private javax.swing.JTextField tf_screentrahangnhap_timnhacungcap;
     // End of variables declaration//GEN-END:variables
 }

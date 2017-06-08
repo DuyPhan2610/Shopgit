@@ -36,9 +36,9 @@ public class JFrame_ManhinhthongbaoimportfileExcel extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(34, 139, 34));
+        jPanel2.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Thêm sản phẩm từ file Excel");
 
@@ -59,10 +59,10 @@ public class JFrame_ManhinhthongbaoimportfileExcel extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Xử lý dữ liệu (Tải về File mẫu: Excel 2003 hoặc bản cao hơn)");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 51));
+        jButton1.setBackground(new java.awt.Color(0, 135, 51));
         jButton1.setFont(new java.awt.Font("Arial Unicode MS", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Chọn file dữ liệu");

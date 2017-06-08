@@ -56,7 +56,7 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
         jrbnu = new javax.swing.JRadioButton();
         jrbkhac = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -97,6 +97,7 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\star_16.png")); // NOI18N
         jLabel3.setText("Loại khách");
 
         cbLoaiKhach.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -108,6 +109,7 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\pencil_16.png")); // NOI18N
         jLabel4.setText("Mã khách hàng");
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -116,6 +118,7 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
         jTextField1.setToolTipText(" Mã mặc định ...");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\diamond_16.png")); // NOI18N
         jLabel5.setText("Tên khách hàng");
 
         tfTenKhachHang.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -123,6 +126,7 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
         tfTenKhachHang.setToolTipText("");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\telephone_16.png")); // NOI18N
         jLabel6.setText("Điện thoại");
 
         tfDienThoai.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -134,14 +138,17 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
         tfNgaySinh.setToolTipText("");
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\wall-calendar_16.png")); // NOI18N
         jLabel7.setText("Ngày sinh");
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\gioitinh_!6.png")); // NOI18N
         jLabel8.setText("Giới tính");
 
         jButtonLuu.setBackground(new java.awt.Color(34, 139, 34));
         jButtonLuu.setFont(new java.awt.Font("Arial Unicode MS", 1, 12)); // NOI18N
         jButtonLuu.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonLuu.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\reload_16.png")); // NOI18N
         jButtonLuu.setText("Lưu\n\n");
         jButtonLuu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,9 +156,10 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 199, 126));
+        jButton3.setBackground(new java.awt.Color(255, 51, 51));
         jButton3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon("D:\\shopmanagement\\trunk\\icon\\access-denied_16.png")); // NOI18N
         jButton3.setText("Huỷ bỏ");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,14 +218,16 @@ public class JFrame_Themkhachhang extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jrbnu)
                         .addGap(18, 18, 18)
                         .addComponent(jrbkhac))
-                    .addComponent(jButtonLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jButtonLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)))
                 .addGap(40, 40, 40))
         );
         jPanel2Layout.setVerticalGroup(

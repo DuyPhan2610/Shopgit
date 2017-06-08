@@ -57,7 +57,6 @@ public class TraHang extends javax.swing.JPanel {
         jPanel28 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         btnTimkiem = new javax.swing.JButton();
-        tfTimkiem2 = new javax.swing.JTextField();
         tfTimkiem3 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         tfTimKiem1 = new javax.swing.JTextField();
@@ -84,7 +83,7 @@ public class TraHang extends javax.swing.JPanel {
         jLabel1.setText("Phiếu trả hàng");
 
         btnTrahang.setBackground(new java.awt.Color(0, 135, 204));
-        btnTrahang.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnTrahang.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
         btnTrahang.setForeground(new java.awt.Color(255, 255, 255));
         btnTrahang.setText("Trả hàng");
         btnTrahang.addActionListener(new java.awt.event.ActionListener() {
@@ -94,12 +93,12 @@ public class TraHang extends javax.swing.JPanel {
         });
 
         jButton2.setBackground(new java.awt.Color(0, 135, 204));
-        jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Xuất file");
 
         jComboBox1.setBackground(new java.awt.Color(0, 135, 204));
-        jComboBox1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jComboBox1.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Mã hóa đơn", "Chi nhánh", "Người nhận trả ", "Ghi chú", "Tổng tiền hàng trả", "Phí trả hàng", "Gỉam giá", " " }));
 
@@ -159,15 +158,15 @@ public class TraHang extends javax.swing.JPanel {
 
         jPanel27.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel28.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel28.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel13.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel13.setBackground(new java.awt.Color(0, 135, 51));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText(" Tìm kiếm");
         jLabel13.setOpaque(true);
 
-        btnTimkiem.setBackground(new java.awt.Color(0, 153, 51));
+        btnTimkiem.setBackground(new java.awt.Color(102, 102, 102));
         btnTimkiem.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnTimkiem.setForeground(new java.awt.Color(255, 255, 255));
         btnTimkiem.setText("...");
@@ -198,10 +197,8 @@ public class TraHang extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        tfTimkiem2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        tfTimkiem2.setText(" Theo mã hóa đơn");
-
         tfTimkiem3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfTimkiem3.setForeground(new java.awt.Color(102, 102, 102));
         tfTimkiem3.setText(" Theo mã, tên hàng");
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
@@ -211,6 +208,7 @@ public class TraHang extends javax.swing.JPanel {
         jButton3.setBorder(null);
 
         tfTimKiem1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfTimKiem1.setForeground(new java.awt.Color(102, 102, 102));
         tfTimKiem1.setText(" Theo mã hóa đơn");
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
@@ -218,46 +216,46 @@ public class TraHang extends javax.swing.JPanel {
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
-                .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel27Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel27Layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel27Layout.createSequentialGroup()
-                        .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tfTimkiem3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfTimkiem2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfTimKiem1))
+                        .addComponent(tfTimkiem3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                         .addContainerGap())))
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel27Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tfTimKiem1)))
+                .addContainerGap())
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel27Layout.createSequentialGroup()
                 .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(tfTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfTimkiem2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfTimkiem3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(tfTimKiem1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tfTimkiem3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGap(27, 27, 27))
         );
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel12.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel12.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel5.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setBackground(new java.awt.Color(0, 135, 51));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(" Trạng thái");
         jLabel5.setOpaque(true);
 
+        btnTrangthai.setBackground(new java.awt.Color(102, 102, 102));
         btnTrangthai.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnTrangthai.setForeground(new java.awt.Color(255, 255, 255));
         btnTrangthai.setText("...");
@@ -287,11 +285,11 @@ public class TraHang extends javax.swing.JPanel {
         );
 
         checkBox_trangthai1.setBackground(new java.awt.Color(255, 255, 255));
-        checkBox_trangthai1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        checkBox_trangthai1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBox_trangthai1.setText(" Hoàn thành");
 
         checkBox_trangthai2.setBackground(new java.awt.Color(255, 255, 255));
-        checkBox_trangthai2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        checkBox_trangthai2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         checkBox_trangthai2.setText(" Đã hủy");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -320,10 +318,10 @@ public class TraHang extends javax.swing.JPanel {
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel21.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel21.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel9.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel9.setBackground(new java.awt.Color(0, 135, 51));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText(" Thời gian");
         jLabel9.setOpaque(true);
@@ -345,21 +343,21 @@ public class TraHang extends javax.swing.JPanel {
         );
 
         jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton1.setText(" Toàn thời gian");
         jRadioButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setText(" Lựa chọn khác");
         jRadioButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel22.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel22.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel10.setBackground(new java.awt.Color(0, 153, 51));
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(0, 135, 51));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText(" Lựa chọn hiển thị");
         jLabel10.setOpaque(true);
@@ -370,19 +368,19 @@ public class TraHang extends javax.swing.JPanel {
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(jLabel10)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(jLabel10)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText(" Số bản ghi:");
 
-        jComboBox3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10", "15", "20", "30", "50" }));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -392,7 +390,7 @@ public class TraHang extends javax.swing.JPanel {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel13Layout.createSequentialGroup()
@@ -404,24 +402,25 @@ public class TraHang extends javax.swing.JPanel {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
-                .addGap(0, 26, Short.MAX_VALUE)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel20Layout.setVerticalGroup(
@@ -507,12 +506,12 @@ public class TraHang extends javax.swing.JPanel {
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
         // TODO add your handling code here:
        btnTimkiem.addActionListener(e -> {
-            if (!tfTimkiem2.isVisible() && !tfTimkiem3.isVisible()) {
-                tfTimkiem2.setVisible(true);
+            if ( !tfTimkiem3.isVisible()) {
+                tfTimKiem1.setVisible(true);
                 tfTimkiem3.setVisible(true);
             } else
             {
-                tfTimkiem2.setVisible(false);
+                
                 tfTimkiem3.setVisible(false);
             }
         });
@@ -565,7 +564,6 @@ public class TraHang extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_trahang;
     private javax.swing.JTextField tfTimKiem1;
-    private javax.swing.JTextField tfTimkiem2;
     private javax.swing.JTextField tfTimkiem3;
     // End of variables declaration//GEN-END:variables
 

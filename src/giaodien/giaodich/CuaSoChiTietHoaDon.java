@@ -72,14 +72,14 @@ public class CuaSoChiTietHoaDon extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabelConNo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 135, 51));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Thông tin");
 

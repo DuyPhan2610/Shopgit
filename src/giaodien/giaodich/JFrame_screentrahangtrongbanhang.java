@@ -23,7 +23,7 @@ public class JFrame_screentrahangtrongbanhang extends javax.swing.JFrame {
     public JFrame_screentrahangtrongbanhang() {
         initComponents();
              JTableHeader theader = jTableHoaDonTraHang.getTableHeader();
-        jTableHoaDonTraHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
+        jTableHoaDonTraHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
        theader.setFont(new Font("Arial", Font.BOLD,20));
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
@@ -78,7 +78,7 @@ public class JFrame_screentrahangtrongbanhang extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Chọn hóa đơn trả hàng");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -101,26 +101,26 @@ public class JFrame_screentrahangtrongbanhang extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("   Tìm kiếm");
         jLabel2.setOpaque(true);
 
         jLabel3.setBackground(new java.awt.Color(204, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("   Thời gian");
         jLabel3.setOpaque(true);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(102, 102, 102));
         jTextField1.setText("    Theo mã hóa đơn");
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(102, 102, 102));
         jTextField2.setText("    Theo khách hàng");
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(102, 102, 102));
         jTextField3.setText("    Theo tên hoặc mã hàng");
 
@@ -158,7 +158,7 @@ public class JFrame_screentrahangtrongbanhang extends javax.swing.JFrame {
             .addGap(0, 317, Short.MAX_VALUE)
         );
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("Từ ngày");
         jLabel4.setToolTipText("");
@@ -189,7 +189,7 @@ public class JFrame_screentrahangtrongbanhang extends javax.swing.JFrame {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Đến ngày");
         jLabel6.setToolTipText("");
