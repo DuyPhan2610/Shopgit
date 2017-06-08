@@ -25,11 +25,11 @@ public class TableCellRendererColor extends DefaultTableCellRenderer{
         {
          componente.setBackground(Color.white);
         } else {
-            componente.setBackground(Color.lightGray);
+            componente.setBackground(Color.getHSBColor(16, 32, 90));
         }
         if(isSelected)
         {
-            componente.setBackground(Color.DARK_GRAY);
+            componente.setBackground(Color.lightGray);
         }
         return componente;
     

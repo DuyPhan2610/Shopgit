@@ -74,9 +74,7 @@ public class MainWindow extends javax.swing.JFrame {
         jMenuItemTaiChinh = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(100, 50));
-        setPreferredSize(new java.awt.Dimension(1200, 700));
 
         jPanelContent.setLayout(new java.awt.CardLayout());
 

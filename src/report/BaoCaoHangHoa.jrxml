@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BaoCaoHangHoa" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="243fdd5a-6c1b-49a1-9fa4-4319feadd736">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="DataSetBaoCaoHangHoa" uuid="e27b445b-5878-419c-a6ae-694919b90ad3">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     hanghoa.`MAHANGHOA` AS hanghoa_MAHANGHOA,
+     hanghoa.`TENHANGHOA` AS hanghoa_TENHANGHOA,
+     hanghoa.`GIABAN` AS hanghoa_GIABAN,
+     hanghoa.`TONKHO` AS hanghoa_TONKHO,
+     hanghoa.`NHOMHANGHOA` AS hanghoa_NHOMHANGHOA
+FROM
+     `hanghoa` hanghoa]]>
+		</queryString>
+		<field name="hanghoa_MAHANGHOA" class="java.lang.String"/>
+		<field name="hanghoa_TENHANGHOA" class="java.lang.String"/>
+		<field name="hanghoa_NHOMHANGHOA" class="java.lang.String"/>
+		<field name="hanghoa_TONKHO" class="java.lang.Integer"/>
+		<field name="hanghoa_GIABAN" class="java.lang.Float"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1]]>
+	</queryString>
+	<field name="1" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="67" uuid="c768e58c-fb60-4159-9c05-f0f7a2588341"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Báo cáo về hàng hóa]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="48" uuid="94e28549-0a5f-42c8-9a23-9715c7296026"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Cửa hàng: LUISHOMME]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="9" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<elementGroup>
+				<elementGroup>
+					<componentElement>
+						<reportElement key="table" style="table" x="0" y="0" width="555" height="125" uuid="10ccf77e-ee3e-4d67-9be9-a05cdcfdb38c"/>
+						<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+							<datasetRun subDataset="DataSetBaoCaoHangHoa" uuid="c2538da9-9bc3-45ab-b549-5410e90470ee">
+								<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+							</datasetRun>
+							<jr:column width="80" uuid="680d741e-5800-4789-82db-9da266edb873">
+								<jr:columnHeader style="table_CH" height="60" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="80" height="38" uuid="c3b94997-8042-4687-afe2-5ad7c2ef5911"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Arial" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Mã hàng hóa]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_TD" height="37" rowSpan="1">
+									<textField>
+										<reportElement x="0" y="0" width="80" height="37" uuid="0f62eb70-516a-49dd-8d1d-b218da8af252"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Times New Roman"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{hanghoa_MAHANGHOA}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="168" uuid="e7bc7b2f-89e4-49e0-9d5c-94dce28459ec">
+								<jr:columnHeader style="table_CH" height="60" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="168" height="38" uuid="79b8c876-1a5c-4f0a-b7bc-80b840f7bc48"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Arial" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Tên hàng hóa]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_TD" height="37" rowSpan="1">
+									<textField>
+										<reportElement x="0" y="0" width="168" height="37" uuid="cec0058b-0731-46ed-a15a-e1e6e2d47747"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Times New Roman"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{hanghoa_TENHANGHOA}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="123" uuid="c7c7b6b8-0383-467a-9052-883389a69252">
+								<jr:columnHeader style="table_CH" height="60" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="123" height="38" uuid="4a75981f-ccce-4b42-8dc2-57af938ee2e6"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Arial" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Nhóm hàng hóa]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_TD" height="37" rowSpan="1">
+									<textField>
+										<reportElement x="0" y="0" width="123" height="37" uuid="ea01ddff-ab41-4cf5-b445-b3dba600a678"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Times New Roman"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{hanghoa_NHOMHANGHOA}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="69" uuid="fa6ebc60-9d04-48be-b00d-24106cdbc733">
+								<jr:columnHeader style="table_CH" height="60" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="69" height="38" uuid="e2a77220-2b8d-44dc-a012-b2af996c2ff6"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Arial" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Tồn kho]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_TD" height="37" rowSpan="1">
+									<textField>
+										<reportElement x="0" y="0" width="69" height="37" uuid="6074bbf5-b4b5-4b5c-97f0-2ef2c960d85c"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Times New Roman"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{hanghoa_TONKHO}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="104" uuid="f4f2ef08-1685-40b5-a202-c6f7a811ff8a">
+								<jr:columnHeader style="table_CH" height="60" rowSpan="1">
+									<staticText>
+										<reportElement x="0" y="0" width="104" height="38" uuid="7ce17d6e-7ff4-43cd-a0d3-192a5348198f"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Arial" size="12" isBold="true"/>
+										</textElement>
+										<text><![CDATA[Giá bán]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="table_TD" height="37" rowSpan="1">
+									<textField>
+										<reportElement x="0" y="0" width="104" height="37" uuid="3e7c3267-d1d1-4da6-abe0-9e8fd55ef878"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font fontName="Times New Roman"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{hanghoa_GIABAN}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:table>
+					</componentElement>
+				</elementGroup>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="21" y="0" width="100" height="20" uuid="e2d45aff-156f-47b4-bb5b-9b3a599ce0d2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="33e7d9e7-63e8-45b1-849b-d444f5823df4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="440058b8-0fa4-4f5c-b10d-c6061ee7bac4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

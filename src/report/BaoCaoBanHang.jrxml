@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2682af2a-1d08-40c1-9fbc-6b1b057091ae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     hoadonbanhang.`MAHOADONBANHANG` AS hoadonbanhang_MAHOADONBANHANG,
+     hoadonbanhang.`TONGTIEN` AS hoadonbanhang_TONGTIEN,
+     hoadonbanhang.`THOIGIAN` AS hoadonbanhang_THOIGIAN
+FROM
+     `hoadonbanhang` hoadonbanhang]]>
+	</queryString>
+	<field name="hoadonbanhang_MAHOADONBANHANG" class="java.lang.String"/>
+	<field name="hoadonbanhang_THOIGIAN" class="java.sql.Timestamp"/>
+	<field name="hoadonbanhang_TONGTIEN" class="java.lang.Float"/>
+	<variable name="COUNT_BH" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{hoadonbanhang_MAHOADONBANHANG}]]></variableExpression>
+	</variable>
+	<variable name="TONGTIEN_BH" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{hoadonbanhang_TONGTIEN}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{hoadonbanhang_TONGTIEN}]]></initialValueExpression>
+	</variable>
+	<variable name="SoThuTu" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$V{SoThuTu}]]></variableExpression>
+	</variable>
+	<group name="hoadonbanhang_TONGTIEN">
+		<groupExpression><![CDATA[$F{hoadonbanhang_TONGTIEN}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="58" forecolor="#FFFFFF" backcolor="#0087CC" uuid="24ea6ab3-65b5-4645-84e3-628a8e41ad50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Báo cáo về bán hàng]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="76" y="1" width="106" height="34" backcolor="#B9D1EA" uuid="cde253dc-55e3-4724-b500-8e72d0502996"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mã hóa đơn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="234" y="1" width="123" height="34" backcolor="#B9D1EA" uuid="7033766a-d693-47df-a391-489780d72ea1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thời gian]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="418" y="0" width="92" height="35" backcolor="#B9D1EA" uuid="9b769770-c859-44eb-a0df-02802fdb4dd4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doanh Thu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="14" y="0" width="35" height="35" backcolor="#B9D1EA" uuid="cbc3b371-35e8-491e-9137-17153244a7fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="76" y="0" width="106" height="36" uuid="9d7623ad-b97e-4567-ba3d-f12e5bede8c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_MAHOADONBANHANG}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm.ss a">
+				<reportElement x="234" y="0" width="123" height="36" uuid="b1fbaf2b-b533-4255-a4bd-1401f35a6137"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_THOIGIAN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="0" width="92" height="36" uuid="ecfcb331-5182-43a2-89a8-fc8d6a11565c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_TONGTIEN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="0" width="35" height="36" uuid="63c547e0-928b-4851-822f-77c138c2fa19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SoThuTu}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="182" y="0" width="100" height="33" uuid="f1846486-4b6a-4571-b767-2667f5086730"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COUNT_BH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="114" height="33" uuid="6814e27e-0b2d-4bc9-ac45-d2b21df91bc1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TONGTIEN_BH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="182" height="33" backcolor="#E0C8A4" uuid="4d2ec689-f1c4-4921-97c8-1aeb0bdb473e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tổng số lượng hóa đơn:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="304" y="0" width="137" height="33" backcolor="#E0C8A4" uuid="157d2093-819d-429b-a390-2211ce1cc82e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tổng doanh thu:]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

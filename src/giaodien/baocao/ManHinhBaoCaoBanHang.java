@@ -5,6 +5,20 @@
  */
 package giaodien.baocao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.HashMap;
+import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.swing.JRViewer;
+
 /**
  *
  * @author USER
@@ -41,6 +55,8 @@ public class ManHinhBaoCaoBanHang extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jPanelBaoCaoBanHang = new javax.swing.JPanel();
+        desktopPaneBH = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,8 +192,31 @@ public class ManHinhBaoCaoBanHang extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(305, Short.MAX_VALUE))
         );
+
+        jPanelBaoCaoBanHang.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanelBaoCaoBanHangLayout = new javax.swing.GroupLayout(jPanelBaoCaoBanHang);
+        jPanelBaoCaoBanHang.setLayout(jPanelBaoCaoBanHangLayout);
+        jPanelBaoCaoBanHangLayout.setHorizontalGroup(
+            jPanelBaoCaoBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 868, Short.MAX_VALUE)
+        );
+        jPanelBaoCaoBanHangLayout.setVerticalGroup(
+            jPanelBaoCaoBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        desktopPaneBH.setBackground(new java.awt.Color(0, 135, 51));
+        desktopPaneBH.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
+        desktopPaneBH.setForeground(new java.awt.Color(255, 255, 255));
+        desktopPaneBH.setText("Mở báo cáo");
+        desktopPaneBH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                desktopPaneBHActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -186,14 +225,22 @@ public class ManHinhBaoCaoBanHang extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(794, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelBaoCaoBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(desktopPaneBH, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelBaoCaoBanHang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(desktopPaneBH, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
 
         jScrollPane2.setViewportView(jPanel1);
@@ -202,15 +249,46 @@ public class ManHinhBaoCaoBanHang extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1375, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void desktopPaneBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desktopPaneBHActionPerformed
+        // TODO add your handling code here:
+        try {
+                // TODO add your handling code here:
+                Class.forName("com.mysql.jdbc.Driver");
+            
+                Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useSSL=false", "root", "2610");
+                 
+                
+                JasperDesign jd = JRXmlLoader.load("D:\\shopmanagement\\trunk\\src\\report\\BaoCaoBanHang.jrxml");
+                JasperReport jr =JasperCompileManager.compileReport("D:\\shopmanagement\\trunk\\src\\report\\BaoCaoBanHang.jrxml");
+                JasperPrint jp =JasperFillManager.fillReport(jr, new HashMap(), con);
+                //JasperViewer.viewReport(jp);
+                //desktopPane.add( new JRViewer(jp));
+                //desktopPane.setVisible(true);
+                
+                JRViewer jv = new JRViewer(jp);  
+jPanelBaoCaoBanHang.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+jPanelBaoCaoBanHang.setLayout(new java.awt.BorderLayout());
+jPanelBaoCaoBanHang.setPreferredSize(new java.awt.Dimension(900, 768));
+jPanelBaoCaoBanHang.add(jv);
+jPanelBaoCaoBanHang.repaint();
+jPanelBaoCaoBanHang.revalidate();
+                //JasperExportManager.exportReportToPdfFile(jp, "D:\\shopmanagement\\trunk\\src\\report\\BaoCaoHangHoa.pdf");
+        } catch ( ClassNotFoundException |SQLException | JRException e) {
+            JOptionPane.showMessageDialog(null, "Can not show report" +e.getMessage());
+        }
+    }//GEN-LAST:event_desktopPaneBHActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,6 +326,7 @@ public class ManHinhBaoCaoBanHang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton desktopPaneBH;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -258,6 +337,7 @@ public class ManHinhBaoCaoBanHang extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanelBaoCaoBanHang;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
