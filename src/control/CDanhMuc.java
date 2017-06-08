@@ -106,4 +106,123 @@ public class CDanhMuc {
         ghiFile.taoFileHangHoa(this.layDSHangHoaTrongTable());
     }
     
+    
+    // tìm hàng hóa bằng mã
+    public void timHangHoaBangMa(String maHangHoa){
+        
+        HangHoa hh = bangHangHoa.layHangHoaTuMaHangHoa(maHangHoa);
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
+        if(hh != null){
+            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                , hh.mDinhMucTonNhieuNhat});
+        }
+    }
+    
+    // show hàng hóa dưới định mức tồn ít nhất
+    public void hangHoaDuoiDinhMucTon(){
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
+        
+        this.ganGiaTriChoDSHangHoa();
+        if(this.dsHangHoa != null){
+            for(int i = 0; i < this.dsHangHoa.size(); i ++){
+                HangHoa hh = dsHangHoa.get(i);
+                if(hh.mTonKho < hh.mDinhMucTonItNhat){
+                            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                , hh.mDinhMucTonNhieuNhat});
+                }
+            }
+        }
+        
+    }
+    
+    
+    // hàng hóa vượt mức tồn
+    public void hangHoaVuotDinhMucTon(){
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
+        
+        this.ganGiaTriChoDSHangHoa();
+        if(this.dsHangHoa != null){
+            for(int i = 0; i < this.dsHangHoa.size(); i ++){
+                HangHoa hh = dsHangHoa.get(i);
+                if(hh.mTonKho > hh.mDinhMucTonNhieuNhat){
+                            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                , hh.mDinhMucTonNhieuNhat});
+                }
+            }
+        }
+        
+    }
+    
+    // hết hàng trong kho
+    public void hetHangTrongKho(){
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
+        
+        this.ganGiaTriChoDSHangHoa();
+        if(this.dsHangHoa != null){
+            for(int i = 0; i < this.dsHangHoa.size(); i ++){
+                HangHoa hh = dsHangHoa.get(i);
+                if(hh.mTonKho == 0){
+                            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                , hh.mDinhMucTonNhieuNhat});
+                }
+            }
+        }
+        
+    }
+    
+    // còn hàng trong kho
+    public void conHangTrongKho(){
+        while(mModel.getRowCount() > 0){
+            mModel.removeRow(0);
+        }
+        
+        this.ganGiaTriChoDSHangHoa();
+        if(this.dsHangHoa != null){
+            for(int i = 0; i < this.dsHangHoa.size(); i ++){
+                HangHoa hh = dsHangHoa.get(i);
+                if(hh.mTonKho > 0){
+                            this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                , hh.mDinhMucTonNhieuNhat});
+                }
+            }
+        }
+        
+    }
+    
+    // lọc theo nhóm quần áo
+    public void locTheoNhomHangHoa(String nhomHangHoa){
+
+            while(mModel.getRowCount() > 0){
+                mModel.removeRow(0);
+            }
+
+        
+            
+            this.ganGiaTriChoDSHangHoa();
+            if(this.dsHangHoa != null){
+                for(int i = 0; i < this.dsHangHoa.size(); i ++){
+                    HangHoa hh = dsHangHoa.get(i);
+                    if(hh.mNhomHangHoa.equals(nhomHangHoa)){
+                                this.mModel.addRow(new Object[]{hh.mMaHangHoa, hh.mTenHangHoa,
+                                    hh.mNhomHangHoa, hh.mGiaVon, hh.mGiaBan, hh.mTonKho, hh.mDinhMucTonItNhat
+                                    , hh.mDinhMucTonNhieuNhat});
+                    }
+                }
+            }
+               
+       
+    }
 }

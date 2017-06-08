@@ -330,7 +330,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jTextField1" alignment="1" min="-2" pref="235" max="-2" attributes="0"/>
+                              <Component id="jTextFieldTimMaHH" alignment="1" min="-2" pref="235" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" pref="253" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -343,7 +343,7 @@
                           <EmptySpace pref="24" max="32767" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="jTextFieldTimMaHH" min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -365,7 +365,7 @@
                     <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="jTextFieldTimMaHH">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                   </Properties>
@@ -467,11 +467,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonHetHang" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonConHang" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonVuotMucTon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonDuoiMucTon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jRadioButtonTatCa" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -480,22 +480,22 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonTatCa" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonDuoiMucTon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonVuotMucTon" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonConHang" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonHetHang" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+                    <Component class="javax.swing.JRadioButton" name="jRadioButtonTatCa">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -509,10 +509,10 @@
                         <Property name="text" type="java.lang.String" value="T&#x1ea5;t c&#x1ea3;"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonTatCaActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+                    <Component class="javax.swing.JRadioButton" name="jRadioButtonDuoiMucTon">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -525,8 +525,11 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="D&#x1b0;&#x1edb;i &#x111;&#x1ecb;nh m&#x1ee9;c t&#x1ed3;n"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonDuoiMucTonActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+                    <Component class="javax.swing.JRadioButton" name="jRadioButtonVuotMucTon">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -540,10 +543,10 @@
                         <Property name="text" type="java.lang.String" value="V&#x1b0;&#x1ee3;t &#x111;&#x1ecb;nh m&#x1ee9;c t&#x1ed3;n"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton3ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonVuotMucTonActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+                    <Component class="javax.swing.JRadioButton" name="jRadioButtonConHang">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -557,10 +560,10 @@
                         <Property name="text" type="java.lang.String" value="C&#xf2;n h&#xe0;ng trong kho"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonConHangActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+                    <Component class="javax.swing.JRadioButton" name="jRadioButtonHetHang">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -574,7 +577,7 @@
                         <Property name="text" type="java.lang.String" value="H&#x1ebf;t h&#xe0;ng trong kho"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton5ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonHetHangActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -634,6 +637,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -651,6 +657,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

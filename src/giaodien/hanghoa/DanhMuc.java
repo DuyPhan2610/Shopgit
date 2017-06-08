@@ -42,6 +42,7 @@ public class DanhMuc extends javax.swing.JPanel {
                .setHorizontalAlignment(JLabel.LEFT);
        jTable3.setFont(new Font("Arial",Font.PLAIN,18));
         jTable3.setRowHeight(50);
+        this.jRadioButtonTatCa.setSelected(true);
        
        this.danhMucHangHoa = new CDanhMuc(jTable3);
        this.danhMucHangHoa.duaDuLieuVaoBang();
@@ -72,16 +73,16 @@ public class DanhMuc extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldTimMaHH = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButtonTatCa = new javax.swing.JRadioButton();
+        jRadioButtonDuoiMucTon = new javax.swing.JRadioButton();
+        jRadioButtonVuotMucTon = new javax.swing.JRadioButton();
+        jRadioButtonConHang = new javax.swing.JRadioButton();
+        jRadioButtonHetHang = new javax.swing.JRadioButton();
         jPanel13 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -205,7 +206,7 @@ public class DanhMuc extends javax.swing.JPanel {
         jLabel2.setText("  Tìm kiếm");
         jLabel2.setOpaque(true);
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextFieldTimMaHH.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -213,7 +214,7 @@ public class DanhMuc extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTimMaHH, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -223,7 +224,7 @@ public class DanhMuc extends javax.swing.JPanel {
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jTextFieldTimMaHH, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -256,48 +257,53 @@ public class DanhMuc extends javax.swing.JPanel {
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
 
-        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton1.setText("Tất cả");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButtonTatCa.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButtonTatCa);
+        jRadioButtonTatCa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButtonTatCa.setText("Tất cả");
+        jRadioButtonTatCa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                jRadioButtonTatCaActionPerformed(evt);
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton2.setText("Dưới định mức tồn");
-
-        jRadioButton3.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton3.setText("Vượt định mức tồn");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButtonDuoiMucTon.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButtonDuoiMucTon);
+        jRadioButtonDuoiMucTon.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButtonDuoiMucTon.setText("Dưới định mức tồn");
+        jRadioButtonDuoiMucTon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                jRadioButtonDuoiMucTonActionPerformed(evt);
             }
         });
 
-        jRadioButton4.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton4.setText("Còn hàng trong kho");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButtonVuotMucTon.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButtonVuotMucTon);
+        jRadioButtonVuotMucTon.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButtonVuotMucTon.setText("Vượt định mức tồn");
+        jRadioButtonVuotMucTon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                jRadioButtonVuotMucTonActionPerformed(evt);
             }
         });
 
-        jRadioButton5.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton5.setText("Hết hàng trong kho");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButtonConHang.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButtonConHang);
+        jRadioButtonConHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButtonConHang.setText("Còn hàng trong kho");
+        jRadioButtonConHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
+                jRadioButtonConHangActionPerformed(evt);
+            }
+        });
+
+        jRadioButtonHetHang.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButtonHetHang);
+        jRadioButtonHetHang.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButtonHetHang.setText("Hết hàng trong kho");
+        jRadioButtonHetHang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonHetHangActionPerformed(evt);
             }
         });
 
@@ -308,25 +314,25 @@ public class DanhMuc extends javax.swing.JPanel {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jRadioButtonHetHang)
+                    .addComponent(jRadioButtonConHang)
+                    .addComponent(jRadioButtonVuotMucTon)
+                    .addComponent(jRadioButtonDuoiMucTon)
+                    .addComponent(jRadioButtonTatCa))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addComponent(jRadioButton1)
+                .addComponent(jRadioButtonTatCa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(jRadioButtonDuoiMucTon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(jRadioButtonVuotMucTon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(jRadioButtonConHang)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton5)
+                .addComponent(jRadioButtonHetHang)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -374,11 +380,21 @@ public class DanhMuc extends javax.swing.JPanel {
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất cả", "Áo sơ mi", "Áo phông", "Quần", "Giày", "Phụ kiện" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 135, 51));
         jButton3.setText("Tìm kiếm");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -582,21 +598,25 @@ public class DanhMuc extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jTable3ComponentAdded
 
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+    private void jRadioButtonHetHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonHetHangActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
+        this.danhMucHangHoa.hetHangTrongKho();
+    }//GEN-LAST:event_jRadioButtonHetHangActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void jRadioButtonConHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonConHangActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+        this.danhMucHangHoa.conHangTrongKho();
+    }//GEN-LAST:event_jRadioButtonConHangActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void jRadioButtonVuotMucTonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonVuotMucTonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+        this.danhMucHangHoa.hangHoaVuotDinhMucTon();
+    }//GEN-LAST:event_jRadioButtonVuotMucTonActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void jRadioButtonTatCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonTatCaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        this.danhMucHangHoa.duaDuLieuVaoBang();
+    }//GEN-LAST:event_jRadioButtonTatCaActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
@@ -607,6 +627,26 @@ public class DanhMuc extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.danhMucHangHoa.xoaRowTrongTable();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if(!this.jTextFieldTimMaHH.getText().toString().isEmpty()){
+            this.danhMucHangHoa.timHangHoaBangMa(this.jTextFieldTimMaHH.getText());
+        }else{
+            this.danhMucHangHoa.duaDuLieuVaoBang();
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jRadioButtonDuoiMucTonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonDuoiMucTonActionPerformed
+        // TODO add your handling code here:
+        this.danhMucHangHoa.hangHoaDuoiDinhMucTon();
+    }//GEN-LAST:event_jRadioButtonDuoiMucTonActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        String nhomHH = this.jComboBox1.getSelectedItem().toString();
+        this.danhMucHangHoa.locTheoNhomHangHoa(nhomHH);
+    }//GEN-LAST:event_jComboBox1ActionPerformed
     
     
     
@@ -641,15 +681,15 @@ public class DanhMuc extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButtonConHang;
+    private javax.swing.JRadioButton jRadioButtonDuoiMucTon;
+    private javax.swing.JRadioButton jRadioButtonHetHang;
+    private javax.swing.JRadioButton jRadioButtonTatCa;
+    private javax.swing.JRadioButton jRadioButtonVuotMucTon;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldTimMaHH;
     // End of variables declaration//GEN-END:variables
 }
