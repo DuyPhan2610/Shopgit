@@ -5,6 +5,7 @@
  */
 package giaodien.baocao;
 
+import DatabaseConnection.ConnectionUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -351,10 +352,10 @@ public class ManHinhBaoCaoHangHoa1 extends javax.swing.JPanel {
             // TODO add your handling code here:
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useSSL=false", "root", "2610");
+            Connection con = new ConnectionUtils().getMySQLConnection();
 
-            JasperDesign jd = JRXmlLoader.load("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
-            JasperReport jr =JasperCompileManager.compileReport("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+            JasperDesign jd = JRXmlLoader.load("D:\\Learning\\Subjects\\PTTKHT\\Project\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+            JasperReport jr =JasperCompileManager.compileReport("D:\\Learning\\Subjects\\PTTKHT\\Project\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
             JasperPrint jp =JasperFillManager.fillReport(jr, new HashMap(), con);
             //JasperViewer.viewReport(jp);
             //desktopPane.add( new JRViewer(jp));

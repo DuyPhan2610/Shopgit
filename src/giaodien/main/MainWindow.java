@@ -2,6 +2,8 @@ package giaodien.main;
 
 
 import giaodien.baocao.ManHinhBaoCaoBanHang1;
+import giaodien.baocao.ManHinhBaoCaoHangHoa;
+import giaodien.baocao.ManHinhBaoCaoHangHoa1;
 import giaodien.giaodich.TraHangNhap;
 import giaodien.doitac.DoiTacKhachHang;
 import giaodien.doitac.DoiTacNhaCungCap;
@@ -194,6 +196,11 @@ public class MainWindow extends javax.swing.JFrame {
         jMenuBaoCao.add(jMenuItemBanNgay);
 
         jMenuItemHangHoa.setText("Hàng hóa");
+        jMenuItemHangHoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemHangHoaActionPerformed(evt);
+            }
+        });
         jMenuBaoCao.add(jMenuItemHangHoa);
 
         jMenuItemBCKhachHang.setText("Khách hàng");
@@ -303,6 +310,11 @@ public class MainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.veLaiFrame(new ManHinhBaoCaoBanHang1());
     }//GEN-LAST:event_jMenuItemBanNgayActionPerformed
+
+    private void jMenuItemHangHoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHangHoaActionPerformed
+        // TODO add your handling code here:
+        this.veLaiFrame(new ManHinhBaoCaoHangHoa1());
+    }//GEN-LAST:event_jMenuItemHangHoaActionPerformed
 
     /**
      * @param args the command line arguments

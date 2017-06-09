@@ -149,6 +149,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="H&#xe0;ng h&#xf3;a"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemHangHoaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemBCKhachHang">
               <Properties>
