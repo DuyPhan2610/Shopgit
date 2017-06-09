@@ -47,14 +47,14 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         initComponents();
         
         JTableHeader theader = jTableChiTietPhieuNhapHang.getTableHeader();
-        jTableChiTietPhieuNhapHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
+        jTableChiTietPhieuNhapHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
-       theader.setFont(new Font("Arial", Font.BOLD,16));
+       theader.setFont(new Font("Arial", Font.BOLD,18));
       
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
-       jTableChiTietPhieuNhapHang.setFont(new Font("Arial",Font.PLAIN,14));
-       jTableChiTietPhieuNhapHang.setRowHeight(30);
+       jTableChiTietPhieuNhapHang.setFont(new Font("Arial",Font.PLAIN,16));
+       jTableChiTietPhieuNhapHang.setRowHeight(50);
        this.mModel = (DefaultTableModel) jTableChiTietPhieuNhapHang.getModel();
        
        this.maPhieuNhap = maPhieuNhap;
@@ -270,8 +270,10 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
         jLabelTongTien2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelTongTien2.setText("0 ");
 
+        jLabelDaTra.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelDaTra.setText("0");
 
+        jLabelGiamGia.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelGiamGia.setText("0");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -310,11 +312,11 @@ public class CuaSoChiTietPhieuNhapHang extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                     .addComponent(jLabelTongHang, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelTongTien2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTongTien2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
                     .addGroup(jPanel8Layout.createSequentialGroup()

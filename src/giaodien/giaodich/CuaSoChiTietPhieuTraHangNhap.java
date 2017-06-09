@@ -23,14 +23,14 @@ public class CuaSoChiTietPhieuTraHangNhap extends javax.swing.JFrame {
     public CuaSoChiTietPhieuTraHangNhap() {
         initComponents();
          JTableHeader theader = jTableChiTietPhieuTraHangNhap.getTableHeader();
-        jTableChiTietPhieuTraHangNhap.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
+        jTableChiTietPhieuTraHangNhap.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
-       theader.setFont(new Font("Arial", Font.BOLD,16));
+       theader.setFont(new Font("Arial", Font.BOLD,18));
       
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
-       jTableChiTietPhieuTraHangNhap.setFont(new Font("Arial",Font.PLAIN,14));
-       jTableChiTietPhieuTraHangNhap.setRowHeight(30);
+       jTableChiTietPhieuTraHangNhap.setFont(new Font("Arial",Font.PLAIN,16));
+       jTableChiTietPhieuTraHangNhap.setRowHeight(50);
     }
 
     /**
@@ -131,10 +131,7 @@ public class CuaSoChiTietPhieuTraHangNhap extends javax.swing.JFrame {
 
         jTableChiTietPhieuTraHangNhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Mã hàng hóa", "Tên hàng", "Số lượng", "Giá nhập", "Giá trả lại"

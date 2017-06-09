@@ -93,6 +93,10 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(240, 244, 244));
+
+        jPanel2.setBackground(new java.awt.Color(240, 244, 244));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setText("Trả hàng nhập");
 
@@ -136,6 +140,8 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
                             .addComponent(tf_screentrahangnhap_timhanghoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel3.setBackground(new java.awt.Color(240, 244, 244));
 
         jTabbedPane1.setBackground(new java.awt.Color(218, 247, 233));
         jTabbedPane1.setForeground(new java.awt.Color(102, 102, 102));
@@ -552,6 +558,8 @@ public class CuaSoTraHangNhap extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
+
+        jPanel8.setBackground(new java.awt.Color(240, 244, 244));
 
         tb_screentrahangnhap.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

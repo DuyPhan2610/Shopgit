@@ -266,8 +266,8 @@ public class ManHinhBaoCaoBanHang1 extends javax.swing.JPanel {
 
             Connection con = new ConnectionUtils().getMySQLConnection();
 
-            JasperDesign jd = JRXmlLoader.load("D:\\Learning\\Subjects\\PTTKHT\\Project\\trunk\\src\\report\\BaoCaoBanHang.jrxml");
-            JasperReport jr =JasperCompileManager.compileReport("D:\\Learning\\Subjects\\PTTKHT\\Project\\trunk\\src\\report\\BaoCaoBanHang.jrxml");
+            JasperDesign jd = JRXmlLoader.load("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+            JasperReport jr =JasperCompileManager.compileReport("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
             JasperPrint jp =JasperFillManager.fillReport(jr, new HashMap(), con);
             //JasperViewer.viewReport(jp);
             //desktopPane.add( new JRViewer(jp));

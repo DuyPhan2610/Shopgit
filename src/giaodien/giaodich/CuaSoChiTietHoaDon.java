@@ -47,14 +47,14 @@ public class CuaSoChiTietHoaDon extends javax.swing.JFrame {
     public CuaSoChiTietHoaDon(String maHoaDon) {
         initComponents();
          JTableHeader theader = jTableChiTietHoaDonBanHang.getTableHeader();
-        jTableChiTietHoaDonBanHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
+        jTableChiTietHoaDonBanHang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
-       theader.setFont(new Font("Arial", Font.BOLD,16));
+       theader.setFont(new Font("Arial", Font.BOLD,18));
       
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
-       jTableChiTietHoaDonBanHang.setFont(new Font("Arial",Font.PLAIN,14));
-       jTableChiTietHoaDonBanHang.setRowHeight(30);
+       jTableChiTietHoaDonBanHang.setFont(new Font("Arial",Font.PLAIN,16));
+       jTableChiTietHoaDonBanHang.setRowHeight(50);
        this.mModel = (DefaultTableModel) jTableChiTietHoaDonBanHang.getModel();
        
        this.maHoaDon = maHoaDon;
@@ -262,8 +262,10 @@ public class CuaSoChiTietHoaDon extends javax.swing.JFrame {
         jLabelConNo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelConNo.setText("0 ");
 
+        jLabelGiaGiam.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelGiaGiam.setText("0");
 
+        jLabelDaTra.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelDaTra.setText("0");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -398,8 +400,8 @@ public class CuaSoChiTietHoaDon extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );

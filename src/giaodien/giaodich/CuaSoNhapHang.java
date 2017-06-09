@@ -31,12 +31,12 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
         JTableHeader theader = tb_screennhaphang.getTableHeader();
         tb_screennhaphang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
-       theader.setFont(new Font("Arial", Font.BOLD,12));
+       theader.setFont(new Font("Arial", Font.BOLD,22));
       
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
-       tb_screennhaphang.setFont(new Font("Arial",Font.PLAIN,14));
-       tb_screennhaphang.setRowHeight(30);
+       tb_screennhaphang.setFont(new Font("Arial",Font.PLAIN,18));
+       tb_screennhaphang.setRowHeight(50);
        
        nhapHangHoa = new NhapHangHoa(tb_screennhaphang, jComboBoxNCC, jLabelMaPhieuNhpa, jLabelTongTien
                         ,jLabelConNo, jTextFieldGiaGiam ,  jTextFieldTienTra, jTextFieldGhiChu);
@@ -117,6 +117,8 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
+        jPanel1.setBackground(new java.awt.Color(240, 244, 244));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
         jLabel1.setText("Nhập hàng");
 
@@ -167,6 +169,8 @@ public class CuaSoNhapHang extends javax.swing.JFrame {
                             .addComponent(btnImport, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
+
+        jPanel3.setBackground(new java.awt.Color(240, 244, 244));
 
         jTabbedPane1.setBackground(new java.awt.Color(218, 247, 233));
         jTabbedPane1.setForeground(new java.awt.Color(102, 102, 102));
