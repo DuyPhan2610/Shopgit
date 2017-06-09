@@ -92,7 +92,7 @@ public class DoiTacKhachHang extends javax.swing.JPanel {
         jLabel3.setBackground(new java.awt.Color(0, 135, 51));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText(" Nhóm hàng hóa");
+        jLabel3.setText(" Nhóm khách hàng");
         jLabel3.setOpaque(true);
 
         jLabel4.setBackground(new java.awt.Color(0, 135, 51));

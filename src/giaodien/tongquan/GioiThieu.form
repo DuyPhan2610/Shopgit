@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1200, 768]"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -16,13 +21,75 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="330" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="774" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="jTextField1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="jTextField1" min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="313" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="369" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="307" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="jTextPane1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="2"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#xa;Gi&#x1ea3;ng vi&#xea;n h&#x1b0;&#x1edb;ng d&#x1eab;n: Ths. &#x110;&#x1ed7; Th&#x1ecb; Minh Ph&#x1ee5;ng&#xa;&#x9;Nh&#xf3;m sinh vi&#xea;n th&#x1ef1;c hi&#x1ec7;n: &#xa;&#x9;&#x9;Ph&#x1ea1;m Ho&#xe0;i Nguy&#xea;n        14520605&#xa;&#x9;&#x9;L&#xea; V&#x103;n C&#x1b0;&#x1edd;ng                14521116&#xa;&#x9;&#x9;Phan Quang Duy           14521161&#xa;&#xa;Th&#xf4;ng tin ph&#x1ea7;n m&#x1ec1;m: &#xa;&#x9;Ph&#x1ea7;n m&#x1ec1;m qu&#x1ea3;n l&#xed; shop th&#x1edd;i trang LUIS HOMME &#x111;&#x1b0;&#x1ee3;c ph&#xe1;t tri&#x1ec3;n b&#x1edf;i nh&#xf3;m tr&#xea;n.  Sau nhi&#x1ec1;u th&#xe1;ng ph&#xe1;t tri&#x1ec3;n ph&#x1ea7;n m&#x1ec1;m v&#xe0; &#x111;&#xe3; cho ra s&#x1ea3;n ph&#x1ea9;m v&#xe0; &#x111;&#x1b0;a v&#xe0;o &#xe1;p d&#x1ee5;ng t&#x1ea1;i shop th&#x1edd;i trang LUIS HOMME, nh&#xf3;m khao kh&#xe1;t mang c&#xf4;ng ngh&#x1ec7; ph&#x1ee5;c v&#x1ee5; c&#xe1;c c&#x1eed;a h&#xe0;ng b&#xe1;n l&#x1ebb; t&#x1ea1;i Vi&#x1ec7;t Nam, gi&#xfa;p  gi&#x1ea3;i quy&#x1ebf;t kh&#xf3; kh&#x103;n trong qu&#xe1; tr&#xec;nh qu&#x1ea3;n l&#xfd; b&#xe1;n h&#xe0;ng m&#x1ed9;t c&#xe1;ch &#x111;&#x1a1;n gi&#x1ea3;n, d&#x1ec5; d&#xe0;ng nh&#x1ea5;t m&#xe0; kh&#xf4;ng t&#x1ed1;n qu&#xe1; nhi&#x1ec1;u chi ph&#xed;."/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/logo-uit.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="36" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="  &#x110;&#x1ed3; &#xe1;n cu&#x1ed1;i k&#xec;: QU&#x1ea2;N L&#xdd; SHOP TH&#x1edc;I TRANG LUIS HOMME"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

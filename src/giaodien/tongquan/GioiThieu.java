@@ -27,19 +27,59 @@ public class GioiThieu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+
+        setPreferredSize(new java.awt.Dimension(1200, 768));
+
+        jTextPane1.setEditable(false);
+        jTextPane1.setBorder(null);
+        jTextPane1.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jTextPane1.setText("\nGiảng viên hướng dẫn: Ths. Đỗ Thị Minh Phụng\n\tNhóm sinh viên thực hiện: \n\t\tPhạm Hoài Nguyên        14520605\n\t\tLê Văn Cường                14521116\n\t\tPhan Quang Duy           14521161\n\nThông tin phần mềm: \n\tPhần mềm quản lí shop thời trang LUIS HOMME được phát triển bởi nhóm trên.  Sau nhiều tháng phát triển phần mềm và đã cho ra sản phẩm và đưa vào áp dụng tại shop thời trang LUIS HOMME, nhóm khao khát mang công nghệ phục vụ các cửa hàng bán lẻ tại Việt Nam, giúp  giải quyết khó khăn trong quá trình quản lý bán hàng một cách đơn giản, dễ dàng nhất mà không tốn quá nhiều chi phí.");
+        jScrollPane1.setViewportView(jTextPane1);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo-uit.png"))); // NOI18N
+
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jTextField1.setText("  Đồ án cuối kì: QUẢN LÝ SHOP THỜI TRANG LUIS HOMME");
+        jTextField1.setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jTextField1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

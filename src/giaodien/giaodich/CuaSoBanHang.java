@@ -24,14 +24,14 @@ public class CuaSoBanHang extends javax.swing.JFrame {
     public CuaSoBanHang() {
         initComponents();
          JTableHeader theader = tb_banhang.getTableHeader();
-        tb_banhang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor1());
+        tb_banhang.setDefaultRenderer(Object.class, new giaodien.utils.TableCellRendererColor());
        theader.setBackground(Color.getHSBColor( 0, 135, 204));
-       theader.setFont(new Font("Arial", Font.BOLD,12));
+       theader.setFont(new Font("Arial", Font.BOLD,18));
       
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
-       tb_banhang.setFont(new Font("Arial",Font.PLAIN,14));
-       tb_banhang.setRowHeight(30);
+       tb_banhang.setFont(new Font("Arial",Font.PLAIN,16));
+       tb_banhang.setRowHeight(40);
        
        
        this.lapHoaDonBanHang = new LapHoaDonBanHang(
@@ -63,7 +63,6 @@ public class CuaSoBanHang extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        jButtonHoaDon = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
@@ -85,6 +84,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jTextFieldGhiChu = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
+        jButtonHoaDon = new javax.swing.JButton();
         jLabelTenNhanVien = new javax.swing.JLabel();
         jComboBoxTenNhanVien = new javax.swing.JComboBox<>();
 
@@ -205,27 +205,15 @@ public class CuaSoBanHang extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 255, 51)));
 
-        jButtonHoaDon.setBackground(new java.awt.Color(0, 153, 51));
-        jButtonHoaDon.setFont(new java.awt.Font("Arial Unicode MS", 0, 14)); // NOI18N
-        jButtonHoaDon.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonHoaDon.setText("Hóa đơn");
-        jButtonHoaDon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonHoaDonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jButtonHoaDon)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 480, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButtonHoaDon)
+            .addGap(0, 27, Short.MAX_VALUE)
         );
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
@@ -298,7 +286,7 @@ public class CuaSoBanHang extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(jLabel6)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelGiaGiam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelTongTien, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -367,12 +355,22 @@ public class CuaSoBanHang extends javax.swing.JFrame {
         jLabel20.setText("Ghi chú");
 
         jButton9.setBackground(new java.awt.Color(0, 153, 51));
-        jButton9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Thanh toán (F9) ");
+        jButton9.setText("In hóa đơn");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButtonHoaDon.setBackground(new java.awt.Color(0, 153, 51));
+        jButtonHoaDon.setFont(new java.awt.Font("Arial Unicode MS", 1, 18)); // NOI18N
+        jButtonHoaDon.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonHoaDon.setText("Thanh toán");
+        jButtonHoaDon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHoaDonActionPerformed(evt);
             }
         });
 
@@ -382,14 +380,14 @@ public class CuaSoBanHang extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldGhiChu))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton9))))
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldGhiChu, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(177, 177, 177)
+                .addComponent(jButton9)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonHoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,7 +400,9 @@ public class CuaSoBanHang extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jTextFieldGhiChu, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(jButton9))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonHoaDon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)))
         );
 
         jLabelTenNhanVien.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

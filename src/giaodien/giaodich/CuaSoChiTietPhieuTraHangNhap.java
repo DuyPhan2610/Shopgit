@@ -30,7 +30,7 @@ public class CuaSoChiTietPhieuTraHangNhap extends javax.swing.JFrame {
        ((DefaultTableCellRenderer)theader.getDefaultRenderer())
                .setHorizontalAlignment(JLabel.LEFT);
        jTableChiTietPhieuTraHangNhap.setFont(new Font("Arial",Font.PLAIN,16));
-       jTableChiTietPhieuTraHangNhap.setRowHeight(50);
+       jTableChiTietPhieuTraHangNhap.setRowHeight(40);
     }
 
     /**
