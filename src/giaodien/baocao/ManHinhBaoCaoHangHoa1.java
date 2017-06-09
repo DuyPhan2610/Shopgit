@@ -5,45 +5,31 @@
  */
 package giaodien.baocao;
 
-import DatabaseConnection.ConnectionUtils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.swing.JRViewer;
-import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
  * @author USER
  */
-public class ManHinhBaoCaoHangHoa extends javax.swing.JFrame {
+public class ManHinhBaoCaoHangHoa1 extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManHinhBaoCaoHangHoa
+     * Creates new form ManHinhBaoCaoHangHoa1
      */
-    public ManHinhBaoCaoHangHoa() {
+    public ManHinhBaoCaoHangHoa1() {
         initComponents();
-        try {
-            Connection conn = new ConnectionUtils().getMySQLConnection();
-            System.out.println(conn);
-        } catch (SQLException ex) {
-            Logger.getLogger(ManHinhBaoCaoHangHoa.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManHinhBaoCaoHangHoa.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     /**
@@ -55,7 +41,6 @@ public class ManHinhBaoCaoHangHoa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPanebchh = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -78,8 +63,6 @@ public class ManHinhBaoCaoHangHoa extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         btnThongKe = new javax.swing.JButton();
         desktopPane = new javax.swing.JPanel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -340,85 +323,56 @@ public class ManHinhBaoCaoHangHoa extends javax.swing.JFrame {
                 .addContainerGap(78, Short.MAX_VALUE))
         );
 
-        jScrollPanebchh.setViewportView(jPanel1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPanebchh, javax.swing.GroupLayout.DEFAULT_SIZE, 1379, Short.MAX_VALUE)
+            .addGap(0, 2481, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPanebchh, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+            .addGap(0, 724, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKeActionPerformed
-        
-            try {
-                // TODO add your handling code here:
-                Class.forName("com.mysql.jdbc.Driver");
-            
-                Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useSSL=false", "root", "2610");
-                 
-                
-                JasperDesign jd = JRXmlLoader.load("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
-                JasperReport jr =JasperCompileManager.compileReport("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
-                JasperPrint jp =JasperFillManager.fillReport(jr, new HashMap(), con);
-                //JasperViewer.viewReport(jp);
-                //desktopPane.add( new JRViewer(jp));
-                //desktopPane.setVisible(true);
-                
-                JRViewer jv = new JRViewer(jp);  
-desktopPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-desktopPane.setLayout(new java.awt.BorderLayout());
-desktopPane.setPreferredSize(new java.awt.Dimension(900, 768));
-desktopPane.add(jv);
-desktopPane.repaint();
-desktopPane.revalidate();
-                //JasperExportManager.exportReportToPdfFile(jp, "D:\\shopmanagement\\trunk\\src\\report\\BaoCaoHangHoa.pdf");
+
+        try {
+            // TODO add your handling code here:
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/shop?useSSL=false", "root", "2610");
+
+            JasperDesign jd = JRXmlLoader.load("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+            JasperReport jr =JasperCompileManager.compileReport("E:\\shop\\trunk\\src\\report\\BaoCaoHangHoa.jrxml");
+            JasperPrint jp =JasperFillManager.fillReport(jr, new HashMap(), con);
+            //JasperViewer.viewReport(jp);
+            //desktopPane.add( new JRViewer(jp));
+            //desktopPane.setVisible(true);
+
+            JRViewer jv = new JRViewer(jp);
+            desktopPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+            desktopPane.setLayout(new java.awt.BorderLayout());
+            desktopPane.setPreferredSize(new java.awt.Dimension(900, 768));
+            desktopPane.add(jv);
+            desktopPane.repaint();
+            desktopPane.revalidate();
+            //JasperExportManager.exportReportToPdfFile(jp, "D:\\shopmanagement\\trunk\\src\\report\\BaoCaoHangHoa.pdf");
         } catch ( ClassNotFoundException |SQLException | JRException e) {
             JOptionPane.showMessageDialog(null, "Can not show report" +e.getMessage());
         }
     }//GEN-LAST:event_btnThongKeActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManHinhBaoCaoHangHoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManHinhBaoCaoHangHoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManHinhBaoCaoHangHoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManHinhBaoCaoHangHoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ManHinhBaoCaoHangHoa().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnThongKe;
@@ -440,7 +394,6 @@ desktopPane.revalidate();
     private javax.swing.JPanel jPanel7;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPanebchh;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;

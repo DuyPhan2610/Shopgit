@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66739d07-46ff-4eae-87fb-8a87eba27217">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     hoadonbanhang.`MAHOADONBANHANG` AS hoadonbanhang_MAHOADONBANHANG,
+     hoadonbanhang.`GIAGIAM` AS hoadonbanhang_GIAGIAM,
+     hoadonbanhang.`KHACHDATRA` AS hoadonbanhang_KHACHDATRA,
+     hoadonbanhang.`TONGTIEN` AS hoadonbanhang_TONGTIEN,
+     hoadonbanhang.`THOIGIAN` AS hoadonbanhang_THOIGIAN
+FROM
+     `hoadonbanhang` hoadonbanhang  
+WHERE THOIGIAN >= '2017-05-01T00:00:00.000' AND 
+    THOIGIAN <= '2017-05-30T00:00:00.000']]>
+	</queryString>
+	<field name="hoadonbanhang_THOIGIAN" class="java.sql.Timestamp"/>
+	<field name="hoadonbanhang_MAHOADONBANHANG" class="java.lang.String"/>
+	<field name="hoadonbanhang_GIAGIAM" class="java.lang.Float"/>
+	<field name="hoadonbanhang_KHACHDATRA" class="java.lang.Float"/>
+	<field name="hoadonbanhang_TONGTIEN" class="java.lang.Float"/>
+	<group name="hoadonbanhang_THOIGIAN">
+		<groupExpression><![CDATA[$F{hoadonbanhang_THOIGIAN}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="79" forecolor="#FFFFFF" backcolor="#0087CC" uuid="178e264f-421f-4d2a-8bf4-dd134f11b6bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Báo cáo doanh thu theo tháng ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="114" height="36" uuid="f24b3d46-07e8-4bc4-b862-d065d24bd3a0"/>
+				<text><![CDATA[hoadonbanhang_THOIGIAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="0" width="104" height="36" uuid="4b973ce8-8bab-412c-8563-374173f24716"/>
+				<text><![CDATA[hoadonbanhang_MAHOADONBANHANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="36" uuid="484ae3be-b557-43d7-bc3e-5316e9b60628"/>
+				<text><![CDATA[hoadonbanhang_GIAGIAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="0" width="100" height="36" uuid="0d90e327-836b-4811-87d3-a937647602bd"/>
+				<text><![CDATA[hoadonbanhang_KHACHDATRA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="0" width="114" height="20" uuid="4396395d-843e-4f23-b0f9-2f68de3571d0"/>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_THOIGIAN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="0" width="100" height="20" uuid="5c479612-52a7-46c9-9ec6-f6b62c9993dd"/>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_MAHOADONBANHANG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="3aa3e0fa-c2fb-49d9-8937-a1b6a5af514d"/>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_GIAGIAM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="0" width="100" height="20" uuid="3ef7f075-ae69-4a0d-9fd6-12bb55410306"/>
+				<textFieldExpression><![CDATA[$F{hoadonbanhang_KHACHDATRA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
